@@ -148,7 +148,7 @@ const AboutUs: React.FC = () => {
         {/* SERVICES SECTION – CARD STYLE LIKE REFERENCE */}
         <section
           className="py-20 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/service-bg01.jpg')" }}
+          style={{ backgroundImage: "url('/service-bg02.jpg')" }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Heading */}
