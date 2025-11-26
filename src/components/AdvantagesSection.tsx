@@ -25,7 +25,7 @@ export default function AdvantagesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* SECTION TITLE */}
         <ScrollAnimation className="text-center mb-16">
