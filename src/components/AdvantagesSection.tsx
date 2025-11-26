@@ -29,9 +29,10 @@ export default function AdvantagesSection() {
 
   return (
     <section
-      className="py-20 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="py-20 relative overflow-hidden bg-cover bg-no-repeat"
       style={{
-        backgroundImage: "url('/shape-02.webp')",
+        backgroundImage: "url('/counter-bg.webp')",
+        backgroundPosition: "left bottom", // IMAGE FIXED TO LEFT-BOTTOM
       }}
     >
       <div className="container mx-auto px-4 relative z-10">
@@ -81,7 +82,7 @@ export default function AdvantagesSection() {
                     </button>
                   </div>
 
-                  {/* BOTTOM RIGHT ICON BOX */}
+                  {/* ICON BOX */}
                   <div
                     className="absolute bottom-0 right-0 
                                w-20 h-20 bg-[#003F48] 
