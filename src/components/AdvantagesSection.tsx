@@ -29,7 +29,7 @@ export default function AdvantagesSection() {
       <div className="container mx-auto px-4">
         {/* SECTION TITLE */}
         <ScrollAnimation className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#003F48] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#9B111E] mb-4">
             {t("advantages.title")}
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -48,22 +48,22 @@ export default function AdvantagesSection() {
                   transition={{ duration: 0.3 }}
                   className="relative h-full bg-white rounded-xl shadow-md 
                              hover:shadow-xl transition-all duration-300 p-8 
-                             border-t-4 border-[#003F48]"
+                             border-t-4 border-[#9B111E]"
                 >
                   {/* ICON */}
-                  <div className="mb-6 w-16 h-16 bg-gradient-to-br from-[#003F48] to-[#005F6B] 
+                  <div className="mb-6 w-16 h-16 bg-gradient-to-br from-[#9B111E] to-[#C41E3A] 
                                   rounded-lg flex items-center justify-center">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   
                   {/* CONTENT */}
-                  <h3 className="text-xl font-bold text-[#003F48] mb-4">
+                  <h3 className="text-xl font-bold text-[#9B111E] mb-4">
                     {t(advantage.titleKey)}
                   </h3>
                   <p className="text-gray-600 text-base leading-relaxed mb-6">
                     {t(advantage.descriptionKey)}
                   </p>
-                  <button className="text-[#003F48] font-semibold text-sm flex items-center gap-2 
+                  <button className="text-[#9B111E] font-semibold text-sm flex items-center gap-2 
                                    hover:gap-3 transition-all duration-300">
                     Read More <span className="text-lg">→</span>
                   </button>
