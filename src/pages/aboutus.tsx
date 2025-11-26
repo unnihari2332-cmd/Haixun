@@ -144,13 +144,12 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* SERVICES SECTION – 2 ROWS × 4 COLUMNS, BG IMAGE */}
+        {/* SERVICES SECTION – 2 ROWS × 4 COLUMNS, BACKGROUND IMAGE */}
         <section
-          className="py-20 bg-cover bg-center relative"
+          className="py-20 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/service-bg.jpg')" }}
         >
-          <div className="absolute inset-0 bg-slate-900/80" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +163,7 @@ const AboutUs = () => {
               >
                 Our Services
               </h2>
-              <p className="text-slate-200 max-w-2xl mx-auto">
+              <p className="text-slate-100 max-w-2xl mx-auto">
                 Comprehensive end-to-end global logistics solutions tailored to
                 your business needs.
               </p>
@@ -172,9 +171,9 @@ const AboutUs = () => {
 
             <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
               {/* 1. LCL Services */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <Ship className="w-8 h-8" style={{ color: RUBY_RED }} />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
@@ -200,9 +199,9 @@ const AboutUs = () => {
               </div>
 
               {/* 2. FCL Services */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <Ship className="w-8 h-8" style={{ color: RUBY_RED }} />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
@@ -228,9 +227,9 @@ const AboutUs = () => {
               </div>
 
               {/* 3. OOG Shipments */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <Package className="w-8 h-8" style={{ color: RUBY_RED }} />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
@@ -255,9 +254,9 @@ const AboutUs = () => {
               </div>
 
               {/* 4. LCL Consolidation */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <ClipboardList
                       className="w-8 h-8"
                       style={{ color: RUBY_RED }}
@@ -285,9 +284,9 @@ const AboutUs = () => {
               </div>
 
               {/* 5. Warehouse Management */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <Boxes className="w-8 h-8" style={{ color: RUBY_RED }} />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
@@ -312,9 +311,9 @@ const AboutUs = () => {
               </div>
 
               {/* 6. Project Logistics */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <Truck className="w-8 h-8" style={{ color: RUBY_RED }} />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
@@ -339,9 +338,9 @@ const AboutUs = () => {
               </div>
 
               {/* 7. Air Shipments */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <Plane className="w-8 h-8" style={{ color: RUBY_RED }} />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
@@ -366,9 +365,9 @@ const AboutUs = () => {
               </div>
 
               {/* 8. Customs Declaration & Insurance */}
-              <div className="group rounded-3xl border border-white/10 px-6 py-8 bg-black/25 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-black/50">
+              <div className="group rounded-3xl border border-white/20 px-6 py-8 bg-slate-900/80 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 hover:bg-slate-900/95">
                 <div>
-                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6 group-hover:bg-black/70 transition">
+                  <div className="w-16 h-16 rounded-full bg-black/40 flex items-center justify-center mb-6">
                     <FileText className="w-8 h-8" style={{ color: RUBY_RED }} />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
