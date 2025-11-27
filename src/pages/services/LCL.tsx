@@ -53,9 +53,9 @@ const LCL = () => {
       <Navigation />
 
       <main className="flex-grow pt-20">
-
-        {/* ========== BIG BREADCRUMB HERO ========== */}
-        <section className="relative bg-[#020817] h-60 md:h-72 flex items-center justify-center">
+        {/* ========== BIG BREADCRUMB HERO WITH SHAPE ========== */}
+        <section className="relative bg-[#020817] h-60 md:h-72 flex items-center justify-center overflow-hidden">
+          {/* Background */}
           <div className="absolute inset-0">
             <img
               src="/service-bg.jpg"
@@ -65,7 +65,14 @@ const LCL = () => {
             <div className="absolute inset-0 bg-black/60" />
           </div>
 
-          {/* BIG BREADCRUMB */}
+          {/* LEFT DECORATIVE SHAPE IMAGE */}
+          <img
+            src="/breadcrumn-shape.png"
+            alt="Breadcrumb Shape"
+            className="absolute left-0 bottom-0 h-full object-contain opacity-100 pointer-events-none"
+          />
+
+          {/* CENTERED BIG BREADCRUMB */}
           <div className="relative text-center">
             <Breadcrumb className="scale-125 md:scale-[1.40]">
               <BreadcrumbList className="flex items-center justify-center gap-3">
@@ -109,10 +116,8 @@ const LCL = () => {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 md:grid-cols-[260px,1fr] items-start">
-
-              {/* LEFT COLUMN: SERVICES LIST ONLY */}
+              {/* LEFT COLUMN */}
               <aside className="space-y-10">
-
                 {/* OUR SERVICES */}
                 <div>
                   <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
@@ -143,12 +148,10 @@ const LCL = () => {
                     })}
                   </div>
                 </div>
-
               </aside>
 
               {/* RIGHT COLUMN */}
               <div className="space-y-12">
-
                 {/* TOP LARGE IMAGE */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -165,7 +168,7 @@ const LCL = () => {
                   />
                 </motion.div>
 
-                {/* DESCRIPTION BLOCK */}
+                {/* DESCRIPTION BLOCK – FULL WIDTH, NO IMAGE */}
                 <section>
                   <div className="mb-6">
                     <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
@@ -174,41 +177,30 @@ const LCL = () => {
                     <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
                   </div>
 
-                  <div className="grid gap-10 md:grid-cols-2 items-start">
-                    {/* TEXT CONTENT */}
-                    <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
-                      <p>
-                        Amass Freight, Dubai provides Less-Than-Container Load (LCL)
-                        services designed for customers who do not have enough cargo to
-                        fill a full container but require reliable shipping.
-                      </p>
-                      <p>
-                        Our extensive global consolidation network helps customers move
-                        small shipments more economically, combining multiple consignments
-                        into a single container to reduce freight cost.
-                      </p>
-                      <p>
-                        Our operations team manages receiving, stuffing, documentation, and
-                        end delivery, ensuring safety and reliability at every step.
-                      </p>
-                      <p>
-                        Frequent departures, predictable transit schedules, and transparent
-                        pricing give your business the flexibility it needs.
-                      </p>
-                    </div>
-
-                    {/* SHIP IMAGE */}
-                    <div className="flex justify-center md:justify-end">
-                      <img
-                        src="/lcl-ship.png"
-                        alt="LCL Ocean Freight"
-                        className="max-w-xs md:max-w-sm object-contain"
-                        loading="lazy"
-                      />
-                    </div>
+                  <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
+                    <p>
+                      Amass Freight, Dubai provides Less-Than-Container Load (LCL) services
+                      designed for customers who do not have enough cargo to fill a full
+                      container but require reliable shipping.
+                    </p>
+                    <p>
+                      Our extensive global consolidation network helps customers move
+                      smaller shipments more economically by combining multiple consignments
+                      into one container, reducing freight cost while maintaining service
+                      reliability.
+                    </p>
+                    <p>
+                      Our operations team manages receiving, stuffing, documentation, and
+                      delivery at destination, ensuring safety, transparency, and efficiency
+                      at every step of the supply chain.
+                    </p>
+                    <p>
+                      With predictable transit schedules, frequent departures, and
+                      transparent pricing, our LCL solutions provide unmatched flexibility
+                      for businesses of all sizes.
+                    </p>
                   </div>
                 </section>
-
               </div>
             </div>
           </div>
