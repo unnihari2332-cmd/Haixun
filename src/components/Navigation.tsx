@@ -149,9 +149,10 @@ const Navigation = () => {
                     {t("services.lcl.title")}
                   </Link>
                 </DropdownMenuItem>
+                {/* CFS -> FCL CHANGE */}
                 <DropdownMenuItem asChild>
-                  <Link to="/services/cfs" className="w-full cursor-pointer hover:bg-gray-100">
-                    {t("services.cfs.title")}
+                  <Link to="/services/fcl" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.fcl.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -311,12 +312,13 @@ const Navigation = () => {
                     >
                       {t("services.lcl.title")}
                     </Link>
+                    {/* CFS -> FCL CHANGE (MOBILE) */}
                     <Link
-                      to="/services/cfs"
+                      to="/services/fcl"
                       className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      {t("services.cfs.title")}
+                      {t("services.fcl.title")}
                     </Link>
                     <Link
                       to="/services/sea-freight"
