@@ -158,7 +158,7 @@ const FCL = () => {
                   className="rounded-md overflow-hidden shadow-lg"
                 >
                   <img
-                    src="/fcl1.jpg"
+                    src="/container.jpg"
                     alt="FCL Shipping"
                     className="w-full h-[340px] md:h-[380px] object-cover"
                     loading="lazy"
