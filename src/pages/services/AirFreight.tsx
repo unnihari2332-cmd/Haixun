@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getCurrentCountryFromPath } from "@/services/countryDetection";
-import { Plane, Clock, Globe, Shield, Package } from "lucide-react";
+import { Plane } from "lucide-react";
 
 import {
   Breadcrumb,
@@ -51,46 +51,13 @@ const AirFreight = () => {
 
   const pathname = location.pathname;
 
-  const features = [
-    {
-      icon: Clock,
-      title: "Express Delivery",
-      description: "Time-critical shipments with guaranteed delivery schedules",
-    },
-    {
-      icon: Globe,
-      title: "Global Network",
-      description: "Extensive worldwide coverage through our partner airlines",
-    },
-    {
-      icon: Shield,
-      title: "Secure Handling",
-      description: "Professional cargo handling with full insurance coverage",
-    },
-    {
-      icon: Package,
-      title: "Flexible Solutions",
-      description: "Customized air freight solutions for all cargo types",
-    },
-  ];
-
-  const services = [
-    "Express Air Freight",
-    "Consolidated Air Cargo",
-    "Charter Flight Services",
-    "Door-to-Door Delivery",
-    "Customs Clearance",
-    "Temperature-Controlled Transport",
-    "Hazardous Goods Handling",
-    "Real-time Tracking",
-  ];
-
   return (
     <div className="bg-white text-gray-900 min-h-screen flex flex-col">
       <ScrollToTop />
       <Navigation />
 
       <main className="flex-grow pt-20">
+
         {/* BREADCRUMB HERO */}
         <section
           className="relative h-56 md:h-64 flex items-center justify-center overflow-hidden border-b border-slate-200"
@@ -106,30 +73,20 @@ const AirFreight = () => {
             <Breadcrumb>
               <BreadcrumbList className="flex items-center justify-center gap-2 md:gap-3">
                 <BreadcrumbItem>
-                  <BreadcrumbLink
-                    asChild
-                    className="text-[#BC0018] text-lg md:text-xl font-semibold hover:text-black"
-                  >
+                  <BreadcrumbLink asChild className="text-[#BC0018] text-lg md:text-xl font-semibold hover:text-black">
                     <Link to={getNavLink("/")}>Home</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
 
-                <BreadcrumbSeparator>
-                  <span className="text-xl md:text-2xl text-slate-600">›</span>
-                </BreadcrumbSeparator>
+                <BreadcrumbSeparator><span className="text-xl md:text-2xl text-slate-600">›</span></BreadcrumbSeparator>
 
                 <BreadcrumbItem>
-                  <BreadcrumbLink
-                    asChild
-                    className="text-[#BC0018] text-lg md:text-xl font-semibold hover:text-black"
-                  >
+                  <BreadcrumbLink asChild className="text-[#BC0018] text-lg md:text-xl font-semibold hover:text-black">
                     <Link to={getNavLink("/services")}>Services</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
 
-                <BreadcrumbSeparator>
-                  <span className="text-xl md:text-2xl text-slate-600">›</span>
-                </BreadcrumbSeparator>
+                <BreadcrumbSeparator><span className="text-xl md:text-2xl text-slate-600">›</span></BreadcrumbSeparator>
 
                 <BreadcrumbItem>
                   <BreadcrumbPage className="text-black font-extrabold text-3xl md:text-4xl">
@@ -145,29 +102,25 @@ const AirFreight = () => {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 md:grid-cols-[260px,1fr] items-start">
-              {/* LEFT COLUMN – OUR SERVICES NAV */}
+
+              {/* LEFT SIDEBAR */}
               <aside className="space-y-10">
                 <div>
-                  <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
-                    OUR SERVICES
-                  </h2>
+                  <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">OUR SERVICES</h2>
                   <div className="w-12 h-[2px] bg-[#BC0018] mb-5" />
 
                   <div className="border border-slate-200 rounded-md overflow-hidden bg-slate-50">
                     {servicesNav.map((item) => {
                       const to = getNavLink(item.path);
                       const isActive =
-                        pathname === to ||
-                        (item.path !== "/services" && pathname.startsWith(to));
+                        pathname === to || (item.path !== "/services" && pathname.startsWith(to));
 
                       return (
                         <Link
                           key={item.path}
                           to={to}
                           className={`block px-6 py-3 text-sm font-medium transition-colors ${
-                            isActive
-                              ? "bg-[#BC0018] text-white"
-                              : "text-slate-600 hover:bg-slate-100"
+                            isActive ? "bg-[#BC0018] text-white" : "text-slate-600 hover:bg-slate-100"
                           }`}
                         >
                           {item.label}
@@ -178,8 +131,9 @@ const AirFreight = () => {
                 </div>
               </aside>
 
-              {/* RIGHT COLUMN */}
+              {/* RIGHT CONTENT */}
               <div className="space-y-12">
+
                 {/* TOP IMAGE */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -196,7 +150,7 @@ const AirFreight = () => {
                   />
                 </motion.div>
 
-                {/* AIR FREIGHT DESCRIPTION – UPDATED TEXT */}
+                {/* AIR FREIGHT TEXT – UPDATED CONTENT */}
                 <section>
                   <div className="mb-6 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
@@ -212,67 +166,17 @@ const AirFreight = () => {
 
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
                     <p>
-                      HAIXUN can provide customized sea-air &amp; air-sea options to meet
-                      customer’s deadline and timeliness while achieving significant cost
-                      savings. These hybrid transport solutions are designed to balance speed
-                      and cost efficiency based on each customer’s cargo type and delivery
-                      requirements.
+                      HAIXUN can provide customized sea-air & air-sea options to meet customer’s deadline
+                      and timeliness while achieving significant cost savings. These hybrid transport solutions
+                      are designed to balance speed and cost efficiency based on each customer’s cargo type
+                      and delivery requirements.
                     </p>
+
                     <p>
-                      Through its efficient and well-connected worldwide network, the company
-                      handles airfreight consolidation on many major global routes. This
-                      ensures reliable schedules, competitive pricing, and seamless cargo
-                      movement from origin to final destination.
+                      Through its efficient and well-connected worldwide network, the company handles
+                      airfreight consolidation on many major global routes. This ensures reliable schedules,
+                      competitive pricing, and seamless cargo movement from origin to final destination.
                     </p>
-                  </div>
-                </section>
-
-                {/* KEY FEATURES */}
-                <section>
-                  <div className="mb-6">
-                    <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
-                      Key Benefits
-                    </h2>
-                    <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
-                  </div>
-
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    {features.map((item) => (
-                      <div
-                        key={item.title}
-                        className="flex gap-4 rounded-lg border border-slate-200 bg-slate-50 p-4"
-                      >
-                        <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
-                          <item.icon className="w-5 h-5 text-[#BC0018]" />
-                        </div>
-                        <div>
-                          <h3 className="text-sm font-semibold text-gray-900">
-                            {item.title}
-                          </h3>
-                          <p className="mt-1 text-xs md:text-sm text-gray-700">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-
-                {/* SERVICES LIST */}
-                <section>
-                  <div className="mb-6">
-                    <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
-                      Service Portfolio
-                    </h2>
-                    <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
-                  </div>
-
-                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
-                    <ul className="grid gap-2 text-sm md:text-base text-gray-700 sm:grid-cols-2">
-                      {services.map((srv) => (
-                        <li key={srv}>• {srv}</li>
-                      ))}
-                    </ul>
                   </div>
                 </section>
 
@@ -292,6 +196,7 @@ const AirFreight = () => {
                     Contact Us
                   </Link>
                 </section>
+
               </div>
             </div>
           </div>
