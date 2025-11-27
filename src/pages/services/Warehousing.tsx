@@ -54,7 +54,7 @@ const Warehousing = () => {
       <Navigation />
 
       <main className="flex-grow pt-20">
-        {/* BREADCRUMB HERO (same structure as LCL/CFS) */}
+        {/* BREADCRUMB HERO */}
         <section
           className="relative h-56 md:h-64 flex items-center justify-center overflow-hidden border-b border-slate-200"
           style={{
@@ -130,7 +130,7 @@ const Warehousing = () => {
                           className={`block px-6 py-3 text-sm font-medium transition-colors ${
                             isActive
                               ? "bg-[#BC0018] text-white"
-                              : "text-slate-600 hover:bg-slate-100"
+                              : "text-slate-700 hover:bg-slate-100 hover:text-[#BC0018] cursor-pointer"
                           }`}
                         >
                           {item.label}
@@ -141,9 +141,9 @@ const Warehousing = () => {
                 </div>
               </aside>
 
-              {/* RIGHT COLUMN: CONTENT */}
+              {/* RIGHT COLUMN */}
               <div className="space-y-12">
-                {/* TOP TAG + IMAGE */}
+                {/* TAG + IMAGE */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -174,29 +174,27 @@ const Warehousing = () => {
                     <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
                       Warehousing Solutions
                     </h2>
-                    <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
                   </div>
 
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
                     <p>
                       GC possesses the necessary resources and expertise to effectively
-                      manage the warehousing of diverse commodities, including cold
-                      storage facilities.
+                      manage the warehousing of diverse commodities, including cold storage
+                      facilities.
                     </p>
                     <p>
-                      Warehouse management plays a crucial role in the overall supply
-                      chain, focusing on controlling the movement and storage of materials
-                      within a warehouse. It encompasses tasks such as shipping, receiving,
-                      put away, and picking, while also providing visibility into the
-                      processes preceding and following the supply chain link.
+                      Warehouse management plays a crucial role in the overall supply chain,
+                      focusing on controlling the movement and storage of materials within a
+                      warehouse. It encompasses tasks such as shipping, receiving, put away,
+                      and picking, while also providing visibility into the processes
+                      preceding and following the supply chain link.
                     </p>
                     <p>
-                      By optimizing warehouse operations, your facility can become a
-                      catalyst for enhanced profitability and customer satisfaction,
-                      rather than an obstacle. The objective of warehouse management is to
-                      efficiently handle stock receipts and manage supplies, encompassing
-                      both supply chain management and demand management, including
-                      container storage, loading, and unloading.
+                      By optimizing warehouse operations, your facility can become a catalyst
+                      for enhanced profitability and customer satisfaction, rather than an
+                      obstacle. The objective of warehouse management is to efficiently
+                      handle stock receipts and manage supplies, including container storage,
+                      loading, and unloading.
                     </p>
                   </div>
                 </section>
@@ -207,7 +205,6 @@ const Warehousing = () => {
                     <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
                       Value We Deliver
                     </h2>
-                    <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
                   </div>
 
                   <div className="bg-gray-50 rounded-2xl p-6 md:p-8">
@@ -215,8 +212,8 @@ const Warehousing = () => {
                       <p>
                         An effective warehouse management system provides a competitive
                         advantage in retail chain distribution. GC strives to understand
-                        customer needs and assists in handling their requirements in the
-                        most optimal manner.
+                        customer needs and assists in handling their requirements in the most
+                        optimal manner.
                       </p>
                       <p>
                         We specialize in handling the vanning and devanning of consolidated
@@ -226,8 +223,8 @@ const Warehousing = () => {
                       <p>
                         With our extensive network in domestic and global markets, GC can
                         identify the ideal warehouse solution based on specific customer
-                        requirements, considering factors such as cost-effectiveness,
-                        storage specifications, commodity requirements, and proximity.
+                        requirements, considering factors such as cost-effectiveness, storage
+                        specifications, commodity requirements, and proximity.
                       </p>
                     </div>
                   </div>
