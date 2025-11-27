@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { FileText, File } from "lucide-react";
 import { getCurrentCountryFromPath } from "@/services/countryDetection";
 
 import {
@@ -111,7 +110,7 @@ const LCL = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 md:grid-cols-[260px,1fr] items-start">
 
-              {/* LEFT COLUMN: SERVICES LIST + BROCHURES */}
+              {/* LEFT COLUMN: SERVICES LIST ONLY */}
               <aside className="space-y-10">
 
                 {/* OUR SERVICES */}
@@ -145,30 +144,6 @@ const LCL = () => {
                   </div>
                 </div>
 
-                {/* OUR BROCHURES */}
-                <div>
-                  <h3 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
-                    OUR BROCHURES
-                  </h3>
-                  <div className="w-12 h-[2px] bg-[#BC0018] mb-5" />
-
-                  <div className="border border-slate-200 rounded-md overflow-hidden bg-slate-50 divide-y">
-                    <a
-                      href="/brochures/service-brochure.pdf"
-                      className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-100"
-                    >
-                      <FileText className="w-4 h-4 text-slate-500" />
-                      <span>Service Brochure.pdf</span>
-                    </a>
-                    <a
-                      href="/brochures/about-company.doc"
-                      className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-100"
-                    >
-                      <File className="w-4 h-4 text-slate-500" />
-                      <span>About Company.doc</span>
-                    </a>
-                  </div>
-                </div>
               </aside>
 
               {/* RIGHT COLUMN */}
