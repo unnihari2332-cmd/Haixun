@@ -108,6 +108,7 @@ const Warehousing = () => {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 md:grid-cols-[260px,1fr] items-start">
+
               {/* LEFT COLUMN: SERVICES NAV */}
               <aside className="space-y-10">
                 <div>
@@ -127,11 +128,14 @@ const Warehousing = () => {
                         <Link
                           key={item.path}
                           to={to}
-                          className={`block px-6 py-3 text-sm font-medium transition-colors ${
-                            isActive
-                              ? "bg-[#BC0018] text-white"
-                              : "text-slate-600 hover:bg-slate-100"
-                          }`}
+                          className={`
+                            block px-6 py-3 text-sm font-medium transition-all duration-200
+                            ${
+                              isActive
+                                ? "bg-[#BC0018] text-white"
+                                : "text-slate-600 hover:text-[#BC0018] hover:bg-[#ffe6e8]"
+                            }
+                          `}
                         >
                           {item.label}
                         </Link>
@@ -143,7 +147,7 @@ const Warehousing = () => {
 
               {/* RIGHT COLUMN */}
               <div className="space-y-12">
-                {/* TOP IMAGE */}
+                {/* HERO IMAGE */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +166,7 @@ const Warehousing = () => {
                 {/* DESCRIPTION */}
                 <section>
                   <div className="mb-6">
-                    <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
+                    <h2 className="text-xl md:text-2xl font-extrabold uppercase text-gray-900">
                       Warehousing Solutions
                     </h2>
                     <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
@@ -170,31 +174,28 @@ const Warehousing = () => {
 
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
                     <p>
-                      GC possesses the necessary resources and expertise to effectively
-                      manage the warehousing of diverse commodities, including cold storage
-                      facilities.
+                      Haixun is fully equipped and can handle the warehousing of various commodities,
+                      including cold storage.
                     </p>
                     <p>
-                      Warehouse management plays a crucial role in the overall supply chain,
-                      focusing on controlling the movement and storage of materials within a
-                      warehouse. It encompasses tasks such as shipping, receiving, put away,
-                      and picking, while also providing visibility into the processes
-                      preceding and following the supply chain link.
+                      Warehouse management is a crucial component of the supply chain. Its primary
+                      purpose is to control the movement and storage of materials within a region and
+                      to process related transactions, including transportation, receiving, storage,
+                      and picking. By understanding the processes within the supply chain, your
+                      warehouse can become an accelerator—not a roadblock—to improve profitability and
+                      customer satisfaction.
                     </p>
                     <p>
-                      By optimizing warehouse operations, your facility can become a catalyst
-                      for enhanced profitability and customer satisfaction, rather than an
-                      obstacle. The objective of warehouse management is to efficiently
-                      handle stock receipts and manage supplies, including container storage,
-                      loading, and unloading.
+                      Warehouse Management (WM) handles inventory receipts, supply movement, container
+                      storage, and demand management as part of the overall supply chain workflow.
                     </p>
                   </div>
                 </section>
 
-                {/* ADDITIONAL CONTENT */}
+                {/* VALUE SECTION */}
                 <section>
                   <div className="mb-6">
-                    <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
+                    <h2 className="text-xl md:text-2xl font-extrabold uppercase text-gray-900">
                       Value We Deliver
                     </h2>
                     <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
@@ -203,21 +204,22 @@ const Warehousing = () => {
                   <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
                     <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
                       <p>
-                        An effective warehouse management system provides a competitive
-                        advantage in retail chain distribution. GC strives to understand
-                        customer needs and assists in handling their requirements in the most
-                        optimal manner.
+                        Efficient warehouse management provides a cutting-edge solution for retail
+                        chain distribution.
                       </p>
                       <p>
-                        We specialize in handling the vanning and devanning of consolidated
-                        cargo, ensuring timely distribution and delivery to the respective
-                        parties, thereby ensuring complete customer satisfaction.
+                        We identify customer needs and assist in fulfilling them in the best way
+                        possible.
                       </p>
                       <p>
-                        With our extensive network in domestic and global markets, GC can
-                        identify the ideal warehouse solution based on specific customer
-                        requirements, considering factors such as cost-effectiveness, storage
-                        specifications, commodity requirements, and proximity.
+                        Haixun has expertise in packing and unpacking, consolidating goods, and
+                        arranging delivery to all respective parties—ensuring complete customer
+                        satisfaction.
+                      </p>
+                      <p>
+                        With strong domestic and global networks, Haixun identifies the right
+                        warehouse type based on cost-effectiveness, storage requirements, product
+                        specificity, and proximity.
                       </p>
                     </div>
                   </div>
