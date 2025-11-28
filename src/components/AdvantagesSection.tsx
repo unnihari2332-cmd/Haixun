@@ -31,10 +31,17 @@ export default function AdvantagesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white relative overflow-hidden">
+      {/* LEFT DECOR IMAGE */}
+      <img
+        src="/about-shape-1.png"
+        alt=""
+        className="absolute left-0 top-0 w-40 md:w-56 opacity-90 pointer-events-none select-none"
+      />
+
       <div className="container mx-auto px-4">
         {/* SECTION TITLE */}
-        <ScrollAnimation className="text-center mb-16">
+        <ScrollAnimation className="text-center mb-16 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-[#9B111E] mb-4">
             {t("advantages.title")}
           </h2>
@@ -44,7 +51,7 @@ export default function AdvantagesSection() {
         </ScrollAnimation>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
           {advantages.map((advantage, index) => {
             const Icon = advantage.icon;
 
@@ -60,7 +67,7 @@ export default function AdvantagesSection() {
                     />
                   </div>
 
-                  {/* TEXT CONTENT WITH HOVER EFFECT */}
+                  {/* TEXT CONTENT */}
                   <motion.div
                     whileHover={{
                       y: -6,
@@ -68,7 +75,7 @@ export default function AdvantagesSection() {
                       boxShadow: "0 8px 20px rgba(155,17,30,0.25)",
                     }}
                     transition={{ duration: 0.3 }}
-                    className="relative border-l-4 border-[#9B111E] pl-8 pr-8 pt-8 pb-20 transition-all duration-300"
+                    className="relative border-l-4 border-[#9B111E] pl-8 pr-8 pt-8 pb-20"
                   >
                     <h3 className="text-2xl font-bold text-[#9B111E] mb-4">
                       {t(advantage.titleKey)}
@@ -79,7 +86,7 @@ export default function AdvantagesSection() {
 
                     <button
                       className="text-[#9B111E] font-semibold text-sm flex items-center gap-2 
-                                 hover:gap-3 transition-all duration-300"
+                      hover:gap-3 transition-all duration-300"
                     >
                       Read More <span className="text-lg">→</span>
                     </button>
@@ -88,7 +95,7 @@ export default function AdvantagesSection() {
                   {/* ICON BOX */}
                   <div
                     className="absolute bottom-0 right-0 w-24 h-24 bg-[#9B111E] 
-                               flex items-center justify-center"
+                    flex items-center justify-center"
                   >
                     <Icon className="w-12 h-12 text-white" strokeWidth={1.5} />
                   </div>
