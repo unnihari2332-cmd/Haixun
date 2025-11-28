@@ -33,7 +33,20 @@ export default function AdvantagesSection() {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
 
-      {/* FLOATING DECOR SHAPE — MOVED MORE INSIDE */}
+      {/* LEFT FLOATING DECOR SHAPE - NEW IMAGE */}
+      <motion.img
+        src="/shape-02.webp"
+        alt=""
+        className="absolute left-10 top-10 w-24 md:w-36 opacity-90 pointer-events-none select-none"
+        animate={{ y: [0, -20, 0] }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* RIGHT FLOATING DECOR SHAPE (existing) */}
       <motion.img
         src="/about-shape-1.png"
         alt=""
@@ -47,6 +60,7 @@ export default function AdvantagesSection() {
       />
 
       <div className="container mx-auto px-4">
+        
         {/* SECTION TITLE */}
         <ScrollAnimation className="text-center mb-16 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-[#9B111E] mb-4">
@@ -65,7 +79,7 @@ export default function AdvantagesSection() {
             return (
               <ScrollAnimation key={index} delay={index * 120}>
                 <div className="relative bg-white rounded-none shadow-lg overflow-hidden">
-                  
+
                   {/* IMAGE */}
                   <div className="w-full h-64 overflow-hidden">
                     <img
@@ -83,21 +97,14 @@ export default function AdvantagesSection() {
                       boxShadow: "0 8px 20px rgba(155,17,30,0.25)",
                     }}
                     transition={{ duration: 0.3 }}
-                    className="relative border-l-4 border-[#9B111E] pl-8 pr-8 pt-8 pb-20"
+                    className="relative border-l-4 border-[#9B111E] pl-8 pr-8 pt-8 pb-16"
                   >
                     <h3 className="text-2xl font-bold text-[#9B111E] mb-4">
                       {t(advantage.titleKey)}
                     </h3>
-                    <p className="text-gray-600 text-base leading-relaxed mb-6">
+                    <p className="text-gray-600 text-base leading-relaxed mb-2">
                       {t(advantage.descriptionKey)}
                     </p>
-
-                    <button
-                      className="text-[#9B111E] font-semibold text-sm flex items-center gap-2 
-                      hover:gap-3 transition-all duration-300"
-                    >
-                      Read More <span className="text-lg">→</span>
-                    </button>
                   </motion.div>
 
                   {/* ICON BOX */}
