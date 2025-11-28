@@ -73,14 +73,15 @@ const Contact: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-white relative">
       <Navigation />
 
-      {/* ⭐ MAP JUST BELOW HEADER */}
+      {/* MAP JUST BELOW HEADER – SHENZHEN / ZHAOXIN HUIJIN PLAZA */}
       <section className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
         <iframe
-          title="Haixun Global Map"
-          src="https://www.google.com/maps/place/Zhaoxin+Huijin+Plaza/@22.54262,114.11696,17z/data=!3m1!4b1!4m6!3m5!1s0x3403f5bf0884ff7b:0xda2e416692e764e2!8m2!3d22.54262!4d114.11696!16s%2Fg%2F11swps22xk?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
+          title="Haixun Global Shenzhen Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.9747126781313!2d114.11695999999999!3d22.54262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f5bf0884ff7b%3A0xda2e416692e764e2!2sZhaoxin%20Huijin%20Plaza!5e0!3m2!1sen!2sin!4v1764335462682!5m2!1sen!2sin"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="absolute inset-0 h-full w-full border-0"
+          allowFullScreen
         />
       </section>
 
@@ -111,7 +112,6 @@ const Contact: React.FC = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="relative grid gap-10 rounded-2xl bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)] lg:grid-cols-[1.5fr,1fr] overflow-hidden">
-
               {/* BACKGROUND WORLD MAP */}
               <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[url('/world-map-light.png')] bg-cover bg-center" />
 
