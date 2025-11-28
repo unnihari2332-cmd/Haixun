@@ -12,7 +12,7 @@ interface ContactSidebarProps {
 }
 
 const countries = [{
-code: "in",
+  code: "in",
   name: "India",
   lat: 9.9323,
   lng: 76.2996,
@@ -96,8 +96,8 @@ code: "in",
 }, {
   code: "ae",
   name: "United Arab Emirates (UAE)",
-    lat: 25.2048,
-    lng: 55.2708,
+  lat: 25.2048,
+  lng: 55.2708,
   cities: [{
     name: "Dubai",
     lat: 25.2048,
@@ -120,8 +120,8 @@ code: "in",
 }, {
   code: "qa",
   name: "Qatar",
-    lat: 25.276987,
-    lng: 51.520008,
+  lat: 25.276987,
+  lng: 51.520008,
   cities: [{
     name: "Doha",
     lat: 25.276987,
@@ -132,10 +132,10 @@ code: "in",
 },{
   code: "cn",
   name: "China",
-    lat: 22.54262,
-    lng: 114.11696,
+  lat: 22.54262,
+  lng: 114.11696,
   cities: [{
-    name: "China",
+    name: "Shenzhen",
     lat: 22.54262,
     lng: 114.11696,
     address: "13C02, Block A, Zhaoxin Huijin Plaza 3085 Shennan East Road, Luohu, Shenzhen.",
@@ -146,7 +146,7 @@ code: "in",
   code: "sa",
   name: "Saudi Arabia",
   lat: 26.4207,
-    lng: 50.0888,
+  lng: 50.0888,
   cities: [{
     name: "Dammam",
     lat: 26.4207,
