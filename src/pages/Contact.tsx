@@ -73,10 +73,10 @@ const Contact: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-white relative">
       <Navigation />
 
-      {/* ⭐ WHITE SPACE ABOVE MAP (TOP GAP) */}
-      <div className="h-10 md:h-16 bg-white"></div>
+      {/* ⭐ PERFECT HEADER-SIZED WHITE SPACE */}
+      <div className="h-20 md:h-24 bg-white"></div>
 
-      {/* ⭐ MAP DIRECTLY BELOW HEADER */}
+      {/* ⭐ MAP */}
       <section className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden bg-white">
         <iframe
           title="Haixun Global Shenzhen Map"
@@ -111,15 +111,14 @@ const Contact: React.FC = () => {
       </AnimatePresence>
 
       <main className="flex-grow">
-        {/* MAIN CONTACT CONTENT */}
+        {/* CONTACT BOX */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="relative grid gap-10 rounded-2xl bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)] lg:grid-cols-[1.5fr,1fr] overflow-hidden">
               
-              {/* BACKGROUND WORLD MAP */}
               <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[url('/world-map-light.png')] bg-cover bg-center" />
 
-              {/* LEFT SIDE - FORM */}
+              {/* LEFT FORM */}
               <div className="relative border-r border-slate-100 p-8 md:p-10">
                 <span
                   className="bg-[#FFF2F3] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] rounded-full text-[#BC0018]"
@@ -139,7 +138,7 @@ const Contact: React.FC = () => {
 
                 <p className="text-sm text-slate-500 mb-8 max-w-xl">
                   Logistics involves the efficient planning, management and
-                  coordination of the movement of goods.
+                  coordination of goods.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -207,7 +206,7 @@ const Contact: React.FC = () => {
                 </form>
               </div>
 
-              {/* RIGHT SIDE - CONTACT INFO */}
+              {/* RIGHT CONTACT INFO */}
               <div className="relative bg-slate-50 p-8 md:p-10">
                 <span
                   className="inline-block mb-2 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.18em]"
@@ -227,6 +226,7 @@ const Contact: React.FC = () => {
                 </h2>
 
                 <div className="space-y-6">
+                  
                   {/* Phone */}
                   <div className="flex items-start gap-4">
                     <div className="h-11 w-11 flex items-center justify-center rounded-md bg-[#FFE7EA]">
@@ -248,7 +248,7 @@ const Contact: React.FC = () => {
                       <Mail className="text-[#BC0018] h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase text-slate-500">
+                      <p className="text-xs uppercase text-salet-500">
                         Write Us Email
                       </p>
                       <p className="font-semibold text-slate-900">
