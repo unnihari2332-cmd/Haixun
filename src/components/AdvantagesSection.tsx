@@ -33,11 +33,11 @@ export default function AdvantagesSection() {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
 
-      {/* FLOATING DECOR SHAPE — MOVED LEFT */}
+      {/* FLOATING DECOR SHAPE — MOVED MORE INSIDE */}
       <motion.img
         src="/about-shape-1.png"
         alt=""
-        className="absolute right-8 top-0 w-20 md:w-28 opacity-90 pointer-events-none select-none"
+        className="absolute right-24 top-0 w-20 md:w-28 opacity-90 pointer-events-none select-none"
         animate={{ y: [0, -15, 0] }}
         transition={{
           duration: 4,
