@@ -79,25 +79,6 @@ const Footer = () => {
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#6E0C13] via-[#9B111E] to-[#B92D35] opacity-90"></div>
 
-      {/* CENTER DECOR SHAPE (background only) */}
-      <img
-        src="/shape-01.webp"
-        alt=""
-        className="
-          absolute 
-          top-1/2 
-          left-1/2 
-          -translate-x-1/2 
-          -translate-y-1/2
-          w-[50%]
-          md:w-[40%]
-          lg:w-[35%]
-          opacity-20
-          pointer-events-none
-          select-none
-        "
-      />
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="h-1 bg-gradient-to-r from-white/50 via-white/30 to-white/50 rounded-full mb-8" />
 
