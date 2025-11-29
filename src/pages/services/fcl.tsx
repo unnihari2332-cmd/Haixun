@@ -37,7 +37,7 @@ const FCL = () => {
     { label: "See All Services", path: "/services" },
     { label: "LCL Services", path: "/services/lcl" },
     { label: "FCL Services", path: "/services/fcl" },
-    { label: "Warehouse Management", path: "/services/warehouse-management" },
+    { label: "Warehouse Management", path: "/services/warehousing" },
     { label: "Project Logistics", path: "/services/project-logistics" },
     { label: "Air Shipments", path: "/services/air-shipments" },
     { label: "Customs Declaration & Insurance", path: "/services/customs-declaration" },
