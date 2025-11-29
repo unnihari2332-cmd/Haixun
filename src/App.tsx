@@ -49,7 +49,6 @@ import ThirdPartyLogistics from "@/pages/services/ThirdPartyLogistics";
 import LinerAgency from "@/pages/services/LinerAgency";
 import LCL from "@/pages/services/LCL";
 import CFS from "@/pages/services/fcl";
-import OOGShipments from "@/pages/services/OOGShipments"; // NEW
 
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -96,8 +95,8 @@ const serviceRoutes: ServiceRoute[] = [
   { path: "third-party-logistics", component: ThirdPartyLogistics },
   { path: "liner-agency", component: LinerAgency },
   { path: "lcl", component: LCL },
+  // FIX: use CFS here (imported from "@/pages/services/fcl")
   { path: "fcl", component: CFS },
-  { path: "oog-shipments", component: OOGShipments }, // NEW
 ];
 
 // Country prefixes
@@ -132,6 +131,7 @@ const App: React.FC = () => {
               <Route path="/blogs" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogDetail />} />
               <Route path="/news" element={<NewsOverviewPage />} />
+              {/* If you want a news detail page, you can add: */}
               {/* <Route path="/news/:slug" element={<NewsDetailPage />} /> */}
               <Route path="/projects" element={<Projects />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
