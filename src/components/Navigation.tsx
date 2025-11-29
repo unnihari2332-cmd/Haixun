@@ -28,12 +28,11 @@ function FlagIcon({
   return (
     <img
       src={src}
-      alt="" /* alt intentionally empty so no text shows */
-      aria-hidden="true" /* decorative */
+      alt="" // decorative
+      aria-hidden="true"
       className={className}
       draggable={false}
       onError={(e) => {
-        // If missing, hide image (no text fallback ever rendered)
         (e.currentTarget as HTMLImageElement).style.display = "none";
       }}
     />
@@ -49,8 +48,9 @@ const Navigation = () => {
   const location = useLocation();
   const { user } = useAuth();
 
-  // We use the URL to decide the current country flag
-  const currentCountry = getCurrentCountryFromPath(location.pathname);
+  // Current country from URL, with safe fallback
+  const currentCountry =
+    getCurrentCountryFromPath(location.pathname) || ({ code: "SG", name: "Singapore" } as const);
 
   // Detect country by IP for flag display
   useEffect(() => {
@@ -92,9 +92,20 @@ const Navigation = () => {
     isActive(getNavLink("/career"));
 
   const SOCIALS = [
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/amassmiddleeast/", Icon: FaLinkedinIn },
-    { name: "Facebook", href: "https://www.facebook.com/Amassmiddleeast?mibextid=ZbWKwL", Icon: FaFacebookF },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/amassmiddleeast/",
+      Icon: FaLinkedinIn,
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/Amassmiddleeast?mibextid=ZbWKwL",
+      Icon: FaFacebookF,
+    },
   ];
+
+  // Precompute Global Presence path using country-aware helper
+  const globalPresencePath = getNavLink("/global-presence");
 
   return (
     <header
@@ -149,54 +160,80 @@ const Navigation = () => {
                     {t("services.lcl.title")}
                   </Link>
                 </DropdownMenuItem>
-                {/* CFS -> FCL CHANGE */}
                 <DropdownMenuItem asChild>
                   <Link to="/services/fcl" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.fcl.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/sea-freight" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/sea-freight"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.oceanFreight.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/air-freight" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/air-freight"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.air.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/warehousing" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/warehousing"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.warehouse.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/project-cargo" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/project-cargo"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.projectCargo.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/customs-clearance" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/customs-clearance"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.customs.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/consolidation" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/consolidation"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.consolidation.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/liquid-cargo" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/liquid-cargo"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.liquidCargo.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/third-party-logistics" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/third-party-logistics"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.thirdPartyLogistics.title")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/services/liner-agency" className="w-full cursor-pointer hover:bg-gray-100">
+                  <Link
+                    to="/services/liner-agency"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.linerAgency.title")}
                   </Link>
                 </DropdownMenuItem>
@@ -224,16 +261,25 @@ const Navigation = () => {
             <Link
               to="/advantages"
               className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${
-                isActive("/advantages") ? "text-red-600" : isScrolled ? "text-gray-900" : "text-red-600"
+                isActive("/advantages")
+                  ? "text-red-600"
+                  : isScrolled
+                  ? "text-gray-900"
+                  : "text-red-600"
               }`}
             >
               {t("nav.advantage")}
             </Link>
 
+            {/* UPDATED: Global Presence uses country-aware path */}
             <Link
-              to="/global-presence"
+              to={globalPresencePath}
               className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${
-                isActive("/global-presence") ? "text-red-600" : isScrolled ? "text-gray-900" : "text-red-600"
+                isActive(globalPresencePath)
+                  ? "text-red-600"
+                  : isScrolled
+                  ? "text-gray-900"
+                  : "text-red-600"
               }`}
             >
               {t("nav.globalPresence")}
@@ -312,7 +358,6 @@ const Navigation = () => {
                     >
                       {t("services.lcl.title")}
                     </Link>
-                    {/* CFS -> FCL CHANGE (MOBILE) */}
                     <Link
                       to="/services/fcl"
                       className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
@@ -417,10 +462,11 @@ const Navigation = () => {
                 {t("nav.advantage")}
               </Link>
 
+              {/* UPDATED: Mobile Global Presence also uses country-aware path */}
               <Link
-                to="/global-presence"
+                to={globalPresencePath}
                 className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
-                  isActive("/global-presence") ? "text-red-600" : "text-gray-900"
+                  isActive(globalPresencePath) ? "text-red-600" : "text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
