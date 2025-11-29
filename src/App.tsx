@@ -5,23 +5,21 @@ import { Toaster } from "@/components/ui/sonner";
 import CountryRedirect from "@/components/CountryRedirect";
 import Meta from "@/components/Meta";
 
+// Page imports
 import Index from "@/pages/Index";
 import SriLankaHome from "@/pages/SriLankaHome";
 import MyanmarHome from "@/pages/MyanmarHome";
 import BangladeshHome from "@/pages/BangladeshHome";
 import PakistanHome from "@/pages/PakistanHome";
-
 import Contact from "@/pages/Contact";
 import Services from "@/pages/Services";
-
-// ⭐ REPLACED OLD GLOBAL PAGES
-import Global from "@/pages/Global";
-
+import GlobalPresence from "@/pages/GlobalPresence";
+import GlobalPresenceM from "@/pages/GlobalPresenceM";
+import GlobalPresenceB from "@/pages/GlobalPresenceB";
 import AboutUs from "@/pages/aboutus";
 import Gallery from "@/pages/Gallery";
 import Career from "@/pages/Career";
 import Advantages from "@/pages/Advantages";
-
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import ForgotPassword from "@/pages/ForgotPassword";
@@ -50,18 +48,20 @@ import LiquidCargo from "@/pages/services/LiquidCargo";
 import ThirdPartyLogistics from "@/pages/services/ThirdPartyLogistics";
 import LinerAgency from "@/pages/services/LinerAgency";
 import LCL from "@/pages/services/LCL";
-import FCL from "@/pages/services/fcl";
+import CFS from "@/pages/services/fcl";
 
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import AdminRoute from "@/components/AdminRoute";
 
+// Dashboard components
 import DashboardOverview from "@/pages/dashboard/Overview";
 import DashboardShipments from "@/pages/dashboard/Shipments";
 import DashboardDocuments from "@/pages/dashboard/Documents";
 import DashboardPayments from "@/pages/dashboard/Payments";
 import DashboardSettings from "@/pages/dashboard/Settings";
 
+// Admin components
 import AdminOverview from "@/pages/admin/Overview";
 import AdminUsers from "@/pages/admin/Users";
 import AdminShipmentsManagement from "@/pages/admin/ShipmentsManagement";
@@ -71,17 +71,19 @@ import AdminSystemSettings from "@/pages/admin/SystemSettings";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5,
+      staleTime: 1000 * 60 * 5, // 5 minutes
       retry: 1,
     },
   },
 });
 
+// Services array type
 type ServiceRoute = {
   path: string;
   component: React.ComponentType;
 };
 
+// All services
 const serviceRoutes: ServiceRoute[] = [
   { path: "sea-freight", component: SeaFreight },
   { path: "air-freight", component: AirFreight },
@@ -93,7 +95,8 @@ const serviceRoutes: ServiceRoute[] = [
   { path: "third-party-logistics", component: ThirdPartyLogistics },
   { path: "liner-agency", component: LinerAgency },
   { path: "lcl", component: LCL },
-  { path: "fcl", component: FCL },
+  // FIX: use CFS here (imported from "@/pages/services/fcl")
+  { path: "fcl", component: CFS },
 ];
 
 // Country prefixes
@@ -106,11 +109,9 @@ const App: React.FC = () => {
         <AuthProvider>
           <CountryRedirect />
           <Meta />
-
           <div className="App">
             <Routes>
-
-              {/* MAIN HOME ROUTES */}
+              {/* Home routes */}
               <Route path="/" element={<Index />} />
               <Route path="/home" element={<Index />} />
               <Route path="/sri-lanka/home" element={<SriLankaHome />} />
@@ -118,17 +119,10 @@ const App: React.FC = () => {
               <Route path="/bangladesh/home" element={<BangladeshHome />} />
               <Route path="/pakistan/home" element={<PakistanHome />} />
 
-              {/* MAIN GLOBAL ROUTES */}
+              {/* Global pages */}
               <Route path="/contact" element={<Contact />} />
               <Route path="/services" element={<Services />} />
-
-              {/* ⭐ NEW GLOBAL PAGE */}
-              <Route path="/global-presence" element={<Global />} />
-              <Route path="/sri-lanka/global-presence" element={<Global />} />
-              <Route path="/pakistan/global-presence" element={<Global />} />
-              <Route path="/myanmar/global-presence" element={<Global />} />
-              <Route path="/bangladesh/global-presence" element={<Global />} />
-
+              <Route path="/global-presence" element={<GlobalPresence />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/career" element={<Career />} />
@@ -137,12 +131,22 @@ const App: React.FC = () => {
               <Route path="/blogs" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogDetail />} />
               <Route path="/news" element={<NewsOverviewPage />} />
+              {/* If you want a news detail page, you can add: */}
+              {/* <Route path="/news/:slug" element={<NewsDetailPage />} /> */}
               <Route path="/projects" element={<Projects />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/blog-editor" element={<BlogEditor />} />
+              <Route path="/sri-lanka/global-presence" element={<GlobalPresence />} />
+              <Route path="/pakistan/global-presence" element={<GlobalPresence />} />
+              <Route path="/myanmar/global-presence" element={<GlobalPresenceM />} />
+              <Route path="/bangladesh/global-presence" element={<GlobalPresenceB />} />
 
-              {/* COUNTRY PREFIX ROUTES */}
+              {/* Simple Admin Routes */}
+              <Route path="/admin-login" element={<AdminLogin />} />
+              <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
+              {/* Country-specific pages */}
               {countries.map((country) => (
                 <React.Fragment key={country}>
                   <Route path={`/${country}/contact`} element={<Contact />} />
@@ -157,10 +161,13 @@ const App: React.FC = () => {
                 </React.Fragment>
               ))}
 
-              {/* SERVICE DETAIL ROUTES */}
+              {/* Service detail pages for global and each country */}
               {serviceRoutes.map((service) => (
                 <React.Fragment key={service.path}>
+                  {/* Global route */}
                   <Route path={`/services/${service.path}`} element={<service.component />} />
+
+                  {/* Country-specific routes */}
                   {countries.map((country) => (
                     <Route
                       key={`${country}-${service.path}`}
@@ -171,13 +178,12 @@ const App: React.FC = () => {
                 </React.Fragment>
               ))}
 
-              {/* AUTH */}
-              <Route path="/admin-login" element={<AdminLogin />} />
+              {/* Auth routes */}
               <Route path="/login" element={<AdminLogin />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
 
-              {/* DASHBOARD */}
+              {/* User Dashboard */}
               <Route
                 path="/dashboard"
                 element={
@@ -194,7 +200,7 @@ const App: React.FC = () => {
                 <Route path="settings" element={<DashboardSettings />} />
               </Route>
 
-              {/* ADMIN */}
+              {/* Admin Dashboard */}
               <Route
                 path="/admin"
                 element={
@@ -213,10 +219,10 @@ const App: React.FC = () => {
                 <Route path="blog/edit/:id?" element={<BlogEditor />} />
               </Route>
 
+              {/* 404 Not Found */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
-
           <Toaster />
         </AuthProvider>
       </Router>
