@@ -551,7 +551,7 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ isOpen, onClose }) => {
 
       {/* Scrollbar styling only for this component */}
       <style>{`
-        /* For native scrollbars inside this ScrollArea (WebKit browsers) */
+        /* Native scrollbar (if the browser still shows it) */
         .custom-scroll,
         .custom-scroll > div {
           scrollbar-width: thin;
@@ -579,9 +579,20 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ isOpen, onClose }) => {
           background: #9b0014;
         }
 
-        /* For shadcn/ui ScrollArea custom thumb (uses bg-border) */
-        .custom-scroll .bg-border {
+        /* Radix / shadcn custom scrollbar thumb */
+        .custom-scroll [data-slot="scroll-area-scrollbar"] {
+          /* optional: background transparent */
+        }
+
+        .custom-scroll [data-slot="scroll-area-thumb"] {
           background-color: #bc0018 !important;
+          border-radius: 9999px;
+          transition: background-color 0.15s ease;
+        }
+
+        .custom-scroll [data-slot="scroll-area-thumb"]:hover,
+        .custom-scroll [data-slot="scroll-area-thumb"][data-state="visible"] {
+          background-color: #9b0014 !important;
         }
       `}</style>
     </>
