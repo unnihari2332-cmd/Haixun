@@ -1,10 +1,24 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { X, MapPin, Globe, ExternalLink, Phone, Mail, Home, ChevronRight } from 'lucide-react';
+import {
+  X,
+  MapPin,
+  Globe,
+  ExternalLink,
+  Phone,
+  Mail,
+  Home,
+  ChevronRight,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ContactSidebarProps {
   isOpen: boolean;
@@ -68,7 +82,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "my",
     name: "Malaysia",
@@ -93,7 +106,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "qa",
     name: "Qatar",
@@ -110,7 +122,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "sg",
     name: "Singapore",
@@ -128,7 +139,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "id",
     name: "Indonesia",
@@ -139,8 +149,7 @@ const countries = [
         name: "Jakarta",
         lat: -6.2088,
         lng: 106.8456,
-        address:
-          "408, Lina Building, JL.HR Rasuna Said kav B7, Jakarta",
+        address: "408, Lina Building, JL.HR Rasuna Said kav B7, Jakarta",
         contacts: ["+62 21 529 20292, 522 4887"],
       },
       {
@@ -153,7 +162,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "lk",
     name: "Sri Lanka",
@@ -171,7 +179,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "th",
     name: "Thailand",
@@ -188,7 +195,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "mm",
     name: "Myanmar",
@@ -206,7 +212,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "pk",
     name: "Pakistan",
@@ -233,8 +238,6 @@ const countries = [
       },
     ],
   },
-
-  // NEW — CHINA
   {
     code: "cn",
     name: "China",
@@ -251,7 +254,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "us",
     name: "United States (USA)",
@@ -285,7 +287,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "gb",
     name: "United Kingdom (UK)",
@@ -302,7 +303,6 @@ const countries = [
       },
     ],
   },
-
   {
     code: "au",
     name: "Australia",
@@ -329,8 +329,7 @@ const sortedCountries = [...countries].sort((a, b) =>
 const ContactSidebar: React.FC<ContactSidebarProps> = ({ isOpen, onClose }) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [expandedCountry, setExpandedCountry] = useState<string | null>(null);
-  const [selectedLocation, setSelectedLocation] =
-    useState<any | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<any | null>(null);
   const [selectedCityIndexes, setSelectedCityIndexes] = useState<{
     [countryName: string]: number;
   }>({});
@@ -431,149 +430,158 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ isOpen, onClose }) => {
                 value={expandedCountry || ""}
                 className="w-full space-y-3"
               >
-                {sortedCountries.map((country) => {
-                  return (
-                    <AccordionItem
-                      key={country.name}
-                      value={country.name}
-                      className="border border-red-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all bg-white"
+                {sortedCountries.map((country) => (
+                  <AccordionItem
+                    key={country.name}
+                    value={country.name}
+                    className="border border-red-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all bg-white"
+                  >
+                    <AccordionTrigger
+                      onClick={() => {
+                        setExpandedCountry(
+                          expandedCountry === country.name ? null : country.name
+                        );
+                        navigateToLocation(country.lat, country.lng);
+                      }}
+                      className="rounded-t-md hover:bg-amber-50 transition-colors px-3 py-2"
                     >
-                      <AccordionTrigger
-                        onClick={() => {
-                          setExpandedCountry(
-                            expandedCountry === country.name
-                              ? null
-                              : country.name
-                          );
-                          navigateToLocation(country.lat, country.lng);
-                        }}
-                        className="rounded-t-md hover:bg-amber-50 transition-colors px-3 py-2"
-                      >
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={`/${country.code}.svg`}
-                            alt={`${country.name} flag`}
-                            className="w-6 h-6 rounded-sm object-cover shadow-sm"
-                          />
-                          <span className="font-medium">
-                            {country.name}
-                          </span>
-                        </div>
-                      </AccordionTrigger>
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={`/${country.code}.svg`}
+                          alt={`${country.name} flag`}
+                          className="w-6 h-6 rounded-sm object-cover shadow-sm"
+                        />
+                        <span className="font-medium">{country.name}</span>
+                      </div>
+                    </AccordionTrigger>
 
-                      <AccordionContent className="bg-gradient-to-b from-red-50/30 to-white px-3 py-2">
+                    <AccordionContent className="bg-gradient-to-b from-red-50/30 to-white px-3 py-2">
+                      <div className="space-y-2">
                         <div className="space-y-2">
-                          <div className="space-y-2">
-                            {country.cities.map((city: any, index: number) => (
-                              <div key={index} className="w-full">
-                                <Button
-                                  variant="ghost"
-                                  className={cn(
-                                    "w-full justify-start text-sm p-2 h-auto rounded-md border transition-all shadow-sm",
-                                    isSelectedCity(country.name, index)
-                                      ? "bg-red-100 hover:bg-red-150 border-red-300 text-red-800"
-                                      : "bg-white hover:bg-red-50 border-gray-100 hover:border-red-200"
-                                  )}
-                                  onClick={() => {
-                                    handleCitySelection(country, index);
-                                    if (isMobile) {
-                                      setTimeout(
-                                        () =>
-                                          setSelectedLocation({
-                                            ...city,
-                                          }),
-                                        50
-                                      );
-                                    }
-                                  }}
-                                >
-                                  <MapPin className="w-4 h-4 mr-2 text-red-600 flex-shrink-0" />
-                                  <span className="font-medium truncate">
-                                    {city.name}
-                                  </span>
-                                  <ChevronRight className="w-4 h-4 ml-auto text-red-300" />
-                                </Button>
+                          {country.cities.map((city: any, index: number) => (
+                            <div key={index} className="w-full">
+                              <Button
+                                variant="ghost"
+                                className={cn(
+                                  "w-full justify-start text-sm p-2 h-auto rounded-md border transition-all shadow-sm",
+                                  isSelectedCity(country.name, index)
+                                    ? "bg-red-100 hover:bg-red-150 border-red-300 text-red-800"
+                                    : "bg-white hover:bg-red-50 border-gray-100 hover:border-red-200"
+                                )}
+                                onClick={() => {
+                                  handleCitySelection(country, index);
+                                  if (isMobile) {
+                                    setTimeout(
+                                      () =>
+                                        setSelectedLocation({
+                                          ...city,
+                                        }),
+                                      50
+                                    );
+                                  }
+                                }}
+                              >
+                                <MapPin className="w-4 h-4 mr-2 text-red-600 flex-shrink-0" />
+                                <span className="font-medium truncate">
+                                  {city.name}
+                                </span>
+                                <ChevronRight className="w-4 h-4 ml-auto text-red-300" />
+                              </Button>
 
-                                {isSelectedCity(country.name, index) &&
-                                  city.address && (
-                                    <div className="mt-2 p-3 bg-gradient-to-br from-red-50 to-white rounded-lg border border-red-200 shadow text-sm animate-in fade-in duration-300 w-full">
-                                      <h4 className="font-semibold text-red-700 mb-2 pb-1 border-b border-red-100 flex items-center">
-                                        <span className="bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
-                                          {city.name} Office
-                                        </span>
-                                      </h4>
+                              {isSelectedCity(country.name, index) &&
+                                city.address && (
+                                  <div className="mt-2 p-3 bg-gradient-to-br from-red-50 to-white rounded-lg border border-red-200 shadow text-sm animate-in fade-in duration-300 w-full">
+                                    <h4 className="font-semibold text-red-700 mb-2 pb-1 border-b border-red-100 flex items-center">
+                                      <span className="bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
+                                        {city.name} Office
+                                      </span>
+                                    </h4>
 
-                                      <div className="flex items-start mb-2 group hover:bg-red-50/50 p-2 rounded-md transition-colors w-full">
-                                        <Home className="w-4 h-4 mr-2 text-red-500 mt-1 flex-shrink-0 group-hover:text-red-600 transition-colors" />
-                                        <p className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words w-full overflow-hidden">
-                                          {city.address}
-                                        </p>
-                                      </div>
-
-                                      {city.contacts &&
-                                        city.contacts.length > 0 && (
-                                          <div className="flex items-start mb-2 group hover:bg-red-50/50 p-2 rounded-md transition-colors w-full">
-                                            <Phone className="w-4 h-4 mr-2 text-red-500 mt-1 flex-shrink-0 group-hover:text-red-600 transition-colors" />
-                                            <div className="space-y-1 w-full overflow-hidden">
-                                              {city.contacts.map(
-                                                (
-                                                  contact: string,
-                                                  idx: number
-                                                ) => (
-                                                  <p
-                                                    key={idx}
-                                                    className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words"
-                                                  >
-                                                    {contact}
-                                                  </p>
-                                                )
-                                              )}
-                                            </div>
-                                          </div>
-                                        )}
-
-                                      {city.email && (
-                                        <div className="flex items-start group hover:bg-red-50/50 p-2 rounded-md transition-colors w-full">
-                                          <Mail className="w-4 h-4 mr-2 text-red-500 mt-1 flex-shrink-0 group-hover:text-red-600 transition-colors" />
-                                          <a
-                                            href={`mailto:${city.email}`}
-                                            className="text-red-600 hover:text-red-800 hover:underline flex items-center text-sm break-words w-full overflow-hidden"
-                                          >
-                                            {city.email}
-                                            <ExternalLink className="ml-1 h-3 w-3" />
-                                          </a>
-                                        </div>
-                                      )}
+                                    <div className="flex items-start mb-2 group hover:bg-red-50/50 p-2 rounded-md transition-colors w-full">
+                                      <Home className="w-4 h-4 mr-2 text-red-500 mt-1 flex-shrink-0 group-hover:text-red-600 transition-colors" />
+                                      <p className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words w-full overflow-hidden">
+                                        {city.address}
+                                      </p>
                                     </div>
-                                  )}
-                              </div>
-                            ))}
-                          </div>
+
+                                    {city.contacts && city.contacts.length > 0 && (
+                                      <div className="flex items-start mb-2 group hover:bg-red-50/50 p-2 rounded-md transition-colors w-full">
+                                        <Phone className="w-4 h-4 mr-2 text-red-500 mt-1 flex-shrink-0 group-hover:text-red-600 transition-colors" />
+                                        <div className="space-y-1 w-full overflow-hidden">
+                                          {city.contacts.map(
+                                            (contact: string, idx: number) => (
+                                              <p
+                                                key={idx}
+                                                className="text-gray-700 group-hover:text-gray-900 transition-colors text-sm break-words"
+                                              >
+                                                {contact}
+                                              </p>
+                                            )
+                                          )}
+                                        </div>
+                                      </div>
+                                    )}
+
+                                    {city.email && (
+                                      <div className="flex items-start group hover:bg-red-50/50 p-2 rounded-md transition-colors w-full">
+                                        <Mail className="w-4 h-4 mr-2 text-red-500 mt-1 flex-shrink-0 group-hover:text-red-600 transition-colors" />
+                                        <a
+                                          href={`mailto:${city.email}`}
+                                          className="text-red-600 hover:text-red-800 hover:underline flex items-center text-sm break-words w-full overflow-hidden"
+                                        >
+                                          {city.email}
+                                          <ExternalLink className="ml-1 h-3 w-3" />
+                                        </a>
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+                            </div>
+                          ))}
                         </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  );
-                })}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
               </Accordion>
             </div>
           </div>
         </ScrollArea>
       </div>
 
-      {/* LOCAL SCROLLBAR STYLE */}
+      {/* Scrollbar styling only for this component */}
       <style>{`
-        .custom-scroll::-webkit-scrollbar {
+        /* For native scrollbars inside this ScrollArea (WebKit browsers) */
+        .custom-scroll,
+        .custom-scroll > div {
+          scrollbar-width: thin;
+          scrollbar-color: #bc0018 #ffe5e5;
+        }
+
+        .custom-scroll::-webkit-scrollbar,
+        .custom-scroll > div::-webkit-scrollbar {
           width: 8px;
         }
-        .custom-scroll::-webkit-scrollbar-track {
+
+        .custom-scroll::-webkit-scrollbar-track,
+        .custom-scroll > div::-webkit-scrollbar-track {
           background: #ffe5e5;
         }
-        .custom-scroll::-webkit-scrollbar-thumb {
+
+        .custom-scroll::-webkit-scrollbar-thumb,
+        .custom-scroll > div::-webkit-scrollbar-thumb {
           background: #bc0018;
           border-radius: 8px;
         }
-        .custom-scroll::-webkit-scrollbar-thumb:hover {
+
+        .custom-scroll::-webkit-scrollbar-thumb:hover,
+        .custom-scroll > div::-webkit-scrollbar-thumb:hover {
           background: #9b0014;
+        }
+
+        /* For shadcn/ui ScrollArea custom thumb (uses bg-border) */
+        .custom-scroll .bg-border {
+          background-color: #bc0018 !important;
         }
       `}</style>
     </>
