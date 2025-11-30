@@ -1,182 +1,357 @@
+import React, { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import type { LucideIcon } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import {
   Ship,
+  Truck,
   Boxes,
-  Warehouse as WarehouseIcon,
-  Package,
   Plane,
-  FileCheck,
-  ArrowDownToLine,
-  Container,
+  FileText,
+  Package,
+  ClipboardList,
+  ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import ScrollAnimation from "./ScrollAnimation";
+import { getCurrentCountryFromPath } from "@/services/countryDetection";
 
-type Service = {
-  icon: LucideIcon;
-  image: string;
-  titleKey: string;
-  descriptionKey: string;
-  link: string;
+const BRAND_RED = "#BC0018";
+
+// Scroll to top on route change
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+  return null;
 };
 
-export default function HaixunServicesSection() {
-  const { t } = useTranslation();
+const Services: React.FC = () => {
+  const location = useLocation();
+  const detected = getCurrentCountryFromPath(location.pathname);
+  const currentCountry = detected ?? { code: "SG", name: "Singapore" };
 
-  const services: Service[] = [
-    {
-      icon: Boxes,
-      image: "/lcl.png",
-      titleKey: "services.lcl.title",
-      descriptionKey: "services.lcl.description",
-      link: "/services/lcl",
-    },
-    {
-      icon: Ship,
-      image: "/fcl.png",
-      titleKey: "services.fcl.title",
-      descriptionKey: "services.fcl.description",
-      link: "/services/fcl",
-    },
-    {
-      icon: WarehouseIcon,
-      image: "/warehouse.png",
-      titleKey: "services.warehouse.title",
-      descriptionKey: "services.warehouse.description",
-      link: "/services/warehousing",
-    },
-    {
-      icon: Package,
-      image: "/projectlogistics.png",
-      titleKey: "services.project.title",
-      descriptionKey: "services.project.description",
-      link: "/services/project-cargo",
-    },
-    {
-      icon: Plane,
-      image: "/airfreight.png",
-      titleKey: "services.air.title",
-      descriptionKey: "services.air.description",
-      link: "/services/air-freight",
-    },
-    {
-      icon: FileCheck,
-      image: "/customclearance.png",
-      titleKey: "services.customs.title",
-      descriptionKey: "services.customs.description",
-      link: "/services/customs",
-    },
-    {
-      icon: ArrowDownToLine,
-      image: "/Aircargo.png",
-      titleKey: "services.import.title",
-      descriptionKey: "services.import.description",
-      link: "/services/import",
-    },
-    {
-      icon: Boxes,
-      image: "/consoldation.png",
-      titleKey: "services.consolidation.title",
-      descriptionKey: "services.consolidation.description",
-      link: "/services/consolidation",
-    },
-    {
-      icon: Container,
-      image: "/oog.png",
-      titleKey: "services.oog.title",
-      descriptionKey: "services.oog.description",
-      // UPDATED LINK TO MATCH NEW OOG SHIPMENTS PAGE
-      link: "/services/oog-shipments",
-    },
-  ];
+  const getNavLink = (basePath: string) => {
+    if (currentCountry.code === "SG") return basePath;
+    return `/${currentCountry.name.toLowerCase().replace(/\s+/g, "-")}${basePath}`;
+  };
 
   return (
-    <section
-      className="relative py-20 overflow-hidden min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/service-bg02.jpg')",
-      }}
-    >
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <ScrollAnimation className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-red-300 mb-3">
-            {t("services.overline", "What We Do")}
-          </p>
+    <div className="min-h-screen flex flex-col bg-white">
+      <ScrollToTop />
+      <Navigation />
+      <main className="flex-grow pt-20">
+        {/* ===== HERO SECTION ===== */}
+        <section className="bg-gradient-to-r from-gc-dark-blue via-gc-blue to-gc-dark-blue text-white relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/lovable-uploads/gp.jpg"
+              alt="Services"
+              className="w-full h-full object-cover opacity-20"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gc-dark-blue/90 to-gc-blue/90" />
+          </div>
 
-          <h2 className="font-extrabold text-white text-4xl md:text-5xl mb-3 leading-tight">
-            {t("services.title")}
-          </h2>
+          <div className="container mx-auto px-4 py-16 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center max-w-4xl mx-auto"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-black mt-7">
+                Our Logistics Services
+              </h1>
+              <div className="w-20 h-1 bg-gc-gold mx-auto mb-6"></div>
+              <p className="text-xl text-black leading-relaxed">
+                Comprehensive end-to-end global logistics solutions tailored to your business needs
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-          <p className="text-lg text-slate-200 max-w-2xl mx-auto">
-            {t("services.subtitle")}
-          </p>
-        </ScrollAnimation>
+        {/* ===== ALL SERVICES SECTION WITH BG IMAGE ===== */}
+        <section
+          className="relative py-20 overflow-hidden min-h-screen bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/service-bg02.jpg')" }}
+        >
+          {/* Dark overlay for better contrast */}
+          <div className="absolute inset-0 bg-slate-900/70" />
 
-        {/* Service Cards */}
-        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const numberLabel = String(index + 1).padStart(2, "0");
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+              {/* 1. LCL Services */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm 
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <Ship className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
 
-            return (
-              <ScrollAnimation key={service.titleKey} delay={index * 60}>
-                <Link to={service.link} aria-label={t(service.titleKey)}>
-                  <motion.article
-                    whileHover={{ y: -10 }}
-                    transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                    className="bg-white rounded-[26px] shadow-[0_18px_50px_rgba(15,23,42,0.35)] overflow-hidden flex flex-col h-full cursor-pointer"
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    LCL Services
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    HAIXUN operate own consolidation service on many trade routes, providing complete LCL solutions.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/lcl")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
                   >
-                    {/* Top Image */}
-                    <div className="relative">
-                      <img
-                        src={service.image}
-                        alt={t(service.titleKey)}
-                        className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
-                        loading="lazy"
-                      />
-
-                      {/* Floating Icon Badge */}
-                      <div className="absolute left-6 -bottom-7">
-                        <div className="w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-[#BC0018]" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="px-8 pt-12 pb-8 flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-2">
-                          {t(service.titleKey)}
-                        </h3>
-
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          {t(service.descriptionKey)}
-                        </p>
-                      </div>
-
-                      {/* Bottom Row */}
-                      <div className="mt-8 flex items-end justify-between">
-                        <span className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-[#BC0018]">
-                          {t("services.readMore")}
-                          <ArrowDownToLine className="w-4 h-4 ml-2" />
-                        </span>
-
-                        <span className="text-4xl font-semibold text-slate-200">
-                          {numberLabel}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.article>
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
                 </Link>
-              </ScrollAnimation>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+              </div>
+
+              {/* 2. FCL Services */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm 
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <Ship className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    FCL Services
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    Own fleet of containers including special equipment for flexible full-container load solutions.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/fcl")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
+                  >
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
+                </Link>
+              </div>
+
+              {/* 3. Warehouse Management */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm 
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <Boxes className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    Warehouse Management
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    Comprehensive facilities for warehousing cold storage and specialized commodities.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/warehousing")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
+                  >
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
+                </Link>
+              </div>
+
+              {/* 4. Project Logistics */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm 
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <Truck className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    Project Logistics
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    Dedicated division to manage end-to-end project logistics across critical geographies.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/project-cargo")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
+                  >
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
+                </Link>
+              </div>
+
+              {/* 5. Air Shipments */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm 
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <Plane className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    Air Shipments
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    Customized sea–air and air–sea shipment options for time-critical deliveries.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/air-freight")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
+                  >
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
+                </Link>
+              </div>
+
+              {/* 6. Customs Declaration & Insurance */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm 
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <FileText className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    Customs Declaration & Insurance
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    Complete compliance and documentation support for smooth shipment clearance.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/customs-clearance")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
+                  >
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
+                </Link>
+              </div>
+
+              {/* 7. OOG Shipments */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm 
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <Package className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    OOG Shipments
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    Handling oversized and heavy-lift cargo including lashing and survey coordination.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/oog-shipments")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
+                  >
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
+                </Link>
+              </div>
+
+              {/* 8. LCL Consolidation */}
+              <div
+                className="group rounded-3xl border border-slate-200 bg-white px-8 py-10 shadow-sm
+                transition-all duration-300 flex flex-col justify-between
+                hover:-translate-y-2 hover:shadow-xl hover:bg-[#BC0018] hover:border-[#BC0018]"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-[#F5F5F7] flex items-center justify-center mb-6 group-hover:bg-white transition">
+                    <ClipboardList className="w-8 h-8 text-[#BC0018] group-hover:text-[#BC0018]" />
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-white">
+                    LCL Consolidation
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed group-hover:text-white">
+                    Combining smaller shipments efficiently into single containers for optimized movement.
+                  </p>
+                </div>
+
+                <Link to={getNavLink("/services/consolidation")} className="mt-6 inline-flex items-center">
+                  <span
+                    className="text-xs font-semibold tracking-wide px-4 py-2 rounded-md bg-white
+                    inline-flex items-center gap-2 group-hover:bg-white group-hover:text-[#BC0018]"
+                  >
+                    READ MORE
+                    <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center">
+                      <ArrowRight className="w-3 h-3 text-[#BC0018]" />
+                    </span>
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Services;
