@@ -46,7 +46,7 @@ const Services: React.FC = () => {
         {/* ================= HERO SECTION (NO GRADIENT) ================= */}
         <section className="relative h-[220px] md:h-[260px] flex items-center overflow-hidden bg-white">
           <img
-            src="/lovable-uploads/gp.jpg"
+            src="/servicepagehero.jpg"
             alt="Services"
             className="absolute inset-0 w-full h-full object-cover"
           />
