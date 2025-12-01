@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getCurrentCountryFromPath } from "@/services/countryDetection";
-import { Container, Anchor, Ship, PackageSearch } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { PackageSearch } from "lucide-react";
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -16,7 +15,6 @@ const ScrollToTop: React.FC = () => {
 };
 
 const OOGShipments: React.FC = () => {
-  const { t } = useTranslation();
   const location = useLocation();
 
   const detected = getCurrentCountryFromPath(location.pathname);
@@ -28,7 +26,7 @@ const OOGShipments: React.FC = () => {
     return `/${countrySlug}${basePath}`;
   };
 
-  // MATCH UPDATED SERVICE PAGES (LCL / FCL / WAREHOUSING / PROJECT / AIR / IMPORT / CONSOLIDATION / OOG)
+  // Match other updated service pages
   const servicesNav = [
     { label: "See All Services", path: "/services" },
     { label: "LCL Services", path: "/services/lcl" },
@@ -43,27 +41,6 @@ const OOGShipments: React.FC = () => {
   ];
 
   const pathname = location.pathname;
-
-  const benefits = [
-    {
-      icon: Container,
-      title: "Specialized OOG Handling",
-      description:
-        "Tailor-made solutions for out-of-gauge cargo that exceeds standard container dimensions.",
-    },
-    {
-      icon: Ship,
-      title: "Inter-Island Connectivity",
-      description:
-        "Reliable inter-island movements to and from major main ports with controlled transit times.",
-    },
-    {
-      icon: Anchor,
-      title: "End-to-End Coordination",
-      description:
-        "From loading and lashing to survey and stripping, we coordinate every stage of the movement.",
-    },
-  ];
 
   const servicesOffered = [
     "Cargo Loading",
@@ -82,11 +59,11 @@ const OOGShipments: React.FC = () => {
       <ScrollToTop />
       <Navigation />
 
-      {/* SAME WHITE GAP UNDER NAV AS OTHER SERVICE PAGES */}
+      {/* Same white gap under nav as other service pages */}
       <div className="h-[90px] w-full bg-white" />
 
       <main className="flex-grow">
-        {/* HERO – MATCH AIR FREIGHT / CONSOLIDATION STYLE */}
+        {/* HERO – image + gradient, same style as Air Freight / Consolidation */}
         <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
           <img
             src="/counter-bg.webp"
@@ -102,8 +79,8 @@ const OOGShipments: React.FC = () => {
             </h1>
 
             <p className="text-white text-lg mt-3 max-w-xl">
-              Engineered solutions for out-of-gauge and inter-island cargo
-              movements with complete operational control end-to-end.
+              OOG Shipments - Inter Island Movements with reliable, coordinated
+              handling for over-dimensional cargo.
             </p>
           </div>
         </section>
@@ -112,7 +89,7 @@ const OOGShipments: React.FC = () => {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 md:grid-cols-[260px,1fr] items-start">
-              {/* LEFT SIDEBAR – SAME AS OTHER SERVICE PAGES */}
+              {/* LEFT SIDEBAR – same as other service pages */}
               <aside className="space-y-10">
                 <div>
                   <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
@@ -162,7 +139,7 @@ const OOGShipments: React.FC = () => {
                   />
                 </motion.div>
 
-                {/* OOG SHIPMENTS DESCRIPTION */}
+                {/* OOG SHIPMENTS DESCRIPTION – new content */}
                 <section>
                   <div className="mb-6 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
@@ -170,7 +147,7 @@ const OOGShipments: React.FC = () => {
                     </div>
                     <div>
                       <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
-                        OOG Shipments – Inter Island Movements
+                        OOG Shipments - Inter Island Movements
                       </h2>
                       <div className="mt-1 w-16 h-[2px] bg-[#BC0018]" />
                     </div>
@@ -178,61 +155,15 @@ const OOGShipments: React.FC = () => {
 
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
                     <p>
-                      {t(
-                        "services.oogShipments.fullDescription",
-                        "Our OOG (Out-of-Gauge) shipment service is designed for cargo that cannot fit into standard containers due to its size, weight, or shape. We provide carefully engineered transport solutions that ensure safe, compliant, and efficient movement of your over-dimensional cargo across islands and to major main ports."
-                      )}
-                    </p>
-                    <p>
-                      We offer end-to-end coordination covering loading, lashing,
-                      survey, ocean freight, and domestic movements. With a
-                      combination of specialized handling equipment, experienced
-                      operations teams, and strong carrier relationships, we ensure
-                      that every piece of cargo is moved with precision and care.
-                    </p>
-                    <p>
-                      Whether it is project machinery, industrial equipment, or
-                      over-dimensional structures, our OOG and inter-island services
-                      are built to deliver reliability, safety, and schedule
-                      integrity for both import and export requirements.
+                      Our OOG (Out-of-Gauge) shipment service provides dedicated
+                      handling for cargo that exceeds standard container
+                      dimensions, offering reliable inter-island movements to
+                      main ports with full operational coordination.
                     </p>
                   </div>
                 </section>
 
-                {/* BENEFITS SECTION */}
-                <section>
-                  <div className="mb-6">
-                    <h2 className="text-xl md:text-2xl font-extrabold uppercase text-gray-900">
-                      Benefits of OOG & Inter Island Movements
-                    </h2>
-                    <div className="mt-2 w-16 h-[2px] bg-[#BC0018]" />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {benefits.map((benefit, index) => (
-                      <motion.div
-                        key={benefit.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.15 * index }}
-                        viewport={{ once: true }}
-                        className="bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300"
-                      >
-                        <div className="bg-[#BC0018]/10 p-3 rounded-lg mb-4 w-fit">
-                          <benefit.icon className="w-6 h-6 text-[#BC0018]" />
-                        </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">
-                          {benefit.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {benefit.description}
-                        </p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </section>
-
-                {/* SERVICES OFFERED SECTION */}
+                {/* SERVICES OFFERED – new list content */}
                 <section>
                   <div className="mb-6">
                     <h2 className="text-xl md:text-2xl font-extrabold uppercase text-gray-900">
@@ -271,7 +202,8 @@ const OOGShipments: React.FC = () => {
                   </h2>
                   <p className="text-lg md:text-xl text-[#BC0018] mb-10">
                     Talk to our operations team for a tailored OOG solution with
-                    complete loading, lashing, survey, and port-to-door coordination.
+                    complete loading, lashing, survey, and port-to-door
+                    coordination.
                   </p>
 
                   <Link
