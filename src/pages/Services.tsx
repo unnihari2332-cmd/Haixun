@@ -75,17 +75,20 @@ export default function HaixunServicesSection() {
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* RIGHT SIDE GRADIENT */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+          {/* STRONG RIGHT SIDE GRADIENT */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
 
           <div className="container mx-auto px-4 relative z-10">
+            
             {/* Breadcrumb */}
             <nav className="mb-4 text-sm text-white flex items-center gap-2">
               <Link to="/" className="font-medium hover:text-yellow-300">
                 Home
               </Link>
               <span>/</span>
-              <span className="text-yellow-300 font-semibold">Services</span>
+              <span className="text-yellow-300 font-semibold">
+                Services
+              </span>
             </nav>
 
             {/* HERO TITLE */}
@@ -101,6 +104,7 @@ export default function HaixunServicesSection() {
 
         {/* ================= SERVICES SECTION ================= */}
         <section className="relative py-20 overflow-hidden bg-white">
+          
           {/* RIGHT BOTTOM SHAPE */}
           <img
             src="/shape-03.webp"
@@ -109,6 +113,7 @@ export default function HaixunServicesSection() {
           />
 
           <div className="container mx-auto px-4 relative z-10">
+
             {/* Section Header */}
             <ScrollAnimation className="text-center mb-16">
               <p className="text-sm font-semibold tracking-[0.25em] uppercase text-red-600 mb-3">
