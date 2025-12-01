@@ -6,15 +6,6 @@ import Footer from "@/components/Footer";
 import { getCurrentCountryFromPath } from "@/services/countryDetection";
 import { Container } from "lucide-react";
 
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -34,19 +25,18 @@ const ProjectCargo = () => {
     return `/${currentCountry.name.toLowerCase().replace(/\s+/g, "-")}${basePath}`;
   };
 
+  // UPDATED PATHS – MATCH LCL / FCL / WAREHOUSING PAGES
   const servicesNav = [
     { label: "See All Services", path: "/services" },
     { label: "LCL Services", path: "/services/lcl" },
-    { label: "CFS Services", path: "/services/cfs" },
-    { label: "Sea Freight", path: "/services/sea-freight" },
-    { label: "Air Freight", path: "/services/air-freight" },
+    { label: "FCL Services", path: "/services/fcl" },
     { label: "Warehousing", path: "/services/warehousing" },
     { label: "Project Cargo", path: "/services/project-cargo" },
-    { label: "Customs Clearance", path: "/services/customs-clearance" },
+    { label: "Air Freight", path: "/services/air-freight" },
+    { label: "Customs Clearance", path: "/services/customs" },
+    { label: "Import Services", path: "/services/import" },
     { label: "Consolidation", path: "/services/consolidation" },
-    { label: "Liquid Cargo", path: "/services/liquid-cargo" },
-    { label: "Third Party Logistics", path: "/services/third-party-logistics" },
-    { label: "Liner Agency", path: "/services/liner-agency" },
+    { label: "OOG Shipments", path: "/services/oog-shipments" },
   ];
 
   const pathname = location.pathname;
@@ -56,54 +46,30 @@ const ProjectCargo = () => {
       <ScrollToTop />
       <Navigation />
 
-      <main className="flex-grow pt-20">
-        {/* BREADCRUMB HERO (MATCH AIR FREIGHT STYLE) */}
-        <section
-          className="relative h-56 md:h-64 flex items-center justify-center overflow-hidden border-b border-slate-200"
-          style={{
-            backgroundImage: "url('/counter-bg.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] z-0" />
+      {/* WHITE SPACE BELOW NAV – SAME AS OTHER SERVICE PAGES */}
+      <div className="h-[90px] w-full bg-white" />
 
-          <div className="relative text-center scale-[1.1] md:scale-[1.25] z-10">
-            <Breadcrumb>
-              <BreadcrumbList className="flex items-center justify-center gap-2 md:gap-3">
-                <BreadcrumbItem>
-                  <BreadcrumbLink
-                    asChild
-                    className="text-[#BC0018] text-lg md:text-xl font-semibold hover:text-black"
-                  >
-                    <Link to={getNavLink("/")}>Home</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
+      <main className="flex-grow">
+        {/* HERO SECTION – MATCH WAREHOUSING / FCL / LCL STYLE */}
+        <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
+          <img
+            src="/servicepagehero.jpg"
+            alt="Project Cargo Hero"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-                <BreadcrumbSeparator>
-                  <span className="text-xl md:text-2xl text-slate-600">›</span>
-                </BreadcrumbSeparator>
+          {/* DARK RIGHT-SIDE GRADIENT */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
-                <BreadcrumbItem>
-                  <BreadcrumbLink
-                    asChild
-                    className="text-[#BC0018] text-lg md:text-xl font-semibold hover:text-black"
-                  >
-                    <Link to={getNavLink("/services")}>Services</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#BC0018]">
+              Project Cargo
+            </h1>
 
-                <BreadcrumbSeparator>
-                  <span className="text-xl md:text-2xl text-slate-600">›</span>
-                </BreadcrumbSeparator>
-
-                <BreadcrumbItem>
-                  <BreadcrumbPage className="text-black font-extrabold text-3xl md:text-4xl">
-                    Project Cargo
-                  </BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+            <p className="text-white text-lg mt-3 max-w-xl">
+              Specialized heavy-lift and oversized cargo solutions with end-to-end planning,
+              execution, and risk-managed delivery.
+            </p>
           </div>
         </section>
 
@@ -162,7 +128,7 @@ const ProjectCargo = () => {
                   />
                 </motion.div>
 
-                {/* TEXT HEADER (MATCHED STYLE) */}
+                {/* TEXT HEADER */}
                 <section>
                   <div className="mb-6 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
@@ -206,7 +172,7 @@ const ProjectCargo = () => {
                   </div>
                 </section>
 
-                {/* CTA – SAME STYLE AS AIR FREIGHT CTA */}
+                {/* CTA */}
                 <section className="py-12 bg-white text-center">
                   <h2 className="text-3xl md:text-4xl font-extrabold text-[#BC0018] mb-4">
                     Ready to Move Your Project Cargo?
