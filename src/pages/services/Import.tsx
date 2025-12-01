@@ -36,7 +36,7 @@ const ImportServices = () => {
         {/* HERO */}
         <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
           <img
-            src="/import hero.jpg"
+            src="/importhero.jpg"
             alt="Import Services Hero"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -64,7 +64,7 @@ const ImportServices = () => {
                 {/* IMAGE */}
                 <div className="rounded-md overflow-hidden shadow-lg">
                   <img
-                    src="/import.png"
+                    src="/importhero1.jpg"
                     alt="Import Logistics Services"
                     className="w-full h-[340px] md:h-[380px] object-cover"
                   />
