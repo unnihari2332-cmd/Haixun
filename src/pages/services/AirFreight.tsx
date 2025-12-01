@@ -121,7 +121,7 @@ const AirFreight = () => {
                   className="rounded-md overflow-hidden shadow-lg"
                 >
                   <img
-                    src="/airfreight.png"
+                    src="/loadingaircraft.jpg"
                     alt="Air Freight Services"
                     className="w-full h-[340px] md:h-[380px] object-cover"
                     loading="lazy"
