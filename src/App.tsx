@@ -50,6 +50,7 @@ import LinerAgency from "@/pages/services/LinerAgency";
 import LCL from "@/pages/services/LCL";
 import CFS from "@/pages/services/fcl";
 import OOGShipments from "@/pages/services/OOGShipments";
+import ImportServices from "@/pages/services/Import"; // <-- NEW IMPORT
 
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -98,6 +99,7 @@ const serviceRoutes: ServiceRoute[] = [
   { path: "lcl", component: LCL },
   { path: "fcl", component: CFS },
   { path: "oog-shipments", component: OOGShipments },
+  { path: "import", component: Import }, // <-- NEW IMPORT SERVICE ROUTE
 ];
 
 // Country prefixes
