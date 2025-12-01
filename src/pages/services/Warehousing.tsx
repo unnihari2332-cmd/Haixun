@@ -52,7 +52,7 @@ const Warehousing = () => {
         {/* HERO SECTION */}
         <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
           <img
-            src="/servicepagehero.jpg"
+            src="/warehouse hero.jpg"
             alt="Warehousing Hero"
             className="absolute inset-0 w-full h-full object-cover"
           />
