@@ -50,69 +50,15 @@ export default function HaixunServicesSection() {
   const { t } = useTranslation();
 
   const services: Service[] = [
-    {
-      icon: Boxes,
-      image: "/lcl.png",
-      titleKey: "services.lcl.title",
-      descriptionKey: "services.lcl.description",
-      link: "/services/lcl",
-    },
-    {
-      icon: Ship,
-      image: "/fcl.png",
-      titleKey: "services.fcl.title",
-      descriptionKey: "services.fcl.description",
-      link: "/services/fcl",
-    },
-    {
-      icon: WarehouseIcon,
-      image: "/warehouse.png",
-      titleKey: "services.warehouse.title",
-      descriptionKey: "services.warehouse.description",
-      link: "/services/warehousing",
-    },
-    {
-      icon: Package,
-      image: "/projectlogistics.png",
-      titleKey: "services.project.title",
-      descriptionKey: "services.project.description",
-      link: "/services/project-cargo",
-    },
-    {
-      icon: Plane,
-      image: "/airfreight.png",
-      titleKey: "services.air.title",
-      descriptionKey: "services.air.description",
-      link: "/services/air-freight",
-    },
-    {
-      icon: FileCheck,
-      image: "/customclearance.png",
-      titleKey: "services.customs.title",
-      descriptionKey: "services.customs.description",
-      link: "/services/customs-clearance", // fixed path
-    },
-    {
-      icon: ArrowDownToLine,
-      image: "/Aircargo.png",
-      titleKey: "services.import.title",
-      descriptionKey: "services.import.description",
-      link: "/services/import",
-    },
-    {
-      icon: Boxes,
-      image: "/consoldation.png",
-      titleKey: "services.consolidation.title",
-      descriptionKey: "services.consolidation.description",
-      link: "/services/consolidation",
-    },
-    {
-      icon: Container,
-      image: "/oog.png",
-      titleKey: "services.oog.title",
-      descriptionKey: "services.oog.description",
-      link: "/services/oog-shipments",
-    },
+    { icon: Boxes, image: "/lcl.png", titleKey: "services.lcl.title", descriptionKey: "services.lcl.description", link: "/services/lcl" },
+    { icon: Ship, image: "/fcl.png", titleKey: "services.fcl.title", descriptionKey: "services.fcl.description", link: "/services/fcl" },
+    { icon: WarehouseIcon, image: "/warehouse.png", titleKey: "services.warehouse.title", descriptionKey: "services.warehouse.description", link: "/services/warehousing" },
+    { icon: Package, image: "/projectlogistics.png", titleKey: "services.project.title", descriptionKey: "services.project.description", link: "/services/project-cargo" },
+    { icon: Plane, image: "/airfreight.png", titleKey: "services.air.title", descriptionKey: "services.air.description", link: "/services/air-freight" },
+    { icon: FileCheck, image: "/customclearance.png", titleKey: "services.customs.title", descriptionKey: "services.customs.description", link: "/services/customs-clearance" },
+    { icon: ArrowDownToLine, image: "/Aircargo.png", titleKey: "services.import.title", descriptionKey: "services.import.description", link: "/services/import" },
+    { icon: Boxes, image: "/consoldation.png", titleKey: "services.consolidation.title", descriptionKey: "services.consolidation.description", link: "/services/consolidation" },
+    { icon: Container, image: "/oog.png", titleKey: "services.oog.title", descriptionKey: "services.oog.description", link: "/services/oog-shipments" },
   ];
 
   return (
@@ -123,6 +69,7 @@ export default function HaixunServicesSection() {
       <div className="h-[90px] w-full bg-white"></div>
 
       <main className="flex-grow">
+
         {/* ================= HERO SECTION ================= */}
         <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
           <img
@@ -131,16 +78,25 @@ export default function HaixunServicesSection() {
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* NO GRADIENT OVERLAY */}
+          {/* ADDING LEFT-SIDE GRADIENT */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
           <div className="container mx-auto px-4 relative z-10">
-            {/* BREADCRUMB */}
+
+            {/* BREADCRUMB – MATCH FCL PAGE */}
             <nav className="mb-4 text-sm text-white flex items-center gap-2">
-              <Link to="/" className="font-medium hover:text-red-500">
+              <Link
+                to="/"
+                className="font-medium hover:text-red-500 transition-colors"
+              >
                 Home
               </Link>
-              <span>/</span>
-              <span className="text-red-500 font-semibold">Services</span>
+
+              <span className="text-red-500">/</span>
+
+              <span className="text-red-500 font-semibold">
+                Services
+              </span>
             </nav>
 
             {/* HERO TITLE */}
@@ -152,6 +108,7 @@ export default function HaixunServicesSection() {
 
         {/* ================= SERVICES SECTION ================= */}
         <section className="relative py-20 overflow-hidden bg-white">
+
           {/* RIGHT BOTTOM SHAPE */}
           <img
             src="/shape-03.webp"
@@ -160,6 +117,7 @@ export default function HaixunServicesSection() {
           />
 
           <div className="container mx-auto px-4 relative z-10">
+
             {/* Section Header */}
             <ScrollAnimation className="text-center mb-16">
               <p className="text-sm font-semibold tracking-[0.25em] uppercase text-red-600 mb-3">
@@ -170,7 +128,6 @@ export default function HaixunServicesSection() {
                 {t("services.title")}
               </h2>
 
-              {/* TAGLINE MOVED BELOW HERO */}
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 {t(
                   "services.subtitle",
@@ -193,6 +150,7 @@ export default function HaixunServicesSection() {
                         transition={{ type: "spring", stiffness: 220, damping: 20 }}
                         className="bg-white rounded-[26px] shadow-lg overflow-hidden flex flex-col h-full cursor-pointer"
                       >
+
                         {/* Service Image */}
                         <div className="relative">
                           <img
@@ -221,7 +179,7 @@ export default function HaixunServicesSection() {
                             </p>
                           </div>
 
-                          {/* Bottom Row */}
+                          {/* Bottom */}
                           <div className="mt-8 flex items-end justify-between">
                             <span className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-[#BC0018]">
                               {t("services.readMore")}
