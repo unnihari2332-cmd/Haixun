@@ -25,7 +25,7 @@ const ProjectCargo = () => {
     return `/${currentCountry.name.toLowerCase().replace(/\s+/g, "-")}${basePath}`;
   };
 
-  // UPDATED PATHS – MATCH LCL / FCL / WAREHOUSING PAGES
+  // MATCH OTHER SERVICE PAGES
   const servicesNav = [
     { label: "See All Services", path: "/services" },
     { label: "LCL Services", path: "/services/lcl" },
@@ -50,26 +50,34 @@ const ProjectCargo = () => {
       <div className="h-[90px] w-full bg-white" />
 
       <main className="flex-grow">
-        {/* HERO SECTION – MATCH WAREHOUSING / FCL / LCL STYLE */}
-        <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
+        {/* HERO SECTION – CENTERED LIKE LCL / FCL / WAREHOUSING */}
+        <section className="relative h-[300px] md:h-[360px] w-full overflow-hidden flex items-center justify-center">
           <img
             src="/projectcargo.jpg"
             alt="Project Cargo Hero"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* DARK RIGHT-SIDE GRADIENT */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          {/* DARK GRADIENT OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
 
-          <div className="container mx-auto px-4 relative z-10">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#BC0018]">
-              Project Cargo
-            </h1>
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="inline-block max-w-3xl"
+            >
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white">
+                Project Cargo
+              </h1>
+              <div className="w-24 h-[3px] bg-[#BC0018] mx-auto mt-3" />
 
-            <p className="text-white text-lg mt-3 max-w-xl">
-              Specialized heavy-lift and oversized cargo solutions with end-to-end planning,
-              execution, and risk-managed delivery.
-            </p>
+              <p className="mt-4 text-base md:text-lg text-gray-200 leading-relaxed">
+                Specialized heavy-lift and oversized cargo solutions with end-to-end
+                planning, execution, and risk-managed delivery.
+              </p>
+            </motion.div>
           </div>
         </section>
 
@@ -128,7 +136,7 @@ const ProjectCargo = () => {
                   />
                 </motion.div>
 
-                {/* TEXT HEADER */}
+                {/* TEXT HEADER + DESCRIPTION (UPDATED CONTENT) */}
                 <section>
                   <div className="mb-6 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
@@ -144,50 +152,30 @@ const ProjectCargo = () => {
 
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
                     <p>
-                      We operate a specialized division focused on knowledge-based projects,
-                      staffed with highly skilled experts who have inherited their expertise
-                      from major project handlers. GC is fully equipped to handle a wide range
-                      of challenging project cargoes, including long lengths, oversized
-                      dimensions, heavy lifts, and complex shipments that require floating
-                      cranes or tandem lifting.
+                      With dedicated project division having experts in the field inherited
+                      from major project handlers, HAIXUN is well equipped to handle all
+                      kinds of special and complex project cargoes including the ones which
+                      need to be handled using floating cranes.
                     </p>
                     <p>
-                      Our approach involves developing customized solution packages that
-                      precisely meet the unique shipping and transport requirements of our
-                      customers, whether it involves port-to-port delivery or ex-works to door
-                      service. Our project and heavy-lift breakbulk handling team provides
-                      valuable guidance to our customers, formulating the right strategies
-                      after conducting thorough feasibility and risk assessments for each job.
+                      The expert team is well familiar handling the special and complex
+                      over-width and over-height cargo right from the ex-works until the
+                      door delivery smoothly and safely.
                     </p>
                     <p>
-                      Furthermore, we offer our customers the knowledge, efficiency, and safety
-                      they require, along with timely and effective communication throughout
-                      the process.
+                      Breakbulk handling experts have the right kind of strategy and contacts
+                      from the load point to the destination point and arrange for the right
+                      kind of resource as it requires more manpower and handling equipment.
                     </p>
                     <p>
-                      At GC, we prioritize transparency, especially when it comes to costs, to
-                      ensure that our customers receive the best value for their projects, as
-                      we understand its significance.
+                      The projects are well studied and all costs are done in a very
+                      transparent manner wherein the customers know the exact costing which
+                      is important for their projects.
                     </p>
                   </div>
                 </section>
 
-                {/* CTA */}
-                <section className="py-12 bg-white text-center">
-                  <h2 className="text-3xl md:text-4xl font-extrabold text-[#BC0018] mb-4">
-                    Ready to Move Your Project Cargo?
-                  </h2>
-                  <p className="text-lg md:text-xl text-[#BC0018] mb-10">
-                    Get a quick consultation – our experts are here to help you out.
-                  </p>
-
-                  <Link
-                    to={getNavLink("/contact")}
-                    className="inline-block bg-[#BC0018] hover:bg-[#a30014] text-white font-semibold text-lg px-10 py-4 rounded-lg transition-all"
-                  >
-                    Contact Us
-                  </Link>
-                </section>
+                {/* CTA REMOVED TO MATCH OTHER UPDATED PAGES */}
               </div>
             </div>
           </div>
