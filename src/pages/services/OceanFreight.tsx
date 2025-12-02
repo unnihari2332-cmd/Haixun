@@ -1,130 +1,197 @@
 import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
+import { getCurrentCountryFromPath } from "@/services/countryDetection";
 import { Ship } from "lucide-react";
-const OceanFreight = () => {
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  const features = ["Full Container Load (FCL)", "Less than Container Load (LCL)", "Door-to-door delivery", "Customs documentation", "Cargo tracking & monitoring", "Competitive freight rates"];
-  return <div className="bg-white text-black min-h-screen">
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+  return null;
+};
+
+const OceanFreight = () => {
+  const location = useLocation();
+
+  const detected = getCurrentCountryFromPath(location.pathname);
+  const currentCountry = detected ?? { code: "SG", name: "Singapore" };
+
+  const getNavLink = (basePath: string) => {
+    if (currentCountry.code === "SG") return basePath;
+    return `/${currentCountry.name.toLowerCase().replace(/\s+/g, "-")}${basePath}`;
+  };
+
+  // SAME STYLE / STRUCTURE AS AIR FREIGHT PAGE
+  const servicesNav = [
+    { label: "See All Services", path: "/services" },
+    { label: "LCL Services", path: "/services/lcl" },
+    { label: "FCL Services", path: "/services/fcl" },
+    { label: "Ocean Freight", path: "/services/ocean-freight" },
+    { label: "Warehousing", path: "/services/warehousing" },
+    { label: "Project Cargo", path: "/services/project-cargo" },
+    { label: "Air Freight", path: "/services/air-freight" },
+    { label: "Customs Clearance", path: "/services/customs-clearance" },
+    { label: "Import Services", path: "/services/import" },
+    { label: "Consolidation", path: "/services/consolidation" },
+    { label: "OOG Shipments", path: "/services/oog-shipments" },
+  ];
+
+  const pathname = location.pathname;
+
+  return (
+    <div className="bg-white text-gray-900 min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-28 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent"></div>
-        <div className="container mx-auto px-4 relative">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-6 mt-3 bg-kargon-blue">
-              <Ship className="w-6 h-6 text-white bg-transparent" />
-              <span className="font-semibold text-slate-50">Ocean Freight Services</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Ocean Freight <span className="text-blue-500">Solutions</span>
+      {/* WHITE SPACE BELOW NAV – SAME AS OTHER SERVICE PAGES */}
+      <div className="h-[90px] w-full bg-white" />
+
+      <main className="flex-grow">
+        {/* HERO SECTION – MATCH AIR FREIGHT STYLE */}
+        <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
+          <img
+            src="/oceanfreight.png"
+            alt="Ocean Freight Hero"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* DARK RIGHT-SIDE GRADIENT */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#BC0018]">
+              Ocean Freight
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Cost-effective sea cargo services for your bulk shipments with reliable scheduling
+
+            <p className="text-white text-lg mt-3 max-w-xl">
+              Reliable and cost-effective sea freight solutions for bulk and containerized
+              cargo across global trade lanes.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{
-            opacity: 0,
-            x: -50
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8,
-            delay: 0.2
-          }} className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/oceanfreight.png" alt="Ocean Freight Services" className="w-full h-96 object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              </div>
-            </motion.div>
-
-            <motion.div initial={{
-            opacity: 0,
-            x: 50
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8,
-            delay: 0.4
-          }} className="space-y-6">
-              <h2 className="text-3xl font-bold text-blue-500">Comprehensive Ocean Freight</h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-               At GC, we possess our own fleet of containers, which includes specialized equipment designed to cater to the unique requirements of our customers. With our extensive expertise in sea freight operations, we excel in various trade lanes. Our professionals ensure frequent departures and offer flexible service options. By partnering with multiple carriers on all trade routes, we secure favorable rates and guarantee space, allocation, timing, pricing, and shipment frequency
-              </p>
-            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services Cards Section */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* MAIN CONTENT */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-12 md:grid-cols-[260px,1fr] items-start">
+              {/* LEFT SIDEBAR */}
+              <aside className="space-y-10">
+                <div>
+                  <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
+                    OUR SERVICES
+                  </h2>
+                  <div className="w-12 h-[2px] bg-[#BC0018] mb-5" />
 
-          {/* FCL Card */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.4
-        }} viewport={{
-          once: true
-        }} className="p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-blue-500 bg-slate-200">
-            <h3 className="text-xl md:text-2xl font-bold text-blue-500 mb-4 text-center">FCL Services</h3>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
-              When it comes to container shipping, FCL (Full Container Load) is the most cost-effective and efficient option, considering the cargo's volume and weight. Throughout the entire process, we take meticulous care at every stage. This includes negotiating contract prices with carriers, reserving space, making bookings, retrieving empty containers from the depot, loading at the shipper's facility, transportation via truck or rail to the port, vessel loading, and closely monitoring the vessel schedule until the final delivery to the consignee.
-            </p>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              In the case of import bookings, we collaborate with our overseas partners in the absence of our own network. We diligently oversee each step of the process, keeping our customers and consignees well-informed at every stage.
-            </p>
-          </motion.div>
+                  <div className="border border-slate-200 rounded-md overflow-hidden bg-slate-50">
+                    {servicesNav.map((item) => {
+                      const to = getNavLink(item.path);
+                      const isActive =
+                        pathname === to ||
+                        (item.path !== "/services" && pathname.startsWith(to));
 
-          {/* LCL Card */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.4
-        }} viewport={{
-          once: true
-        }} className="p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-blue-500 bg-slate-200">
-            <h3 className="text-xl md:text-2xl font-bold text-blue-500 mb-4 text-center">LCL Services</h3>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-             GC offers its own consolidation service on numerous trade routes, leveraging an extensive network of consolidators. This enables the company to deliver competitive pricing and a range of sailing options. By regularly providing consolidation boxes to key trade lanes, GC can effectively handle cargo that requires timely deliveries. In addition, GC ensures complete transparency in pricing, including origin, destination, and sea freight charges.
-            </p>
-          </motion.div>
+                      return (
+                        <Link
+                          key={item.path}
+                          to={to}
+                          className={`block px-6 py-3 text-sm font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#BC0018] text-white"
+                              : "text-slate-600 hover:bg-slate-100"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </aside>
 
-        </div>
-      </section>
+              {/* RIGHT CONTENT */}
+              <div className="space-y-12">
+                {/* TOP IMAGE – SAME STYLE AS AIR FREIGHT PAGE */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="rounded-md overflow-hidden shadow-lg"
+                >
+                  <img
+                    src="/oceanfreight.png"
+                    alt="Ocean Freight Services"
+                    className="w-full h-[340px] md:h-[380px] object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
 
-      {/* Transparency Message */}
-      
+                {/* OCEAN FREIGHT TEXT */}
+                <section>
+                  <div className="mb-6 flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
+                      <Ship className="w-5 h-5 text-[#BC0018]" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
+                        Comprehensive Ocean Freight Solutions
+                      </h2>
+                      <div className="mt-1 w-16 h-[2px] bg-[#BC0018]" />
+                    </div>
+                  </div>
 
-      {/* Footer */}
+                  <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
+                    <p>
+                      At GC, we operate our own fleet of containers, including specialized
+                      equipment designed to handle diverse cargo profiles and complex
+                      requirements. With strong expertise in sea freight operations, we
+                      manage multiple trade lanes with frequent departures and flexible
+                      service options.
+                    </p>
+                    <p>
+                      Our team negotiates competitive contract rates with carriers,
+                      secures space, coordinates bookings, arranges container pick-up from
+                      depots, supervises stuffing at the shipper’s facility, and manages
+                      movement to ports by truck or rail. We monitor vessel schedules
+                      closely until final delivery to the consignee.
+                    </p>
+                    <p>
+                      For imports, we collaborate with our global partners to manage each
+                      step end-to-end, ensuring complete transparency in origin, freight,
+                      and destination charges, while keeping customers informed throughout
+                      the shipment life cycle.
+                    </p>
+                  </div>
+                </section>
+
+                {/* CTA – MATCH AIR FREIGHT STYLE */}
+                <section className="py-12 bg-white text-center">
+                  <h2 className="text-3xl md:text-4xl font-extrabold text-[#BC0018] mb-4">
+                    Planning Your Next Sea Shipment?
+                  </h2>
+                  <p className="text-lg md:text-xl text-[#BC0018] mb-10">
+                    Speak with our ocean freight specialists for the best routing and rates.
+                  </p>
+
+                  <Link
+                    to={getNavLink("/contact")}
+                    className="inline-block bg-[#BC0018] hover:bg-[#a30014] text-white font-semibold text-lg px-10 py-4 rounded-lg transition-all"
+                  >
+                    Contact Us
+                  </Link>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default OceanFreight;
