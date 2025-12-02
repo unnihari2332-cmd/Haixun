@@ -140,7 +140,7 @@ const Consolidation = () => {
                   className="rounded-md overflow-hidden shadow-lg"
                 >
                   <img
-                    src="consolidationmini.jpg
+                    src="/consolidationmini.jpg"
                     alt="Consolidation"
                     className="w-full h-[340px] md:h-[380px] object-cover"
                     loading="lazy"
