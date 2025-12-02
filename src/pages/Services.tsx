@@ -50,15 +50,69 @@ export default function HaixunServicesSection() {
   const { t } = useTranslation();
 
   const services: Service[] = [
-    { icon: Boxes, image: "/lcl.png", titleKey: "services.lcl.title", descriptionKey: "services.lcl.description", link: "/services/lcl" },
-    { icon: Ship, image: "/fcl.png", titleKey: "services.fcl.title", descriptionKey: "services.fcl.description", link: "/services/fcl" },
-    { icon: WarehouseIcon, image: "/warehouse.png", titleKey: "services.warehouse.title", descriptionKey: "services.warehouse.description", link: "/services/warehousing" },
-    { icon: Package, image: "/projectlogistics.png", titleKey: "services.project.title", descriptionKey: "services.project.description", link: "/services/project-cargo" },
-    { icon: Plane, image: "/airfreight.png", titleKey: "services.air.title", descriptionKey: "services.air.description", link: "/services/air-freight" },
-    { icon: FileCheck, image: "/customclearance.png", titleKey: "services.customs.title", descriptionKey: "services.customs.description", link: "/services/customs" },
-    { icon: ArrowDownToLine, image: "/Aircargo.png", titleKey: "services.import.title", descriptionKey: "services.import.description", link: "/services/import" },
-    { icon: Boxes, image: "/consoldation.png", titleKey: "services.consolidation.title", descriptionKey: "services.consolidation.description", link: "/services/consolidation" },
-    { icon: Container, image: "/oog.png", titleKey: "services.oog.title", descriptionKey: "services.oog.description", link: "/services/oog-shipments" },
+    {
+      icon: Boxes,
+      image: "/lcl.png",
+      titleKey: "services.lcl.title",
+      descriptionKey: "services.lcl.description",
+      link: "/services/lcl",
+    },
+    {
+      icon: Ship,
+      image: "/fcl.png",
+      titleKey: "services.fcl.title",
+      descriptionKey: "services.fcl.description",
+      link: "/services/fcl",
+    },
+    {
+      icon: WarehouseIcon,
+      image: "/warehouse.png",
+      titleKey: "services.warehouse.title",
+      descriptionKey: "services.warehouse.description",
+      link: "/services/warehousing",
+    },
+    {
+      icon: Package,
+      image: "/projectlogistics.png",
+      titleKey: "services.project.title",
+      descriptionKey: "services.project.description",
+      link: "/services/project-cargo",
+    },
+    {
+      icon: Plane,
+      image: "/airfreight.png",
+      titleKey: "services.air.title",
+      descriptionKey: "services.air.description",
+      link: "/services/air-freight",
+    },
+    {
+      icon: FileCheck,
+      image: "/customclearance.png",
+      titleKey: "services.customs.title",
+      descriptionKey: "services.customs.description",
+      link: "/services/customs-clearance", // fixed path
+    },
+    {
+      icon: ArrowDownToLine,
+      image: "/Aircargo.png",
+      titleKey: "services.import.title",
+      descriptionKey: "services.import.description",
+      link: "/services/import",
+    },
+    {
+      icon: Boxes,
+      image: "/consoldation.png",
+      titleKey: "services.consolidation.title",
+      descriptionKey: "services.consolidation.description",
+      link: "/services/consolidation",
+    },
+    {
+      icon: Container,
+      image: "/oog.png",
+      titleKey: "services.oog.title",
+      descriptionKey: "services.oog.description",
+      link: "/services/oog-shipments",
+    },
   ];
 
   return (
@@ -69,7 +123,6 @@ export default function HaixunServicesSection() {
       <div className="h-[90px] w-full bg-white"></div>
 
       <main className="flex-grow">
-
         {/* ================= HERO SECTION ================= */}
         <section className="relative h-[260px] md:h-[320px] w-full overflow-hidden flex items-center">
           <img
@@ -78,12 +131,10 @@ export default function HaixunServicesSection() {
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* STRONG RIGHT SIDE GRADIENT */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+          {/* NO GRADIENT OVERLAY */}
 
           <div className="container mx-auto px-4 relative z-10">
-            
-            {/* BREADCRUMB UPDATED TO RED */}
+            {/* BREADCRUMB */}
             <nav className="mb-4 text-sm text-white flex items-center gap-2">
               <Link to="/" className="font-medium hover:text-red-500">
                 Home
@@ -96,16 +147,11 @@ export default function HaixunServicesSection() {
             <h1 className="text-4xl md:text-5xl font-extrabold text-white">
               Our Services
             </h1>
-
-            <p className="text-white text-lg mt-3 max-w-xl">
-              Comprehensive end-to-end global logistics solutions tailored to your business needs.
-            </p>
           </div>
         </section>
 
         {/* ================= SERVICES SECTION ================= */}
         <section className="relative py-20 overflow-hidden bg-white">
-          
           {/* RIGHT BOTTOM SHAPE */}
           <img
             src="/shape-03.webp"
@@ -114,7 +160,6 @@ export default function HaixunServicesSection() {
           />
 
           <div className="container mx-auto px-4 relative z-10">
-
             {/* Section Header */}
             <ScrollAnimation className="text-center mb-16">
               <p className="text-sm font-semibold tracking-[0.25em] uppercase text-red-600 mb-3">
@@ -125,8 +170,12 @@ export default function HaixunServicesSection() {
                 {t("services.title")}
               </h2>
 
+              {/* TAGLINE MOVED BELOW HERO */}
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                {t("services.subtitle")}
+                {t(
+                  "services.subtitle",
+                  "Comprehensive end-to-end global logistics solutions tailored to your business needs."
+                )}
               </p>
             </ScrollAnimation>
 
