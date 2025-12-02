@@ -78,31 +78,16 @@ export default function HaixunServicesSection() {
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* ADDING LEFT-SIDE GRADIENT */}
+          {/* LEFT GRADIENT */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
           <div className="container mx-auto px-4 relative z-10">
 
-            {/* BREADCRUMB – MATCH FCL PAGE */}
-            <nav className="mb-4 text-sm text-white flex items-center gap-2">
-              <Link
-                to="/"
-                className="font-medium hover:text-red-500 transition-colors"
-              >
-                Home
-              </Link>
-
-              <span className="text-red-500">/</span>
-
-              <span className="text-red-500 font-semibold">
-                Services
-              </span>
-            </nav>
-
-            {/* HERO TITLE */}
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-              Our Services
+            {/* ============ UPDATED BREADCRUMB LIKE LCL ============ */}
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#BC0018]">
+              Services
             </h1>
+
           </div>
         </section>
 
