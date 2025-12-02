@@ -66,7 +66,7 @@ export default function HaixunServicesSection() {
       image: "/cfs-realistic.jpg",
       titleKey: "services.customs.title",
       descriptionKey: "services.customs.description",
-      link: "/services/customs",
+      link: "/services/customs-clearance",
     },
     {
       icon: ArrowDownToLine,
