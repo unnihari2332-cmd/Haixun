@@ -51,7 +51,7 @@ const FCL = () => {
         {/* HERO SECTION – aligned to LCL style */}
         <section className="relative h-[300px] md:h-[360px] w-full overflow-hidden flex items-center justify-center">
           <img
-            src="/servicepagehero.jpg"
+            src="/fclhero.jpg"
             alt="FCL Hero"
             className="absolute inset-0 w-full h-full object-cover"
           />
