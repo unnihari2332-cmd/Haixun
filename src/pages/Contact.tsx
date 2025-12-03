@@ -114,17 +114,19 @@ const Contact: React.FC = () => {
       </AnimatePresence>
 
       <main className="flex-grow">
-        {/* CONTACT SECTION – MATCH REFERENCE LAYOUT */}
-        <section className="py-16 bg-white">
+        {/* CONTACT SECTION WITH NEW BACKGROUND */}
+        <section
+          className="py-16 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/about-bg.webp')" }}
+        >
           <div className="container mx-auto px-4">
-            <div className="relative overflow-hidden rounded-none md:rounded-2xl bg-white">
+            <div className="relative overflow-hidden rounded-none md:rounded-2xl bg-white/90 backdrop-blur-sm">
               {/* subtle world map background */}
               <div className="pointer-events-none absolute inset-0 opacity-[0.12] bg-[url('/world-map-light.png')] bg-cover bg-center" />
 
               <div className="relative grid gap-12 lg:grid-cols-2">
                 {/* LEFT – FORM SIDE */}
                 <div className="px-4 sm:px-8 pb-10">
-                  {/* small red label with icon */}
                   <button className="group inline-flex items-center gap-2 text-[13px] font-semibold text-red-600 mb-2">
                     <span className="text-[13px] text-red-600 underline decoration-red-600">
                       Send Us Mail
@@ -132,7 +134,6 @@ const Contact: React.FC = () => {
                     <Truck className="h-4 w-4 text-red-600 group-hover:translate-x-0.5 transition-transform" />
                   </button>
 
-                  {/* big heading */}
                   <h2 className="text-[32px] sm:text-[40px] font-bold text-slate-900 leading-tight mb-4">
                     Feel Free To{" "}
                     <span
@@ -149,12 +150,11 @@ const Contact: React.FC = () => {
                     information.
                   </p>
 
-                  {/* form styled like reference (beige fields) */}
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <input type="hidden" name="Location" value={selectedLocation} />
 
                     <div className="grid gap-4 md:grid-cols-2">
-                      {/* First Name with icon */}
+                      {/* First Name */}
                       <div className="relative">
                         <User className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                         <Input
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
                         />
                       </div>
 
-                      {/* Last Name with icon */}
+                      {/* Last Name */}
                       <div className="relative">
                         <User className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                         <Input
@@ -177,7 +177,7 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div className="grid gap-4 md:grid-cols-2">
-                      {/* Email with icon */}
+                      {/* Email */}
                       <div className="relative">
                         <Mail className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                         <Input
@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
                         />
                       </div>
 
-                      {/* Phone with icon */}
+                      {/* Phone */}
                       <div className="relative">
                         <Phone className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                         <Input
@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Message with icon */}
+                    {/* Message */}
                     <div className="relative">
                       <MessageCircle className="pointer-events-none absolute left-3 top-4 h-4 w-4 text-slate-400" />
                       <Textarea
@@ -221,9 +221,8 @@ const Contact: React.FC = () => {
                   </form>
                 </div>
 
-                {/* RIGHT – CONTACT INFO SIDE */}
+                {/* RIGHT – CONTACT INFO */}
                 <div className="px-4 sm:px-8 pb-12">
-                  {/* small red label with icon */}
                   <button className="group inline-flex items-center gap-2 text-[13px] font-semibold text-red-600 mb-2">
                     <span className="underline decoration-red-600">
                       Need Any Help?
@@ -247,7 +246,7 @@ const Contact: React.FC = () => {
                   </p>
 
                   <div className="space-y-6">
-                    {/* phone block */}
+                    {/* phone */}
                     <div className="flex items-center gap-4">
                       <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-[#E0001B]">
                         <Phone className="h-6 w-6 text-white" />
@@ -260,7 +259,7 @@ const Contact: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* email block */}
+                    {/* email */}
                     <div className="flex items-center gap-4">
                       <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-[#E0001B]">
                         <Mail className="h-6 w-6 text-white" />
@@ -269,11 +268,11 @@ const Contact: React.FC = () => {
                         <p className="text-sm font-semibold text-slate-900">
                           Write us email
                         </p>
-                        <p className="text-sm text-slate-700"> helen@haixun.co</p>
+                        <p className="text-sm text-slate-700">helen@haixun.co</p>
                       </div>
                     </div>
 
-                    {/* address block */}
+                    {/* address */}
                     <div className="flex items-center gap-4">
                       <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-[#E0001B]">
                         <MapPin className="h-6 w-6 text-white" />
