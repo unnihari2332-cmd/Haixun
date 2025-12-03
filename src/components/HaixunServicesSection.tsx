@@ -49,7 +49,7 @@ export default function HaixunServicesSection() {
     },
     {
       icon: Package,
-      image: "/project-cargo-realistic.jpg",
+      image: "/Projectcargofrontbanner.jpg",
       titleKey: "services.project.title",
       descriptionKey: "services.project.description",
       link: "/services/project-cargo",
