@@ -80,7 +80,7 @@ export default function HaixunServicesSection() {
     },
     {
       icon: Plane,
-      image: "/air-freight-realistic.jpg",
+      image: "/Airfrontbannner.png",
       titleKey: "services.air.title",
       descriptionKey: "services.air.description",
       link: "/services/air-freight",
