@@ -36,7 +36,6 @@ const HeroSection: React.FC = () => {
     []
   );
 
-  // Use Hero01.mp4 from public as background video
   const videoSrc = "/Hero01.mp4";
   const videoPoster = "/hero-poster.jpg";
 
@@ -52,7 +51,6 @@ const HeroSection: React.FC = () => {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
   ).current;
 
-  // Preload images
   useEffect(() => {
     const imgs = heroImages.map((src, i) => {
       const img = new Image();
@@ -68,7 +66,6 @@ const HeroSection: React.FC = () => {
     return () => imgs.forEach((img) => (img.onload = null));
   }, [heroImages]);
 
-  // Auto-play slider only when not using video and motion allowed
   useEffect(() => {
     if (prefersReducedMotion || !autoPlay || useVideo) return;
     const id = setInterval(() => {
@@ -77,7 +74,6 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(id);
   }, [heroImages.length, prefersReducedMotion, autoPlay, useVideo]);
 
-  // Try playing video; fall back to images if it fails or user prefers reduced motion
   useEffect(() => {
     if (prefersReducedMotion) {
       setUseVideo(false);
@@ -152,19 +148,19 @@ const HeroSection: React.FC = () => {
         )}
       </div>
 
-      {/* SINGLE OVERLAY (gradient removed) */}
+      {/* OVERLAY */}
       <div className="absolute inset-0 bg-black/30" />
 
-      {/* LEFT CENTER CONTENT (shifted right) */}
+      {/* UPDATED POSITION: MORE TO THE RIGHT */}
       <div
         className="
-          absolute top-1/2 
-          left-10 sm:left-14 md:left-20 lg:left-24 
-          -translate-y-1/2 
-          z-20 
-          w-[calc(100%-2rem)] 
-          sm:w-auto sm:max-w-md md:max-w-xl 
-          pr-4 sm:pr-6 
+          absolute top-1/2
+          left-20 sm:left-32 md:left-40 lg:left-56 
+          -translate-y-1/2
+          z-20
+          w-[calc(100%-2rem)]
+          sm:w-auto sm:max-w-md md:max-w-xl
+          pr-4 sm:pr-6
           text-left
         "
       >
@@ -180,16 +176,16 @@ const HeroSection: React.FC = () => {
           <a
             href="#about"
             className="
-              inline-flex items-center justify-center 
-              rounded-xl 
-              bg-[#BC0018] 
-              px-5 sm:px-7 py-3 
-              text-xs sm:text-sm 
-              font-semibold 
+              inline-flex items-center justify-center
+              rounded-xl
+              bg-[#BC0018]
+              px-5 sm:px-7 py-3
+              text-xs sm:text-sm
+              font-semibold
               text-white
-              shadow-lg shadow-black/30 
-              hover:bg-[#A90015] 
-              focus:outline-none 
+              shadow-lg shadow-black/30
+              hover:bg-[#A90015]
+              focus:outline-none
               focus:ring-2 focus:ring-white/80
             "
           >
@@ -198,27 +194,26 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* IMAGE SLIDER CONTROLS (ONLY WHEN NO VIDEO) */}
       {!useVideo && (
         <>
           <button
             aria-label="Previous slide"
             onClick={goPrev}
-            className="group absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white backdrop-blur hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="group absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white backdrop-blur hover:bg-black/60"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
+
           <button
             aria-label="Next slide"
             onClick={goNext}
-            className="group absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white backdrop-blur hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="group absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white backdrop-blur hover:bg-black/60"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
         </>
       )}
 
-      {/* SLIDER DOTS (ONLY WHEN NO VIDEO) */}
       {!useVideo && (
         <div className="absolute bottom-28 left-0 right-0 z-20 flex items-center justify-center gap-2">
           {heroImages.map((_, i) => (
@@ -237,7 +232,6 @@ const HeroSection: React.FC = () => {
         </div>
       )}
 
-      {/* PORTAL LINKS */}
       <div className="absolute bottom-8 left-0 right-0 z-20">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 px-4 sm:grid-cols-4">
           {portalLinks.map((link, i) => (
@@ -246,7 +240,7 @@ const HeroSection: React.FC = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white backdrop-blur-md transition hover:bg-white/15 hover:border-white/25"
+              className="group flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white backdrop-blur-md transition hover:bg-white/15"
             >
               <span className="rounded-full bg-white/20 p-2">{link.icon}</span>
               <span className="text-sm font-semibold">{link.title}</span>
@@ -255,8 +249,8 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* FRAME + FALLBACK SKELETON */}
       <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+
       {!useVideo && !loaded[0] && (
         <div className="absolute inset-0 z-0 animate-pulse bg-neutral-900" aria-hidden />
       )}
