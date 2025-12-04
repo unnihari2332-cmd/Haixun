@@ -28,7 +28,7 @@ export default function HaixunServicesSection() {
   const services: Service[] = [
     {
       icon: Boxes,
-      image: "/fcp.jpg", // Updated
+      image: "/fcp.jpg",
       titleKey: "services.lcl.title",
       descriptionKey: "services.lcl.description",
       link: "/services/lcl",
@@ -56,14 +56,14 @@ export default function HaixunServicesSection() {
     },
     {
       icon: Plane,
-      image: "/Airfrontbannner.png", // Updated
+      image: "/Airfrontbannner.png",
       titleKey: "services.air.title",
       descriptionKey: "services.air.description",
       link: "/services/air-freight",
     },
     {
       icon: FileCheck,
-      image: "/customs.jpg", // Updated
+      image: "/customs.jpg",
       titleKey: "services.customs.title",
       descriptionKey: "services.customs.description",
       link: "/services/customs-clearance",
@@ -95,27 +95,28 @@ export default function HaixunServicesSection() {
     <section
       className="relative py-20 overflow-hidden min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/service-bg02.jpg')",
+        background:
+          "linear-gradient(to top, #9B111E 0%, #B24049 30%, #D58A8A 65%, #F2E6E6 100%)",
       }}
     >
       <div className="container mx-auto px-4">
         
         {/* HEADER */}
         <ScrollAnimation className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-red-300 mb-3">
+          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-red-100 mb-3">
             {t("services.overline", "What We Do")}
           </p>
 
-          <h2 className="font-extrabold text-white text-4xl md:text-5xl mb-3 leading-tight">
+          <h2 className="font-extrabold text-gray-50 text-4xl md:text-5xl mb-3 leading-tight">
             {t("services.title")}
           </h2>
 
-          <p className="text-lg text-slate-200 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-100 max-w-2xl mx-auto">
             {t("services.subtitle")}
           </p>
         </ScrollAnimation>
 
-        {/* SERVICE CARDS */}
+        {/* SERVICES GRID */}
         <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -146,7 +147,7 @@ export default function HaixunServicesSection() {
                       </div>
                     </div>
 
-                    {/* TEXT */}
+                    {/* TEXT CONTENT */}
                     <div className="px-8 pt-12 pb-8 flex-1 flex flex-col justify-between">
                       <div>
                         <h3 className="text-lg font-bold text-slate-900 mb-2">
@@ -157,7 +158,7 @@ export default function HaixunServicesSection() {
                         </p>
                       </div>
 
-                      {/* FOOTER ROW */}
+                      {/* FOOTER */}
                       <div className="mt-8 flex items-end justify-between">
                         <span className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-[#BC0018]">
                           {t("services.readMore")}
@@ -169,7 +170,6 @@ export default function HaixunServicesSection() {
                         </span>
                       </div>
                     </div>
-
                   </motion.article>
                 </Link>
               </ScrollAnimation>
