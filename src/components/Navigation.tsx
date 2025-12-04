@@ -47,7 +47,6 @@ const Navigation = () => {
   const location = useLocation();
   const { user } = useAuth();
 
-  // track current language locally
   const [currentLang, setCurrentLang] = useState(i18n.language || "en");
 
   // Load preferred language from localStorage
@@ -59,16 +58,16 @@ const Navigation = () => {
         setCurrentLang(stored);
       }
     } catch {
-      // ignore storage errors
+      // ignore
     }
   }, []);
 
-  // Keep state in sync if i18n language changes elsewhere
+  // Keep state in sync if i18n language changes
   useEffect(() => {
     setCurrentLang(i18n.language);
   }, [i18n.language]);
 
-  // Toggle between EN and ZH + persist
+  // Toggle language EN <-> ZH and persist
   const handleLanguageSwitch = () => {
     const next = currentLang === "zh" ? "en" : "zh";
     i18n.changeLanguage(next);
@@ -122,7 +121,6 @@ const Navigation = () => {
     isActive(getNavLink("/gallery")) ||
     isActive(getNavLink("/career"));
 
-  // Check if we're on homepage
   const isHomePage = location.pathname === "/";
 
   const SOCIALS = [
@@ -294,13 +292,13 @@ const Navigation = () => {
               {t("nav.contact")}
             </Link>
 
-            {/* Desktop language button (toggle EN/中文) */}
+            {/* Desktop language button with red icon on white bg */}
             <button
               type="button"
               onClick={handleLanguageSwitch}
               className={`${desktopLangButtonClasses} ${
                 isScrolled || !isHomePage
-                  ? "border-gray-300 text-gray-900 hover:bg-gray-900 hover:text-white"
+                  ? "border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
                   : "border-white/40 text-white hover:bg-white hover:text-black"
               }`}
             >
@@ -499,14 +497,14 @@ const Navigation = () => {
                 {t("nav.contact")}
               </Link>
 
-              {/* Mobile language button (same toggle) */}
+              {/* Mobile language button with red color */}
               <button
                 type="button"
                 onClick={() => {
                   handleLanguageSwitch();
                   setIsMenuOpen(false);
                 }}
-                className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors"
+                className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-red-600 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-600 hover:text-white transition-colors"
               >
                 {langLabel}
               </button>
