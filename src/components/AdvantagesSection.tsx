@@ -30,7 +30,7 @@ export default function AdvantagesSection() {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
 
-      {/* LEFT-BOTTOM DECOR SHAPE — NO MOTION, 35% SIZE */}
+      {/* LEFT-BOTTOM DECOR SHAPE — HIDDEN ON MOBILE */}
       <img
         src="/shape-02.webp"
         alt=""
@@ -38,12 +38,11 @@ export default function AdvantagesSection() {
           absolute 
           left-0 
           bottom-0 
-          w-[35%] 
-          md:w-[32%] 
-          lg:w-[28%]
+          w-[35%] md:w-[32%] lg:w-[28%]
           opacity-90 
           pointer-events-none 
           select-none
+          hidden sm:block
         "
       />
 
@@ -112,7 +111,7 @@ export default function AdvantagesSection() {
                   {/* ICON BOX */}
                   <div
                     className="absolute bottom-0 right-0 w-24 h-24 bg-[#9B111E] 
-                    flex items-center justify-center"
+                      flex items-center justify-center"
                   >
                     <Icon className="w-12 h-12 text-white" strokeWidth={1.5} />
                   </div>
