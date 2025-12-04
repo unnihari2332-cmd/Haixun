@@ -11,147 +11,92 @@
   "hero": {
     "title": "值得信赖的项目货运合作伙伴",
     "subtitle": "在海迅，我们擅长为项目货物提供定制物流解决方案，确保精确满足客户的期限和要求。",
-    "description": "凭借处理超大和敏感货物的专业知识，我们已成功为卡特彼勒中国、电动汽车出口商和建筑公司等客户提供服务。",
-    "ourServices": "我们的服务",
     "contactUs": "联系我们"
   },
   "services": {
     "title": "我们的服务",
     "subtitle": "为您量身定制的综合物流解决方案",
     "allServices": "所有服务",
-
-    "lcl": {
-      "title": "拼箱服务",
-      "description": "海迅在许多贸易路线上运营自己的拼箱服务，提供原产地、目的地和海运费的完全透明定价。",
-      "fullDescription": "海迅在众多贸易路线上提供自己的拼箱整合服务，利用广泛的整合商网络。这使公司能够提供有竞争力的价格和多种航班选择。通过定期向关键贸易航线提供整合箱，海迅能够有效处理需要及时交付的货物。"
-    },
-
-    "cfs": {
-      "title": "集装箱货运站服务",
-      "description": "集装箱货运站服务，提供高效的货物处理、拼箱和拆箱服务，配备先进的仓库管理系统。",
-      "fullDescription": "我们的CFS设施配备现代化基础设施，可处理货物装箱、拆箱、托盘化和存储。我们通过实时库存跟踪确保安全高效的运营。"
-    },
-
-    "fcl": {
-      "title": "整柜服务",
-      "description": "海迅拥有自己的集装箱车队，包括特殊设备，以满足客户的特殊要求，专注于多条全球贸易航线。",
-      "fullDescription": "在集装箱运输方面，整箱货运（FCL）是最具成本效益和效率的选择。我们细致处理每个阶段，从与承运商谈判合同价格到最终交付给收货人。"
-    },
-
-    "warehouse": {
-      "title": "仓储管理",
-      "description": "配备先进设施，海迅高效管理各种商品的仓储业务，包括采用先进技术的冷藏库。",
-      "fullDescription": "海迅拥有必要的资源和专业知识，能够有效管理各种商品的仓储，包括冷藏设施。我们的仓库管理优化运营，提高盈利能力和客户满意度。"
-    },
-
-    "projectCargo": {
-      "title": "项目货物",
-      "description": "专业处理超大、重型和复杂的项目货物，提供从港到港或门到门的定制物流解决方案。",
-      "fullDescription": "我们运营一个专注于知识型项目的专业部门，配备高技能专家。海迅完全有能力处理具有挑战性的项目货物，包括超长、超大尺寸和需要浮吊或串联起重的重型货物。"
-    },
-
-    "project": {
-      "title": "项目物流",
-      "description": "拥有由行业专家组成的专门项目部门，海迅确保安全及时地处理复杂的大型项目货物。"
-    },
-
-    "air": {
-      "title": "空运",
-      "description": "快速可靠的空运解决方案，通过快递交付选项和实时跟踪将您的业务连接到全球市场。",
-      "fullDescription": "海迅通过与专业承运商合作，在提供增强的灵活性和全球选择方面表现出色。我们提供定制的海空联运和空海联运选项，以满足客户的截止日期，同时实现显著的成本节约。"
-    },
-
-    "oceanFreight": {
-      "title": "海运",
-      "description": "具有成本效益的海运服务，提供整箱和拼箱选项、有竞争力的费率和全球贸易路线的可靠时间表。",
-      "fullDescription": "海迅拥有自己的集装箱车队，包括专用设备。凭借在海运业务方面的丰富专业知识，我们在各种贸易航线上表现出色，确保有利的费率并保证舱位、分配、时间和定价。"
-    },
-
-    "customs": {
-      "title": "报关清关",
-      "description": "作为领先的清关代理，海迅确保以最小的延误顺利高效地完成所有海关手续和检验。",
-      "fullDescription": "专业的报关服务，处理文件、税费计算和法规合规。我们经验丰富的团队确保快速清关，完全遵守法规。"
-    },
-
-    "oog": {
-      "title": "超规格货物运输",
-      "description": "提供的服务包括货物装载、捆扎、勘察安排以及到主要港口的岛际运输——由经验丰富的超规格货物团队处理。"
-    },
-
-    "import": {
-      "title": "进口服务",
-      "description": "全面的进口处理服务，由仓库、堆场、起重机和先进的集装箱处理设备支持，确保无缝运营。"
-    },
-
-    "consolidation": {
-      "title": "货物整合",
-      "description": "直接出口整合到新加坡、科伦坡和卡拉奇等关键目的地，并延伸连接到主要全球枢纽。",
-      "fullDescription": "海迅的货物整合允许多个托运人共享集装箱空间并降低运费成本，在整个运输过程中提供端到端跟踪和完全透明。"
-    },
-
-    "liquidCargo": {
-      "title": "液体货物运输",
-      "description": "通过ISO罐、软罐和IBC为液体货物提供专业运输解决方案，符合安全标准并进行实时监控。",
-      "fullDescription": "海迅专门为液体货物运输提供全面的专业知识。我们的首要任务是提供专业、经济高效和安全的解决方案，通过高效的物流管理实现无缝的门到门运输。"
-    },
-
-    "thirdPartyLogistics": {
-      "title": "第三方物流服务",
-      "description": "采用尖端仓库管理系统的先进第三方物流解决方案，优化履约并降低成本。",
-      "fullDescription": "通过我们尖端的第三方物流仓库管理系统，优化您的业务运营，实施先进的履约策略以提高客户满意度，同时最大限度地减少费用和交付时间。"
-    },
-
-    "linerAgency": {
-      "title": "船代服务",
-      "description": "为航运公司提供端到端服务，包括船舶调度、货物处理、文档和港口运营协调。",
-      "fullDescription": "海迅提供全方位的船代支持，包括船舶调度、文档处理、海关清关、货物预订和港口协调，提供专业的服务标准。"
-    },
-
+    "seeAllServices": "查看所有服务",
+    "ourServices": "我们的服务",
+    "description": "服务介绍",
+    "lcl": { "title": "拼箱服务", "description": "海迅在许多贸易路线上运营自己的拼箱服务。", "heroTagline": "灵活的拼箱解决方案，为您的部分货物提供全球覆盖。" },
+    "cfs": { "title": "集装箱货运站服务", "description": "高效的货物处理、拼箱和拆箱服务。" },
+    "fcl": { "title": "整柜服务", "description": "海迅拥有自己的集装箱车队，包括特殊设备。", "heroTagline": "整柜运输解决方案，为您的货物提供专用集装箱。" },
+    "warehouse": { "title": "仓储管理", "description": "配备先进设施，高效管理各种商品的仓储业务。", "heroTagline": "现代化仓储解决方案，配备先进的库存管理。" },
+    "projectCargo": { "title": "项目货物", "description": "专业处理超大、重型和复杂的项目货物。", "heroTagline": "专业处理超大和复杂的项目货物。" },
+    "project": { "title": "项目物流", "description": "安全及时地处理复杂的大型项目货物。" },
+    "air": { "title": "空运", "description": "快速可靠的空运解决方案，将您的业务连接到全球市场。", "heroTagline": "快速可靠的空运解决方案。" },
+    "oceanFreight": { "title": "海运", "description": "具有成本效益的海运服务，提供整箱和拼箱选项。" },
+    "customs": { "title": "报关清关", "description": "顺利高效地完成所有海关手续和检验。", "heroTagline": "专业的报关服务。" },
+    "oog": { "title": "超规格货物运输", "description": "货物装载、捆扎、勘察安排。", "heroTagline": "专业处理超规格货物。" },
+    "import": { "title": "进口服务", "description": "全面的进口处理服务。", "heroTagline": "端到端进口解决方案。" },
+    "consolidation": { "title": "货物整合", "description": "直接出口整合到关键目的地。", "heroTagline": "经济高效的货物整合服务。" },
+    "liquidCargo": { "title": "液体货物运输", "description": "液体货物专业运输解决方案。" },
+    "thirdPartyLogistics": { "title": "第三方物流服务", "description": "先进的第三方物流解决方案。" },
+    "linerAgency": { "title": "船代服务", "description": "为航运公司提供端到端服务。" },
     "readMore": "了解更多"
   },
   "about": {
     "title": "关于海迅环球",
     "subtitle": "30多年的物流卓越",
     "whoWeAre": "我们是谁",
-    "paragraph1": "海迅环球深圳公司凭借30多年的物流专业知识，包括海运、陆运、空运、报关、仓储和配送。集团已将网络扩展到中国、印度、马来西亚、阿联酋等地区。",
-    "paragraph2": "海迅环球深圳成立于2019年，秉承集团的诚信、客户满意度和快速响应承诺，确保在中国提供可靠和以客户为中心的服务体验。",
-    "paragraph3": "我们的服务包括量身定制的运输计划，选择适当的运输方式和设备，如平板架、开顶集装箱和散杂货运输。专注于准时性和成本效益，我们保证安全准时的交付。"
+    "paragraph1": "海迅环球深圳公司凭借30多年的物流专业知识。",
+    "paragraph2": "海迅环球深圳成立于2019年，秉承集团的诚信承诺。",
+    "paragraph3": "我们的服务包括量身定制的运输计划。",
+    "fastDelivery": "全球快速配送",
+    "fastDeliveryDesc": "我们广泛的全球网络确保您的货物按时到达目的地。",
+    "safeDelivery": "安全可靠配送",
+    "safeDeliveryDesc": "从取货到最终送达，我们严格遵守安全标准。",
+    "knowMore": "了解更多",
+    "needHelp": "需要帮助？",
+    "yearsOfGrowth": "年成长历程"
   },
   "advantages": {
     "title": "我们的优势",
     "subtitle": "通过能力、服务和专业知识提供卓越",
-    "transportation": {
-      "title": "运输能力",
-      "description": "公司注册资本5000万元，拥有解放、东风和五十铃轻型货运车辆，从事全国各地的货物运输服务。"
-    },
-    "logistics": {
-      "title": "物流服务",
-      "description": "公司拥有先进的信息系统，可以全程可见，让您随时掌握每项业务的进度，严格的系统可防止错误和事故。"
-    },
-    "team": {
-      "title": "团队人员",
-      "description": "公司拥有高度竞争力的运营团队，多年来一直从事国内货物运输服务，拥有严谨的运输组织团队。"
-    }
+    "transportation": { "title": "运输能力", "description": "从事全国各地的货物运输服务。" },
+    "logistics": { "title": "物流服务", "description": "先进的信息系统，全程可见。" },
+    "team": { "title": "团队人员", "description": "高度竞争力的运营团队。" }
   },
   "contact": {
     "title": "联系我们",
-    "subtitle": "需要联系我们吗？没问题！您可以使用我们的联系表格向我们发送消息。",
+    "subtitle": "需要联系我们吗？没问题！",
     "address": "我们的办公地址",
     "email": "邮箱",
     "phone": "电话",
-    "form": {
-      "name": "您的姓名",
-      "email": "您的邮箱",
-      "subject": "主题",
-      "message": "留言",
-      "send": "发送消息"
-    }
+    "sendUsMail": "发送邮件",
+    "feelFreeToWrite": "随时联系我们",
+    "needAnyHelp": "需要帮助吗？",
+    "getInTouchWithUs": "与我们取得联系！",
+    "haveAnyQuestion": "有任何问题？",
+    "writeUsEmail": "给我们发邮件",
+    "headquarters": "总部",
+    "messageSent": "您的消息已发送。",
+    "logisticsDesc": "物流涉及货物流动的高效规划和协调。",
+    "form": { "firstName": "名字", "lastName": "姓氏", "name": "您的姓名", "email": "您的邮箱", "phone": "电话号码", "subject": "主题", "message": "留言", "send": "发送消息" },
+    "success": "消息发送成功！",
+    "error": "出错了，请重试。"
+  },
+  "blog": {
+    "title": "我们的博客",
+    "subtitle": "随时了解全球物流的最新见解。",
+    "loading": "正在加载文章...",
+    "noArticles": "暂无发布的文章。",
+    "readMore": "阅读更多",
+    "minRead": "分钟阅读"
+  },
+  "globalPresence": {
+    "title": "全球业务",
+    "globalLocations": "全球分布",
+    "office": "办公室"
   },
   "footer": {
     "company": "海迅环球有限公司",
-    "description": "凭借30多年的物流专业知识，包括海运、陆运、空运、报关、仓储和配送。",
+    "description": "凭借30多年的物流专业知识。",
     "usefulLinks": "有用链接",
     "contactUs": "联系我们",
-    "rights": "版权所有。"
+    "rights": "版权所有。",
+    "fax": "传真"
   }
 }

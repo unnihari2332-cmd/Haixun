@@ -105,11 +105,10 @@ const AboutSection: React.FC = () => {
               <Globe2 className="w-8 h-8" style={{ color: ACCENT }} />
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">
-                  Fast Worldwide Delivery
+                  {t("about.fastDelivery")}
                 </h4>
                 <p className="text-gray-600 text-sm">
-                  Our vast global network ensures your cargo reaches
-                  destinations on schedule.
+                  {t("about.fastDeliveryDesc")}
                 </p>
               </div>
             </div>
@@ -118,11 +117,10 @@ const AboutSection: React.FC = () => {
               <ShieldCheck className="w-8 h-8" style={{ color: ACCENT }} />
               <div>
                 <h4 className="font-bold text-gray-900 text-lg">
-                  Safe And Secure Delivery
+                  {t("about.safeDelivery")}
                 </h4>
                 <p className="text-gray-600 text-sm">
-                  From pickup to final drop-off, we maintain strict safety and
-                  compliance standards.
+                  {t("about.safeDeliveryDesc")}
                 </p>
               </div>
             </div>
@@ -134,7 +132,7 @@ const AboutSection: React.FC = () => {
                 className="text-white text-base font-semibold px-6 py-3 rounded-md shadow-lg transition"
                 style={{ backgroundColor: ACCENT }}
               >
-                Know More About Us
+                {t("about.knowMore")}
               </Button>
             </Link>
 
@@ -147,7 +145,7 @@ const AboutSection: React.FC = () => {
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Need Help?</p>
+                  <p className="text-sm text-gray-600">{t("about.needHelp")}</p>
                   <p className="text-lg font-bold text-gray-900">
                     +86 75582222447
                   </p>

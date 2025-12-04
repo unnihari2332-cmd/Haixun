@@ -19,139 +19,86 @@
     "title": "Our Services",
     "subtitle": "Comprehensive logistics solutions tailored to your needs",
     "allServices": "All Services",
-
-    "lcl": {
-      "title": "LCL Services",
-      "description": "HAIXUN operates its own consolidation services on multiple trade routes, providing complete transparency in pricing across origin, destination, and ocean freight charges.",
-      "fullDescription": "HAIXUN offers its own consolidation service on numerous trade routes, leveraging an extensive network of consolidators. This enables the company to deliver competitive pricing and a range of sailing options. By regularly providing consolidation boxes to key trade lanes, HAIXUN can effectively handle cargo that requires timely deliveries."
-    },
-
-    "cfs": {
-      "title": "CFS Services",
-      "description": "Container Freight Station services providing efficient cargo handling, consolidation, and deconsolidation with advanced warehouse management systems.",
-      "fullDescription": "Our CFS facilities are equipped with modern infrastructure to handle cargo stuffing, destuffing, palletization, and storage. We ensure secure and efficient operations with real-time inventory tracking."
-    },
-
-    "fcl": {
-      "title": "FCL Services",
-      "description": "HAIXUN owns a fleet of containers, including special equipment to accommodate customers' unique requirements, specializing in multiple global trade lanes.",
-      "fullDescription": "When it comes to container shipping, FCL (Full Container Load) is the most cost-effective and efficient option. We handle every stage meticulously, from negotiating contract prices with carriers to final delivery to the consignee."
-    },
-
-    "warehouse": {
-      "title": "Warehouse Management",
-      "description": "Equipped with state-of-the-art facilities, HAIXUN efficiently manages warehousing operations for various commodities, including cold storage with advanced technology.",
-      "fullDescription": "HAIXUN possesses the necessary resources and expertise to effectively manage the warehousing of diverse commodities, including cold storage facilities. Our warehouse management optimizes operations for enhanced profitability and customer satisfaction."
-    },
-
-    "projectCargo": {
-      "title": "Project Cargo",
-      "description": "Specialized handling of oversized, heavy-lift, and complex project cargo with customized logistics solutions from port-to-port or door-to-door.",
-      "fullDescription": "We operate a specialized division focused on knowledge-based projects, staffed with highly skilled experts. HAIXUN is fully equipped to handle challenging project cargoes, including long lengths, oversized dimensions, and heavy lifts that require floating cranes or tandem lifting."
-    },
-
-    "project": {
-      "title": "Project Logistics",
-      "description": "With a dedicated project division comprising industry experts, HAIXUN ensures the safe and timely handling of complex, large-scale project cargo."
-    },
-
-    "air": {
-      "title": "Air Freight",
-      "description": "Swift and reliable air cargo solutions connecting your business to global markets with express delivery options and real-time tracking.",
-      "fullDescription": "HAIXUN excels in offering enhanced flexibility and global choice by collaborating with specialized carriers. We provide customized sea-air and air-sea options, tailored to meet customers' deadlines while achieving significant cost savings."
-    },
-
-    "oceanFreight": {
-      "title": "Ocean Freight",
-      "description": "Cost-effective sea cargo services with FCL and LCL options, competitive rates, and reliable scheduling for global trade routes.",
-      "fullDescription": "HAIXUN possesses its own fleet of containers, including specialized equipment. With extensive expertise in sea freight operations, we excel in various trade lanes, securing favorable rates and guaranteeing space, allocation, timing, and pricing."
-    },
-
-    "customs": {
-      "title": "Customs Clearance",
-      "description": "As a leading customs clearing agent, HAIXUN ensures smooth and efficient completion of all customs formalities and inspections with minimal delays.",
-      "fullDescription": "Professional customs brokerage services handling documentation, duty calculations, and regulatory compliance. Our experienced team ensures fast clearance with full regulatory adherence."
-    },
-
-    "oog": {
-      "title": "OOG Shipments",
-      "description": "Services offered include cargo loading, lashing, survey arrangements, and inter-island movement to major ports—handled by a team experienced in out-of-gauge cargo."
-    },
-
-    "import": {
-      "title": "Import Services",
-      "description": "Comprehensive import handling services supported by warehouses, yards, cranes, and advanced container handling equipment ensure seamless operations."
-    },
-
-    "consolidation": {
-      "title": "Cargo Consolidation",
-      "description": "Direct export consolidations to key destinations such as Singapore, Colombo, and Karachi, with extended connections to major global hubs.",
-      "fullDescription": "HAIXUN's cargo consolidation allows multiple shippers to share container space and reduce freight costs, with end-to-end tracking and full transparency throughout the shipping process."
-    },
-
-    "liquidCargo": {
-      "title": "Liquid Cargo Transportation",
-      "description": "Specialized transportation solutions for liquid cargo through ISO Tanks, Flexi Tanks, and IBCs with safety compliance and real-time monitoring.",
-      "fullDescription": "HAIXUN specializes in delivering comprehensive expertise for liquid cargo transportation. Our priority is to offer professional, cost-effective, and secure solutions with efficient logistics management for seamless door-to-door movements."
-    },
-
-    "thirdPartyLogistics": {
-      "title": "3PL Services",
-      "description": "Advanced third-party logistics solutions with cutting-edge warehouse management systems for optimized fulfillment and reduced costs.",
-      "fullDescription": "With our cutting-edge 3PL warehouse management system, optimize your business operations and implement advanced fulfillment strategies for enhanced customer satisfaction, while minimizing expenses and delivery times."
-    },
-
-    "linerAgency": {
-      "title": "Liner Agency",
-      "description": "End-to-end services for shipping lines including vessel scheduling, cargo handling, documentation, and port operations coordination.",
-      "fullDescription": "HAIXUN offers full liner agency support including vessel scheduling, documentation, customs clearance, cargo booking, and port coordination with professional service standards."
-    },
-
+    "seeAllServices": "See All Services",
+    "ourServices": "OUR SERVICES",
+    "description": "Description",
+    "lcl": { "title": "LCL Services", "description": "HAIXUN operates its own consolidation services on multiple trade routes.", "heroTagline": "Flexible Less-Than-Container Load solutions tailored for your partial shipments." },
+    "cfs": { "title": "CFS Services", "description": "Container Freight Station services providing efficient cargo handling." },
+    "fcl": { "title": "FCL Services", "description": "HAIXUN owns a fleet of containers, including special equipment.", "heroTagline": "Full Container Load shipping solutions with dedicated containers." },
+    "warehouse": { "title": "Warehouse Management", "description": "State-of-the-art facilities for warehousing operations.", "heroTagline": "Modern warehousing solutions with advanced inventory management." },
+    "projectCargo": { "title": "Project Cargo", "description": "Specialized handling of oversized, heavy-lift, and complex project cargo.", "heroTagline": "Expert handling of oversized and complex project cargo." },
+    "project": { "title": "Project Logistics", "description": "Safe and timely handling of complex, large-scale project cargo." },
+    "air": { "title": "Air Freight", "description": "Swift and reliable air cargo solutions connecting your business to global markets.", "heroTagline": "Fast and reliable air cargo solutions." },
+    "oceanFreight": { "title": "Ocean Freight", "description": "Cost-effective sea cargo services with FCL and LCL options." },
+    "customs": { "title": "Customs Clearance", "description": "Smooth and efficient completion of all customs formalities.", "heroTagline": "Professional customs brokerage services." },
+    "oog": { "title": "OOG Shipments", "description": "Cargo loading, lashing, survey arrangements for out-of-gauge cargo.", "heroTagline": "Specialized handling of out-of-gauge cargo." },
+    "import": { "title": "Import Services", "description": "Comprehensive import handling services.", "heroTagline": "End-to-end import solutions." },
+    "consolidation": { "title": "Cargo Consolidation", "description": "Direct export consolidations to key destinations.", "heroTagline": "Cost-effective cargo consolidation services." },
+    "liquidCargo": { "title": "Liquid Cargo Transportation", "description": "Specialized transportation solutions for liquid cargo." },
+    "thirdPartyLogistics": { "title": "3PL Services", "description": "Advanced third-party logistics solutions." },
+    "linerAgency": { "title": "Liner Agency", "description": "End-to-end services for shipping lines." },
     "readMore": "Read More"
   },
   "about": {
     "title": "About Haixun Global",
     "subtitle": "30+ Years of Logistics Excellence",
     "whoWeAre": "Who We Are",
-    "paragraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics, including sea, land, air transportation, customs declaration, warehousing, and distribution. The Group has expanded its network to regions such as China, India, Malaysia, the UAE, and beyond.",
-    "paragraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity, customer satisfaction, and rapid response, ensuring a reliable and customer-focused service experience in China.",
-    "paragraph3": "Our services include tailored shipping plans with the selection of appropriate transport modes and equipment, such as Flat Rack, Open Top Containers, and Breakbulk Shipping. Focused on punctuality and cost-efficiency, we guarantee safe and on-time deliveries."
+    "paragraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics.",
+    "paragraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity.",
+    "paragraph3": "Our services include tailored shipping plans with appropriate transport modes.",
+    "fastDelivery": "Fast Worldwide Delivery",
+    "fastDeliveryDesc": "Our vast global network ensures your cargo reaches destinations on schedule.",
+    "safeDelivery": "Safe And Secure Delivery",
+    "safeDeliveryDesc": "From pickup to final drop-off, we maintain strict safety standards.",
+    "knowMore": "Know More About Us",
+    "needHelp": "Need Help?",
+    "yearsOfGrowth": "Years of Growth"
   },
   "advantages": {
     "title": "Our Advantages",
     "subtitle": "Delivering excellence through capacity, service, and expertise",
-    "transportation": {
-      "title": "Transportation Capacity",
-      "description": "With a registered capital of 50 million yuan, the company has Jiefang, Dongfeng and Isuzu light format transportation vehicles, which are engaged in cargo transportation services all over the country."
-    },
-    "logistics": {
-      "title": "Logistics Service",
-      "description": "The company has advanced information system, which can be seen in the whole process, so that you can master the progress of each business at any time, and strict system prevents errors and accidents."
-    },
-    "team": {
-      "title": "Team Personnel",
-      "description": "The company has a highly competitive operation team, has been engaged in domestic cargo transportation services for many years, and has a rigorous transportation organization team."
-    }
+    "transportation": { "title": "Transportation Capacity", "description": "Engaged in cargo transportation services all over the country." },
+    "logistics": { "title": "Logistics Service", "description": "Advanced information system with full process visibility." },
+    "team": { "title": "Team Personnel", "description": "Highly competitive operation team with years of experience." }
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "Need to get in touch? No problem! You can use our contact form to send us a message.",
+    "subtitle": "Need to get in touch? No problem!",
     "address": "Our Office Address",
     "email": "Email Us",
     "phone": "Call Us",
-    "form": {
-      "name": "Your Name",
-      "email": "Your Email",
-      "subject": "Subject",
-      "message": "Message",
-      "send": "Send Message"
-    }
+    "sendUsMail": "Send Us Mail",
+    "feelFreeToWrite": "Feel Free To Write",
+    "needAnyHelp": "Need Any Help?",
+    "getInTouchWithUs": "Get In Touch With Us!",
+    "haveAnyQuestion": "Have any question?",
+    "writeUsEmail": "Write us email",
+    "headquarters": "Headquarters",
+    "messageSent": "Your message has been sent.",
+    "logisticsDesc": "Logistics involves efficient planning and coordination of goods movement.",
+    "form": { "firstName": "First Name", "lastName": "Last Name", "name": "Your Name", "email": "Your Email", "phone": "Phone Number", "subject": "Subject", "message": "Message", "send": "Send Message" },
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again."
+  },
+  "blog": {
+    "title": "Our Blog",
+    "subtitle": "Stay updated with the latest insights in global logistics.",
+    "loading": "Loading articles...",
+    "noArticles": "No articles published yet.",
+    "readMore": "Read More",
+    "minRead": "min read"
+  },
+  "globalPresence": {
+    "title": "Global Presence",
+    "globalLocations": "Global Locations",
+    "office": "Office"
   },
   "footer": {
     "company": "Haixun Global Co., Ltd",
-    "description": "Leveraging over 30 years of expertise in logistics, including sea, land, air transportation, customs declaration, warehousing, and distribution.",
+    "description": "Leveraging over 30 years of expertise in logistics.",
     "usefulLinks": "Useful Links",
     "contactUs": "Contact Us",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "fax": "Fax"
   }
 }
