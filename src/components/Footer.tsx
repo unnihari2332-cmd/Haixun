@@ -93,7 +93,6 @@ const Footer = () => {
             variants={footerAnim}
             className="flex flex-col items-start"
           >
-            {/* Logo block with white tile background */}
             <div className="mb-4 p-2 rounded-xl border-2 border-white/80 bg-white/10 backdrop-blur-sm inline-block shadow-lg">
               <div className="rounded-lg bg-white p-3 shadow-md flex items-center justify-center">
                 <img
@@ -197,12 +196,14 @@ const Footer = () => {
                       <span>{current.phone}</span>
                     </div>
                   )}
+
                   {current.fax && (
                     <div className="flex items-center gap-2 text-white/90 text-sm">
                       <Phone size={16} className="text-white/80" />
                       <span>{t("footer.fax")}: {current.fax}</span>
                     </div>
                   )}
+
                   {current.email && (
                     <div className="flex items-center gap-2 text-white/90 text-sm">
                       <Mail size={16} className="text-white/80" />
@@ -213,21 +214,7 @@ const Footer = () => {
               </AnimatePresence>
             </div>
 
-            {/* Dots */}
-            <div className="flex justify-start mt-4 space-x-2">
-              {offices.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setIdx(i)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    i === idx
-                      ? "bg-white"
-                      : "bg-white/30 hover:bg-white/60"
-                  }`}
-                  aria-label={`Go to office ${i + 1}`}
-                />
-              ))}
-            </div>
+            {/* DOTS REMOVED */}
           </motion.div>
         </div>
 
