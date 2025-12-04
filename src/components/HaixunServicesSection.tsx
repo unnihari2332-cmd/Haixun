@@ -103,20 +103,20 @@ export default function HaixunServicesSection() {
         
         {/* HEADER */}
         <ScrollAnimation className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-red-100 mb-3">
+          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-black/70 mb-3">
             {t("services.overline", "What We Do")}
           </p>
 
-          <h2 className="font-extrabold text-gray-50 text-4xl md:text-5xl mb-3 leading-tight">
+          <h2 className="font-extrabold text-black text-4xl md:text-5xl mb-3 leading-tight">
             {t("services.title")}
           </h2>
 
-          <p className="text-lg text-gray-100 max-w-2xl mx-auto">
+          <p className="text-lg text-black/80 max-w-2xl mx-auto">
             {t("services.subtitle")}
           </p>
         </ScrollAnimation>
 
-        {/* SERVICES GRID */}
+        {/* SERVICE CARDS */}
         <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -147,7 +147,7 @@ export default function HaixunServicesSection() {
                       </div>
                     </div>
 
-                    {/* TEXT CONTENT */}
+                    {/* TEXT */}
                     <div className="px-8 pt-12 pb-8 flex-1 flex flex-col justify-between">
                       <div>
                         <h3 className="text-lg font-bold text-slate-900 mb-2">
@@ -158,7 +158,6 @@ export default function HaixunServicesSection() {
                         </p>
                       </div>
 
-                      {/* FOOTER */}
                       <div className="mt-8 flex items-end justify-between">
                         <span className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-[#BC0018]">
                           {t("services.readMore")}
@@ -170,6 +169,7 @@ export default function HaixunServicesSection() {
                         </span>
                       </div>
                     </div>
+
                   </motion.article>
                 </Link>
               </ScrollAnimation>
