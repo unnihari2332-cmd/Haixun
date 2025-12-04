@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
     []
   );
 
-  // CHANGED: use Hero01.mp4 from public as background video
+  // Use Hero01.mp4 from public as background video
   const videoSrc = "/Hero01.mp4";
   const videoPoster = "/hero-poster.jpg";
 
@@ -133,7 +133,6 @@ const HeroSection: React.FC = () => {
             preload="auto"
             poster={videoPoster}
           >
-            {/* CHANGED: Only Hero01.mp4 as source */}
             <source src={videoSrc} type="video/mp4" />
           </video>
         ) : (
@@ -153,22 +152,46 @@ const HeroSection: React.FC = () => {
         )}
       </div>
 
-      {/* OVERLAYS */}
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+      {/* SINGLE OVERLAY (gradient removed) */}
+      <div className="absolute inset-0 bg-black/30" />
 
-      {/* LEFT CENTER CONTENT BELOW LOGO */}
-      <div className="absolute top-1/2 left-4 sm:left-6 md:left-12 lg:left-16 -translate-y-1/2 z-20 w-[calc(100%-2rem)] sm:w-auto sm:max-w-md md:max-w-xl pr-4 sm:pr-6 text-left">
+      {/* LEFT CENTER CONTENT (shifted right) */}
+      <div
+        className="
+          absolute top-1/2 
+          left-10 sm:left-14 md:left-20 lg:left-24 
+          -translate-y-1/2 
+          z-20 
+          w-[calc(100%-2rem)] 
+          sm:w-auto sm:max-w-md md:max-w-xl 
+          pr-4 sm:pr-6 
+          text-left
+        "
+      >
         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight drop-shadow-md text-white">
           {t("hero.title")}
         </h1>
+
         <p className="mt-2 sm:mt-4 md:mt-5 text-xs sm:text-sm md:text-lg leading-relaxed text-gray-200">
           {t("hero.subtitle")}
         </p>
+
         <div className="mt-4 sm:mt-7 flex items-start">
           <a
             href="#about"
-            className="inline-flex items-center justify-center rounded-xl bg-white/95 px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-black shadow-lg shadow-black/30 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/80"
+            className="
+              inline-flex items-center justify-center 
+              rounded-xl 
+              bg-[#BC0018] 
+              px-5 sm:px-7 py-3 
+              text-xs sm:text-sm 
+              font-semibold 
+              text-white
+              shadow-lg shadow-black/30 
+              hover:bg-[#A90015] 
+              focus:outline-none 
+              focus:ring-2 focus:ring-white/80
+            "
           >
             {t("hero.contactUs")}
           </a>
