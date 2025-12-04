@@ -91,18 +91,14 @@ const HeroSection: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
       {/* === LEFT CENTER CONTENT BELOW LOGO === */}
-      <div className="absolute top-1/2 left-4 sm:left-8 md:left-12 -translate-y-1/2 z-20 max-w-[calc(100%-2rem)] sm:max-w-md md:max-w-xl pr-4 sm:pr-6 text-left md:mx-[120px] lg:mx-[254px]">
-        <h1 style={{
-        color: '#FFFFFF'
-      }} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight drop-shadow-md text-slate-50">
+      <div className="absolute top-1/2 left-4 sm:left-6 md:left-12 lg:left-16 -translate-y-1/2 z-20 w-[calc(100%-2rem)] sm:w-auto sm:max-w-md md:max-w-xl pr-4 sm:pr-6 text-left">
+        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight drop-shadow-md text-white">
           {t("hero.title")}
         </h1>
-        <p style={{
-        color: '#CFC9CA'
-      }} className="mt-3 sm:mt-4 md:mt-5 text-sm sm:text-base md:text-lg leading-relaxed">
+        <p className="mt-2 sm:mt-4 md:mt-5 text-xs sm:text-sm md:text-lg leading-relaxed text-gray-200">
           {t("hero.subtitle")}
         </p>
-        <div className="mt-5 sm:mt-7 flex items-start">
+        <div className="mt-4 sm:mt-7 flex items-start">
           <a href="#about" className="inline-flex items-center justify-center rounded-xl bg-white/95 px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-black shadow-lg shadow-black/30 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/80">
             {t("hero.contactUs")}
           </a>

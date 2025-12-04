@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getCurrentCountryFromPath } from "@/services/countryDetection";
@@ -15,6 +16,7 @@ const ScrollToTop = () => {
 };
 
 const AirFreight = () => {
+  const { t } = useTranslation();
   const location = useLocation();
 
   const detected = getCurrentCountryFromPath(location.pathname);
@@ -26,16 +28,16 @@ const AirFreight = () => {
   };
 
   const servicesNav = [
-    { label: "See All Services", path: "/services" },
-    { label: "LCL Services", path: "/services/lcl" },
-    { label: "FCL Services", path: "/services/fcl" },
-    { label: "Warehousing", path: "/services/warehousing" },
-    { label: "Project Cargo", path: "/services/project-cargo" },
-    { label: "Air Freight", path: "/services/air-freight" },
-    { label: "Customs Clearance", path: "/services/customs-clearance" },
-    { label: "Import Services", path: "/services/import" },
-    { label: "Consolidation", path: "/services/consolidation" },
-    { label: "OOG Shipments", path: "/services/oog-shipments" },
+    { label: t("services.seeAllServices"), path: "/services" },
+    { label: t("services.lcl.title"), path: "/services/lcl" },
+    { label: t("services.fcl.title"), path: "/services/fcl" },
+    { label: t("services.warehouse.title"), path: "/services/warehousing" },
+    { label: t("services.projectCargo.title"), path: "/services/project-cargo" },
+    { label: t("services.air.title"), path: "/services/air-freight" },
+    { label: t("services.customs.title"), path: "/services/customs-clearance" },
+    { label: t("services.import.title"), path: "/services/import" },
+    { label: t("services.consolidation.title"), path: "/services/consolidation" },
+    { label: t("services.oog.title"), path: "/services/oog-shipments" },
   ];
 
   const pathname = location.pathname;
@@ -48,16 +50,14 @@ const AirFreight = () => {
       <div className="h-[90px] w-full bg-white" />
 
       <main className="flex-grow">
-
-        {/* HERO SECTION – CENTERED (MATCHING NEW DESIGN) */}
-        <section className="relative h-[300px] md:h-[360px] w-full overflow-hidden flex items-center justify-center">
+        {/* HERO SECTION */}
+        <section className="relative h-[250px] md:h-[360px] w-full overflow-hidden flex items-center justify-center">
           <img
             src="/airflighthero.jpg"
             alt="Air Freight Hero"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* DARK GRADIENT */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
 
           <div className="container mx-auto px-4 relative z-10 text-center">
@@ -67,30 +67,29 @@ const AirFreight = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="inline-block max-w-3xl"
             >
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-                Air Freight
+              <h1 className="text-3xl md:text-5xl font-extrabold text-white">
+                {t("services.air.title")}
               </h1>
 
               <div className="w-24 h-[3px] bg-[#BC0018] mx-auto mt-3" />
 
-              <p className="mt-4 text-base md:text-lg text-gray-200 leading-relaxed">
-                Fast and reliable air freight solutions, balancing speed and cost with
-                flexible routing across global hubs.
+              <p className="mt-4 text-sm md:text-lg text-gray-200 leading-relaxed px-4">
+                {t("services.air.heroTagline")}
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* MAIN CONTENT */}
-        <section className="py-16 bg-white">
+        <section className="py-10 md:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-12 md:grid-cols-[260px,1fr] items-start">
+            <div className="grid gap-8 md:gap-12 md:grid-cols-[260px,1fr] items-start">
               
-              {/* LEFT SIDEBAR */}
-              <aside className="space-y-10">
+              {/* LEFT SIDEBAR - Hidden on mobile */}
+              <aside className="hidden md:block space-y-10">
                 <div>
                   <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
-                    OUR SERVICES
+                    {t("services.ourServices")}
                   </h2>
                   <div className="w-12 h-[2px] bg-[#BC0018] mb-5" />
 
@@ -117,7 +116,7 @@ const AirFreight = () => {
               </aside>
 
               {/* RIGHT CONTENT */}
-              <div className="space-y-12">
+              <div className="space-y-8 md:space-y-12">
 
                 {/* TOP IMAGE */}
                 <motion.div
@@ -130,43 +129,30 @@ const AirFreight = () => {
                   <img
                     src="/loadingaircraft.jpg"
                     alt="Air Freight Services"
-                    className="w-full h-[340px] md:h-[380px] object-cover"
+                    className="w-full h-[240px] md:h-[380px] object-cover"
                     loading="lazy"
                   />
                 </motion.div>
 
                 {/* DESCRIPTION CONTENT */}
                 <section>
-                  <div className="mb-6 flex items-center gap-3">
+                  <div className="mb-4 md:mb-6 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
                       <Plane className="w-5 h-5 text-[#BC0018]" />
                     </div>
                     <div>
-                      <h2 className="text-xl md:text-2xl font-extrabold uppercase text-gray-900">
-                        Leading Air Freight Solutions
+                      <h2 className="text-lg md:text-2xl font-extrabold uppercase text-gray-900">
+                        {t("services.air.leadingTitle")}
                       </h2>
                       <div className="mt-1 w-16 h-[2px] bg-[#BC0018]" />
                     </div>
                   </div>
 
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
-                    <p>
-                      HAIXUN can provide customized sea-air and air-sea options to meet
-                      customer deadlines while achieving significant cost savings. These
-                      hybrid transport solutions balance speed and cost efficiency based on
-                      each customer’s cargo profile and delivery requirements.
-                    </p>
-                    <p>
-                      Through its efficient and globally connected network, HAIXUN handles
-                      airfreight consolidation across major world routes—ensuring reliable
-                      schedules, competitive pricing, and seamless cargo movement from origin
-                      to final destination.
-                    </p>
+                    <p>{t("services.air.content1")}</p>
+                    <p>{t("services.air.content2")}</p>
                   </div>
                 </section>
-
-                {/* CTA REMOVED TO MATCH NEW PAGE STYLE */}
-
               </div>
             </div>
           </div>

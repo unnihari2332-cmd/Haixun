@@ -200,7 +200,7 @@ const Footer = () => {
                   {current.fax && (
                     <div className="flex items-center gap-2 text-white/90 text-sm">
                       <Phone size={16} className="text-white/80" />
-                      <span>Fax: {current.fax}</span>
+                      <span>{t("footer.fax")}: {current.fax}</span>
                     </div>
                   )}
                   {current.email && (

@@ -22,21 +22,110 @@
     "seeAllServices": "See All Services",
     "ourServices": "OUR SERVICES",
     "description": "Description",
-    "lcl": { "title": "LCL Services", "description": "HAIXUN operates its own consolidation services on multiple trade routes.", "heroTagline": "Flexible Less-Than-Container Load solutions tailored for your partial shipments." },
-    "cfs": { "title": "CFS Services", "description": "Container Freight Station services providing efficient cargo handling." },
-    "fcl": { "title": "FCL Services", "description": "HAIXUN owns a fleet of containers, including special equipment.", "heroTagline": "Full Container Load shipping solutions with dedicated containers." },
-    "warehouse": { "title": "Warehouse Management", "description": "State-of-the-art facilities for warehousing operations.", "heroTagline": "Modern warehousing solutions with advanced inventory management." },
-    "projectCargo": { "title": "Project Cargo", "description": "Specialized handling of oversized, heavy-lift, and complex project cargo.", "heroTagline": "Expert handling of oversized and complex project cargo." },
-    "project": { "title": "Project Logistics", "description": "Safe and timely handling of complex, large-scale project cargo." },
-    "air": { "title": "Air Freight", "description": "Swift and reliable air cargo solutions connecting your business to global markets.", "heroTagline": "Fast and reliable air cargo solutions." },
-    "oceanFreight": { "title": "Ocean Freight", "description": "Cost-effective sea cargo services with FCL and LCL options." },
-    "customs": { "title": "Customs Clearance", "description": "Smooth and efficient completion of all customs formalities.", "heroTagline": "Professional customs brokerage services." },
-    "oog": { "title": "OOG Shipments", "description": "Cargo loading, lashing, survey arrangements for out-of-gauge cargo.", "heroTagline": "Specialized handling of out-of-gauge cargo." },
-    "import": { "title": "Import Services", "description": "Comprehensive import handling services.", "heroTagline": "End-to-end import solutions." },
-    "consolidation": { "title": "Cargo Consolidation", "description": "Direct export consolidations to key destinations.", "heroTagline": "Cost-effective cargo consolidation services." },
-    "liquidCargo": { "title": "Liquid Cargo Transportation", "description": "Specialized transportation solutions for liquid cargo." },
-    "thirdPartyLogistics": { "title": "3PL Services", "description": "Advanced third-party logistics solutions." },
-    "linerAgency": { "title": "Liner Agency", "description": "End-to-end services for shipping lines." },
+    "lcl": {
+      "title": "LCL Services",
+      "description": "HAIXUN operates its own consolidation services on multiple trade routes.",
+      "heroTagline": "Flexible Less-Than-Container Load solutions tailored for your partial shipments.",
+      "content1": "Haixun Global provides Less-Than-Container Load (LCL) services designed for customers who do not have enough cargo to fill a full container but require reliable shipping.",
+      "content2": "Our extensive global consolidation network helps customers move smaller shipments more economically by combining multiple consignments into one container.",
+      "content3": "Our operations team manages receiving, stuffing, documentation, and delivery at destination, ensuring safety, transparency, and efficiency.",
+      "content4": "With predictable transit schedules, frequent departures, and transparent pricing, our LCL solutions provide unmatched flexibility for businesses of all sizes."
+    },
+    "cfs": {
+      "title": "CFS Services",
+      "description": "Container Freight Station services providing efficient cargo handling."
+    },
+    "fcl": {
+      "title": "FCL Services",
+      "description": "HAIXUN owns a fleet of containers, including special equipment.",
+      "heroTagline": "Full Container Load shipping solutions with dedicated containers.",
+      "content1": "Full Container Load (FCL) shipping is ideal for businesses with enough cargo to fill an entire container.",
+      "content2": "We provide dedicated containers ensuring your goods travel safely without sharing space with other shipments.",
+      "content3": "Our FCL services offer competitive rates, reliable schedules, and door-to-door delivery options.",
+      "content4": "With our extensive network of shipping lines, we ensure optimal routing and transit times for your cargo."
+    },
+    "warehouse": {
+      "title": "Warehouse Management",
+      "description": "State-of-the-art facilities for warehousing operations.",
+      "heroTagline": "Modern warehousing solutions with advanced inventory management.",
+      "content1": "Our state-of-the-art warehousing facilities provide secure storage solutions for all types of cargo.",
+      "content2": "We offer comprehensive inventory management, pick-and-pack services, and distribution solutions.",
+      "content3": "Our warehouses are strategically located to optimize supply chain efficiency and reduce transit times.",
+      "content4": "Advanced security systems and climate-controlled environments ensure your goods remain in optimal condition."
+    },
+    "projectCargo": {
+      "title": "Project Cargo",
+      "description": "Specialized handling of oversized, heavy-lift, and complex project cargo.",
+      "heroTagline": "Expert handling of oversized and complex project cargo.",
+      "content1": "Project cargo requires specialized handling for oversized, heavy-lift, and complex shipments.",
+      "content2": "Our experienced team manages every aspect from planning to execution, ensuring safe delivery.",
+      "content3": "We provide customized solutions including route surveys, specialized equipment, and permits.",
+      "content4": "Our track record includes successful delivery for construction, energy, and industrial sectors."
+    },
+    "project": {
+      "title": "Project Logistics",
+      "description": "Safe and timely handling of complex, large-scale project cargo."
+    },
+    "air": {
+      "title": "Air Freight",
+      "description": "Swift and reliable air cargo solutions connecting your business to global markets.",
+      "heroTagline": "Fast and reliable air cargo solutions.",
+      "leadingTitle": "Leading Air Freight Solutions",
+      "content1": "HAIXUN can provide customized sea-air and air-sea options to meet customer deadlines while achieving significant cost savings.",
+      "content2": "Through its efficient and globally connected network, HAIXUN handles airfreight consolidation across major world routes—ensuring reliable schedules, competitive pricing, and seamless cargo movement."
+    },
+    "oceanFreight": {
+      "title": "Ocean Freight",
+      "description": "Cost-effective sea cargo services with FCL and LCL options."
+    },
+    "customs": {
+      "title": "Customs Clearance",
+      "description": "Smooth and efficient completion of all customs formalities.",
+      "heroTagline": "Professional customs brokerage services.",
+      "content1": "Our customs clearance services ensure smooth and compliant import/export processes.",
+      "content2": "Our licensed customs brokers handle all documentation and regulatory requirements.",
+      "content3": "We provide duty optimization strategies and tariff classification guidance.",
+      "content4": "Our expertise covers all types of goods including hazardous materials and restricted items."
+    },
+    "oog": {
+      "title": "OOG Shipments",
+      "description": "Cargo loading, lashing, survey arrangements for out-of-gauge cargo.",
+      "heroTagline": "Specialized handling of out-of-gauge cargo.",
+      "content1": "Out-of-gauge (OOG) cargo requires specialized equipment and handling expertise.",
+      "content2": "We arrange flat racks, open tops, and specialized containers for oversized cargo.",
+      "content3": "Our team handles lashing, securing, and all necessary documentation.",
+      "content4": "We coordinate with shipping lines and port authorities for smooth OOG operations."
+    },
+    "import": {
+      "title": "Import Services",
+      "description": "Comprehensive import handling services.",
+      "heroTagline": "End-to-end import solutions.",
+      "content1": "Our comprehensive import services cover the entire process from origin to destination.",
+      "content2": "We handle customs clearance, duty payments, and last-mile delivery.",
+      "content3": "Our team provides guidance on import regulations and compliance requirements.",
+      "content4": "We offer bonded warehousing and deferred duty payment options."
+    },
+    "consolidation": {
+      "title": "Cargo Consolidation",
+      "description": "Direct export consolidations to key destinations.",
+      "heroTagline": "Cost-effective cargo consolidation services.",
+      "content1": "Our consolidation services combine multiple shipments for cost-effective transportation.",
+      "content2": "We operate regular consolidation services to major global destinations.",
+      "content3": "Reduce your shipping costs while maintaining reliable delivery schedules.",
+      "content4": "Our consolidation network covers Asia, Europe, Americas, and beyond."
+    },
+    "liquidCargo": {
+      "title": "Liquid Cargo Transportation",
+      "description": "Specialized transportation solutions for liquid cargo."
+    },
+    "thirdPartyLogistics": {
+      "title": "3PL Services",
+      "description": "Advanced third-party logistics solutions."
+    },
+    "linerAgency": {
+      "title": "Liner Agency",
+      "description": "End-to-end services for shipping lines."
+    },
     "readMore": "Read More"
   },
   "about": {
@@ -57,9 +146,18 @@
   "advantages": {
     "title": "Our Advantages",
     "subtitle": "Delivering excellence through capacity, service, and expertise",
-    "transportation": { "title": "Transportation Capacity", "description": "Engaged in cargo transportation services all over the country." },
-    "logistics": { "title": "Logistics Service", "description": "Advanced information system with full process visibility." },
-    "team": { "title": "Team Personnel", "description": "Highly competitive operation team with years of experience." }
+    "transportation": {
+      "title": "Transportation Capacity",
+      "description": "Engaged in cargo transportation services all over the country."
+    },
+    "logistics": {
+      "title": "Logistics Service",
+      "description": "Advanced information system with full process visibility."
+    },
+    "team": {
+      "title": "Team Personnel",
+      "description": "Highly competitive operation team with years of experience."
+    }
   },
   "contact": {
     "title": "Contact Us",
@@ -76,7 +174,16 @@
     "headquarters": "Headquarters",
     "messageSent": "Your message has been sent.",
     "logisticsDesc": "Logistics involves efficient planning and coordination of goods movement.",
-    "form": { "firstName": "First Name", "lastName": "Last Name", "name": "Your Name", "email": "Your Email", "phone": "Phone Number", "subject": "Subject", "message": "Message", "send": "Send Message" },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "name": "Your Name",
+      "email": "Your Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    },
     "success": "Message sent successfully!",
     "error": "Something went wrong. Please try again."
   },
@@ -86,12 +193,31 @@
     "loading": "Loading articles...",
     "noArticles": "No articles published yet.",
     "readMore": "Read More",
-    "minRead": "min read"
+    "minRead": "min read",
+    "article": "Article",
+    "emptyCta": "Create First Article"
   },
   "globalPresence": {
     "title": "Global Presence",
+    "subtitle": "Serving customers worldwide with local expertise",
     "globalLocations": "Global Locations",
-    "office": "Office"
+    "office": "Office",
+    "viewDetails": "View Details",
+    "countries": {
+      "china": "China",
+      "singapore": "Singapore",
+      "india": "India",
+      "indonesia": "Indonesia",
+      "malaysia": "Malaysia",
+      "thailand": "Thailand",
+      "sriLanka": "Sri Lanka",
+      "bangladesh": "Bangladesh",
+      "myanmar": "Myanmar",
+      "pakistan": "Pakistan",
+      "uae": "UAE",
+      "uk": "United Kingdom",
+      "usa": "United States"
+    }
   },
   "footer": {
     "company": "Haixun Global Co., Ltd",

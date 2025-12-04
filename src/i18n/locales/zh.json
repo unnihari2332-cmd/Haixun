@@ -20,21 +20,110 @@
     "seeAllServices": "查看所有服务",
     "ourServices": "我们的服务",
     "description": "服务介绍",
-    "lcl": { "title": "拼箱服务", "description": "海迅在许多贸易路线上运营自己的拼箱服务。", "heroTagline": "灵活的拼箱解决方案，为您的部分货物提供全球覆盖。" },
-    "cfs": { "title": "集装箱货运站服务", "description": "高效的货物处理、拼箱和拆箱服务。" },
-    "fcl": { "title": "整柜服务", "description": "海迅拥有自己的集装箱车队，包括特殊设备。", "heroTagline": "整柜运输解决方案，为您的货物提供专用集装箱。" },
-    "warehouse": { "title": "仓储管理", "description": "配备先进设施，高效管理各种商品的仓储业务。", "heroTagline": "现代化仓储解决方案，配备先进的库存管理。" },
-    "projectCargo": { "title": "项目货物", "description": "专业处理超大、重型和复杂的项目货物。", "heroTagline": "专业处理超大和复杂的项目货物。" },
-    "project": { "title": "项目物流", "description": "安全及时地处理复杂的大型项目货物。" },
-    "air": { "title": "空运", "description": "快速可靠的空运解决方案，将您的业务连接到全球市场。", "heroTagline": "快速可靠的空运解决方案。" },
-    "oceanFreight": { "title": "海运", "description": "具有成本效益的海运服务，提供整箱和拼箱选项。" },
-    "customs": { "title": "报关清关", "description": "顺利高效地完成所有海关手续和检验。", "heroTagline": "专业的报关服务。" },
-    "oog": { "title": "超规格货物运输", "description": "货物装载、捆扎、勘察安排。", "heroTagline": "专业处理超规格货物。" },
-    "import": { "title": "进口服务", "description": "全面的进口处理服务。", "heroTagline": "端到端进口解决方案。" },
-    "consolidation": { "title": "货物整合", "description": "直接出口整合到关键目的地。", "heroTagline": "经济高效的货物整合服务。" },
-    "liquidCargo": { "title": "液体货物运输", "description": "液体货物专业运输解决方案。" },
-    "thirdPartyLogistics": { "title": "第三方物流服务", "description": "先进的第三方物流解决方案。" },
-    "linerAgency": { "title": "船代服务", "description": "为航运公司提供端到端服务。" },
+    "lcl": {
+      "title": "拼箱服务",
+      "description": "海迅在许多贸易路线上运营自己的拼箱服务。",
+      "heroTagline": "灵活的拼箱解决方案，为您的部分货物提供全球覆盖。",
+      "content1": "海迅环球提供拼箱（LCL）服务，专为货物不足以装满整柜但需要可靠运输的客户设计。",
+      "content2": "我们广泛的全球拼箱网络帮助客户通过将多个货物合并到一个集装箱来更经济地运输小批量货物。",
+      "content3": "我们的运营团队管理收货、装箱、单证和目的地交付，确保安全、透明和高效。",
+      "content4": "凭借可预测的运输时间表、频繁的航班和透明的定价，我们的拼箱解决方案为各种规模的企业提供无与伦比的灵活性。"
+    },
+    "cfs": {
+      "title": "集装箱货运站服务",
+      "description": "高效的货物处理、拼箱和拆箱服务。"
+    },
+    "fcl": {
+      "title": "整柜服务",
+      "description": "海迅拥有自己的集装箱车队，包括特殊设备。",
+      "heroTagline": "整柜运输解决方案，为您的货物提供专用集装箱。",
+      "content1": "整柜（FCL）运输非常适合有足够货物装满整个集装箱的企业。",
+      "content2": "我们提供专用集装箱，确保您的货物安全运输，无需与其他货物共享空间。",
+      "content3": "我们的整柜服务提供有竞争力的价格、可靠的时间表和门到门的交付选项。",
+      "content4": "凭借我们广泛的航运公司网络，我们确保为您的货物提供最佳的路线和运输时间。"
+    },
+    "warehouse": {
+      "title": "仓储管理",
+      "description": "配备先进设施，高效管理各种商品的仓储业务。",
+      "heroTagline": "现代化仓储解决方案，配备先进的库存管理。",
+      "content1": "我们先进的仓储设施为各类货物提供安全的存储解决方案。",
+      "content2": "我们提供全面的库存管理、分拣包装服务和配送解决方案。",
+      "content3": "我们的仓库战略性地分布，以优化供应链效率并缩短运输时间。",
+      "content4": "先进的安全系统和温控环境确保您的货物保持最佳状态。"
+    },
+    "projectCargo": {
+      "title": "项目货物",
+      "description": "专业处理超大、重型和复杂的项目货物。",
+      "heroTagline": "专业处理超大和复杂的项目货物。",
+      "content1": "项目货物需要对超大、重型和复杂货物进行专业处理。",
+      "content2": "我们经验丰富的团队管理从规划到执行的各个方面，确保安全交付。",
+      "content3": "我们提供定制解决方案，包括路线勘察、专用设备和许可证。",
+      "content4": "我们的业绩包括为建筑、能源和工业部门成功交付。"
+    },
+    "project": {
+      "title": "项目物流",
+      "description": "安全及时地处理复杂的大型项目货物。"
+    },
+    "air": {
+      "title": "空运",
+      "description": "快速可靠的空运解决方案，将您的业务连接到全球市场。",
+      "heroTagline": "快速可靠的空运解决方案。",
+      "leadingTitle": "领先的空运解决方案",
+      "content1": "海迅可以提供定制的海空联运和空海联运选项，以满足客户的截止日期同时实现显著的成本节约。",
+      "content2": "通过其高效且全球互联的网络，海迅在主要世界航线上处理空运拼箱——确保可靠的时间表、有竞争力的价格和无缝的货物流动。"
+    },
+    "oceanFreight": {
+      "title": "海运",
+      "description": "具有成本效益的海运服务，提供整箱和拼箱选项。"
+    },
+    "customs": {
+      "title": "报关清关",
+      "description": "顺利高效地完成所有海关手续和检验。",
+      "heroTagline": "专业的报关服务。",
+      "content1": "我们的报关服务确保顺利合规的进出口流程。",
+      "content2": "我们持牌的报关员处理所有文件和监管要求。",
+      "content3": "我们提供关税优化策略和税则分类指导。",
+      "content4": "我们的专业知识涵盖各类货物，包括危险品和受限物品。"
+    },
+    "oog": {
+      "title": "超规格货物运输",
+      "description": "货物装载、捆扎、勘察安排。",
+      "heroTagline": "专业处理超规格货物。",
+      "content1": "超规格（OOG）货物需要专用设备和处理专业知识。",
+      "content2": "我们安排平板架、开顶柜和专用集装箱用于超大货物。",
+      "content3": "我们的团队处理捆扎、固定和所有必要的文件。",
+      "content4": "我们与航运公司和港口当局协调，确保OOG操作顺利进行。"
+    },
+    "import": {
+      "title": "进口服务",
+      "description": "全面的进口处理服务。",
+      "heroTagline": "端到端进口解决方案。",
+      "content1": "我们全面的进口服务涵盖从起运地到目的地的整个过程。",
+      "content2": "我们处理清关、关税支付和最后一公里配送。",
+      "content3": "我们的团队提供进口法规和合规要求的指导。",
+      "content4": "我们提供保税仓储和延期付税选项。"
+    },
+    "consolidation": {
+      "title": "货物整合",
+      "description": "直接出口整合到关键目的地。",
+      "heroTagline": "经济高效的货物整合服务。",
+      "content1": "我们的整合服务将多个货物合并，以实现经济高效的运输。",
+      "content2": "我们运营定期整合服务到主要全球目的地。",
+      "content3": "降低您的运输成本同时保持可靠的交货时间表。",
+      "content4": "我们的整合网络覆盖亚洲、欧洲、美洲及其他地区。"
+    },
+    "liquidCargo": {
+      "title": "液体货物运输",
+      "description": "液体货物专业运输解决方案。"
+    },
+    "thirdPartyLogistics": {
+      "title": "第三方物流服务",
+      "description": "先进的第三方物流解决方案。"
+    },
+    "linerAgency": {
+      "title": "船代服务",
+      "description": "为航运公司提供端到端服务。"
+    },
     "readMore": "了解更多"
   },
   "about": {
@@ -55,9 +144,18 @@
   "advantages": {
     "title": "我们的优势",
     "subtitle": "通过能力、服务和专业知识提供卓越",
-    "transportation": { "title": "运输能力", "description": "从事全国各地的货物运输服务。" },
-    "logistics": { "title": "物流服务", "description": "先进的信息系统，全程可见。" },
-    "team": { "title": "团队人员", "description": "高度竞争力的运营团队。" }
+    "transportation": {
+      "title": "运输能力",
+      "description": "从事全国各地的货物运输服务。"
+    },
+    "logistics": {
+      "title": "物流服务",
+      "description": "先进的信息系统，全程可见。"
+    },
+    "team": {
+      "title": "团队人员",
+      "description": "高度竞争力的运营团队。"
+    }
   },
   "contact": {
     "title": "联系我们",
@@ -74,7 +172,16 @@
     "headquarters": "总部",
     "messageSent": "您的消息已发送。",
     "logisticsDesc": "物流涉及货物流动的高效规划和协调。",
-    "form": { "firstName": "名字", "lastName": "姓氏", "name": "您的姓名", "email": "您的邮箱", "phone": "电话号码", "subject": "主题", "message": "留言", "send": "发送消息" },
+    "form": {
+      "firstName": "名字",
+      "lastName": "姓氏",
+      "name": "您的姓名",
+      "email": "您的邮箱",
+      "phone": "电话号码",
+      "subject": "主题",
+      "message": "留言",
+      "send": "发送消息"
+    },
     "success": "消息发送成功！",
     "error": "出错了，请重试。"
   },
@@ -84,12 +191,31 @@
     "loading": "正在加载文章...",
     "noArticles": "暂无发布的文章。",
     "readMore": "阅读更多",
-    "minRead": "分钟阅读"
+    "minRead": "分钟阅读",
+    "article": "文章",
+    "emptyCta": "创建第一篇文章"
   },
   "globalPresence": {
     "title": "全球业务",
+    "subtitle": "以本地专业知识服务全球客户",
     "globalLocations": "全球分布",
-    "office": "办公室"
+    "office": "办公室",
+    "viewDetails": "查看详情",
+    "countries": {
+      "china": "中国",
+      "singapore": "新加坡",
+      "india": "印度",
+      "indonesia": "印度尼西亚",
+      "malaysia": "马来西亚",
+      "thailand": "泰国",
+      "sriLanka": "斯里兰卡",
+      "bangladesh": "孟加拉国",
+      "myanmar": "缅甸",
+      "pakistan": "巴基斯坦",
+      "uae": "阿联酋",
+      "uk": "英国",
+      "usa": "美国"
+    }
   },
   "footer": {
     "company": "海迅环球有限公司",
