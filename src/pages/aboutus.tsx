@@ -52,7 +52,6 @@ const AboutUs: React.FC = () => {
           {/* MAIN CONTENT */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              
               {/* LEFT IMAGE – BIGGER & CENTERED, ICON REMOVED */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
@@ -62,7 +61,6 @@ const AboutUs: React.FC = () => {
                 className="w-full flex justify-center"
               >
                 <div className="relative w-[380px] sm:w-[480px] md:w-[560px] mx-auto">
-
                   {/* Glow behind card */}
                   <div
                     className="absolute inset-0 rounded-[36px] bg-gradient-to-br from-rose-100/80 via-white to-transparent blur-3xl -z-10"
@@ -75,8 +73,13 @@ const AboutUs: React.FC = () => {
                       className="px-7 py-3 rounded-2xl text-white shadow-2xl text-center"
                       style={{ backgroundColor: RUBY_RED }}
                     >
-                      <span className="text-2xl font-bold leading-none block">9+</span>
-                      <span className="text-sm opacity-90 block mt-1">Years of Growth</span>
+                      {/* If you want this number also translatable, wrap with t(...) */}
+                      <span className="text-2xl font-bold leading-none block">
+                        {t("about.yearsNumber", { defaultValue: "9+" })}
+                      </span>
+                      <span className="text-sm opacity-90 block mt-1">
+                        {t("about.yearsOfGrowth")}
+                      </span>
                     </div>
                   </div>
 
@@ -84,7 +87,7 @@ const AboutUs: React.FC = () => {
                   <div className="rounded-[36px] overflow-hidden shadow-[0_30px_70px_rgba(15,23,42,0.22)] bg-slate-100">
                     <img
                       src="/Dubai.jpg"
-                      alt="Haixun Global operations"
+                      alt={t("about.aboutImageAlt")}
                       className="w-full h-[360px] sm:h-[420px] md:h-[480px] object-cover"
                     />
                   </div>
@@ -99,42 +102,38 @@ const AboutUs: React.FC = () => {
                 viewport={{ once: true }}
                 className="space-y-6"
               >
+                {/* SMALL LABEL – reuse same key as AboutSection */}
                 <p
                   className="text-sm font-semibold tracking-[0.22em] uppercase"
                   style={{ color: RUBY_RED }}
                 >
-                  Who We Are
+                  {t("about.whoWeAre")}
                 </p>
 
+                {/* MAIN TITLE */}
                 <h1
                   className="text-4xl md:text-5xl font-extrabold tracking-tight"
                   style={{ color: RUBY_RED }}
                 >
-                  About Haixun Global
+                  {t("about.aboutTitle")}
                 </h1>
 
+                {/* SUB HEADING */}
                 <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
-                  30+ Years of Logistics Excellence
+                  {t("about.experienceHeading")}
                 </h2>
 
+                {/* PARAGRAPHS */}
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Haixun Global Logistics (Shenzhen) Co., Ltd., headquartered in Shenzhen, China,
-                  provides global freight forwarding services for LCL, FCL, general cargo, and bulk
-                  cargo via sea, land, and air. Our solutions include booking, customs clearance,
-                  inspection, warehousing, distribution, door-to-door delivery, and logistics
-                  planning.
+                  {t("about.pageParagraph1")}
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Guided by integrity, honesty, service, and speed, we follow a corporate spirit of
-                  pragmatism, hard work, and responsibility. Our business model is built on
-                  innovation, win-win cooperation, and a strong commitment to customer satisfaction.
+                  {t("about.pageParagraph2")}
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
-                  With a modern management approach, advanced technology, and attentive customer
-                  care, we consistently adhere to the principle of putting customers first. We aim
-                  to impress clients with reliable, efficient, and seamless logistics solutions.
+                  {t("about.pageParagraph3")}
                 </p>
 
                 <div className="pt-4">
@@ -148,7 +147,6 @@ const AboutUs: React.FC = () => {
                   </Link>
                 </div>
               </motion.div>
-
             </div>
           </div>
         </section>
