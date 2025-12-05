@@ -1,182 +1,494 @@
-import { motion } from "framer-motion";
-import type { LucideIcon } from "lucide-react";
-import {
-  Ship,
-  Boxes,
-  Warehouse as WarehouseIcon,
-  Package,
-  Plane,
-  FileCheck,
-  ArrowDownToLine,
-  Container,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "react-i18next";
-import ScrollAnimation from "./ScrollAnimation";
+import CountrySelector from "@/components/CountrySelector";
+import { getCurrentCountryFromPath, detectCountryByIP } from "@/services/countryDetection";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
-type Service = {
-  icon: LucideIcon;
-  image: string;
-  titleKey: string;
-  descriptionKey: string;
-  link: string;
-};
-
-export default function HaixunServicesSection() {
-  const { t } = useTranslation();
-
-  const services: Service[] = [
-    {
-      icon: Boxes,
-      image: "/fcp.jpg",
-      titleKey: "services.lcl.title",
-      descriptionKey: "services.lcl.description",
-      link: "/services/lcl",
-    },
-    {
-      icon: Ship,
-      image: "/ocean-freight-realistic.jpg",
-      titleKey: "services.fcl.title",
-      descriptionKey: "services.fcl.description",
-      link: "/services/fcl",
-    },
-    {
-      icon: WarehouseIcon,
-      image: "/warehouse-realistic.jpg",
-      titleKey: "services.warehouse.title",
-      descriptionKey: "services.warehouse.description",
-      link: "/services/warehousing",
-    },
-    {
-      icon: Package,
-      image: "/Projectcargofrontbanner.jpg",
-      titleKey: "services.project.title",
-      descriptionKey: "services.project.description",
-      link: "/services/project-cargo",
-    },
-    {
-      icon: Plane,
-      image: "/Airfrontbannner.png",
-      titleKey: "services.air.title",
-      descriptionKey: "services.air.description",
-      link: "/services/air-freight",
-    },
-    {
-      icon: FileCheck,
-      image: "/customs.jpg",
-      titleKey: "services.customs.title",
-      descriptionKey: "services.customs.description",
-      link: "/services/customs-clearance",
-    },
-    {
-      icon: ArrowDownToLine,
-      image: "/cfs-realistic.jpg",
-      titleKey: "services.import.title",
-      descriptionKey: "services.import.description",
-      link: "/services/import",
-    },
-    {
-      icon: Boxes,
-      image: "/lcl-realistic.jpg",
-      titleKey: "services.consolidation.title",
-      descriptionKey: "services.consolidation.description",
-      link: "/services/consolidation",
-    },
-    {
-      icon: Container,
-      image: "/project-cargo-realistic.jpg",
-      titleKey: "services.oog.title",
-      descriptionKey: "services.oog.description",
-      link: "/services/oog-shipments",
-    },
-  ];
-
+/** Small flag component that never shows raw text like '/lk.svg' */
+function FlagIcon({
+  code,
+  className = "h-5 w-7 object-contain rounded-[2px]",
+}: {
+  code: string;
+  className?: string;
+}) {
+  const iso = (code || "").toLowerCase();
+  const src = `/${iso}.svg`;
   return (
-    <section
-      className="relative py-20 overflow-hidden min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{
-        background:
-          "linear-gradient(to top, #9B111E 0%, #B24049 30%, #D58A8A 65%, #F2E6E6 100%)",
+    <img
+      src={src}
+      alt=""
+      aria-hidden="true"
+      className={className}
+      draggable={false}
+      onError={(e) => {
+        (e.currentTarget as HTMLImageElement).style.display = "none";
       }}
-    >
-      <div className="container mx-auto px-4">
-        
-        {/* HEADER */}
-        <ScrollAnimation className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-black/70 mb-3">
-            {t("services.overline", "What We Do")}
-          </p>
-
-          <h2 className="font-extrabold text-black text-4xl md:text-5xl mb-3 leading-tight">
-            {t("services.title")}
-          </h2>
-
-          <p className="text-lg text-black/80 max-w-2xl mx-auto">
-            {t("services.subtitle")}
-          </p>
-        </ScrollAnimation>
-
-        {/* SERVICE CARDS */}
-        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const numberLabel = String(index + 1).padStart(2, "0");
-
-            return (
-              <ScrollAnimation key={service.titleKey} delay={index * 60}>
-                <Link to={service.link} aria-label={t(service.titleKey)}>
-                  <motion.article
-                    whileHover={{ y: -10 }}
-                    transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                    className="bg-white rounded-[26px] shadow-[0_18px_50px_rgba(15,23,42,0.35)] overflow-hidden flex flex-col h-full cursor-pointer"
-                  >
-                    {/* IMAGE */}
-                    <div className="relative">
-                      <img
-                        src={service.image}
-                        alt={t(service.titleKey)}
-                        className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
-                        loading="lazy"
-                      />
-
-                      {/* FLOATING ICON */}
-                      <div className="absolute left-6 -bottom-7">
-                        <div className="w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-[#BC0018]" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* TEXT */}
-                    <div className="px-8 pt-12 pb-8 flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-2">
-                          {t(service.titleKey)}
-                        </h3>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          {t(service.descriptionKey)}
-                        </p>
-                      </div>
-
-                      <div className="mt-8 flex items-end justify-between">
-                        <span className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-[#BC0018]">
-                          {t("services.readMore")}
-                          <ArrowDownToLine className="w-4 h-4 ml-2" />
-                        </span>
-
-                        <span className="text-4xl font-semibold text-slate-200">
-                          {numberLabel}
-                        </span>
-                      </div>
-                    </div>
-
-                  </motion.article>
-                </Link>
-              </ScrollAnimation>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    />
   );
 }
+
+const Navigation = () => {
+  const { t, i18n } = useTranslation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
+  const [ipCountry, setIpCountry] = useState<{ code: string; name: string } | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const { user } = useAuth();
+
+  const [currentLang, setCurrentLang] = useState(i18n.language || "en");
+
+  // Load preferred language from localStorage
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("preferredLanguage");
+      if (stored && stored !== currentLang) {
+        i18n.changeLanguage(stored);
+        setCurrentLang(stored);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  // Keep state in sync if i18n language changes
+  useEffect(() => {
+    setCurrentLang(i18n.language);
+  }, [i18n.language]);
+
+  // Toggle language EN <-> ZH and persist
+  const handleLanguageSwitch = () => {
+    const next = currentLang === "zh" ? "en" : "zh";
+    i18n.changeLanguage(next);
+    setCurrentLang(next);
+    try {
+      localStorage.setItem("preferredLanguage", next);
+    } catch {
+      // ignore
+    }
+  };
+
+  // We use the URL to decide the current country flag
+  const currentCountry = getCurrentCountryFromPath(location.pathname);
+
+  // Detect country by IP for flag display
+  useEffect(() => {
+    const detect = async () => {
+      try {
+        const saved = localStorage.getItem("preferredCountry");
+        if (saved) {
+          setIpCountry(JSON.parse(saved));
+          return;
+        }
+        const country = await detectCountryByIP();
+        setIpCountry({ code: country.code, name: country.name });
+      } catch {
+        setIpCountry(null);
+      }
+    };
+    detect();
+  }, []);
+
+  // Handle scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isActive = (path: string) => location.pathname === path;
+
+  const getNavLink = (basePath: string) => {
+    if (currentCountry.code === "SG") return basePath;
+    return `/${currentCountry.name.toLowerCase().replace(" ", "-")}${basePath}`;
+  };
+
+  const isHomePage = location.pathname === "/";
+
+  const desktopLinkColor = (active: boolean) =>
+    active
+      ? "text-red-600"
+      : isScrolled || !isHomePage
+      ? "text-gray-900"
+      : "text-white";
+
+  const desktopLangButtonClasses =
+    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors";
+
+  const langLabel = currentLang === "zh" ? "EN" : "中文";
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+        isScrolled || !isHomePage ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 py-2 sm:py-4 lg:py-[18px]">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/">
+              <img
+                src="/haixun-logo.svg"
+                alt="Haixun Global Co., Ltd"
+                className="h-8 sm:h-12 lg:h-14 w-auto object-contain"
+              />
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-6">
+            <Link
+              to="/"
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+                isActive("/")
+              )}`}
+            >
+              {t("nav.home")}
+            </Link>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors flex items-center gap-1 ${
+                  location.pathname.includes("/services")
+                    ? "text-red-600"
+                    : desktopLinkColor(false)
+                }`}
+              >
+                {t("nav.services")} <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64 bg-white border-gray-200 shadow-lg z-[100]">
+                {/* All services */}
+                <DropdownMenuItem asChild>
+                  <Link to="/services" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.allServices")}
+                  </Link>
+                </DropdownMenuItem>
+
+                {/* Services from HaixunServicesSection */}
+                <DropdownMenuItem asChild>
+                  <Link to="/services/lcl" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.lcl.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/services/fcl" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.fcl.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/services/warehousing" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.warehouse.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/services/project-cargo" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.project.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/services/air-freight" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.air.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/services/customs-clearance"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
+                    {t("services.customs.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/services/import" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.import.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/services/consolidation" className="w-full cursor-pointer hover:bg-gray-100">
+                    {t("services.consolidation.title")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/services/oog-shipments"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
+                    {t("services.oog.title")}
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Link
+              to="/about-us"
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+                isActive("/about-us")
+              )}`}
+            >
+              {t("nav.about")}
+            </Link>
+
+            <Link
+              to="/blog"
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+                isActive("/blog")
+              )}`}
+            >
+              {t("nav.news")}
+            </Link>
+
+            <Link
+              to="/advantages"
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+                isActive("/advantages")
+              )}`}
+            >
+              {t("nav.advantage")}
+            </Link>
+
+            <Link
+              to="/global-presence"
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+                isActive("/global-presence")
+              )}`}
+            >
+              {t("nav.globalPresence")}
+            </Link>
+
+            <Link
+              to="/contact"
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+                isActive("/contact")
+              )}`}
+            >
+              {t("nav.contact")}
+            </Link>
+
+            {/* Desktop language button with red icon on white bg */}
+            <button
+              type="button"
+              onClick={handleLanguageSwitch}
+              className={`${desktopLangButtonClasses} ${
+                isScrolled || !isHomePage
+                  ? "border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
+                  : "border-white/40 text-white hover:bg-white hover:text-black"
+              }`}
+            >
+              {langLabel}
+            </button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <div className="lg:hidden flex items-center gap-2">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 mr-2"
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? (
+                <X
+                  className={isScrolled || !isHomePage ? "text-gray-900" : "text-white"}
+                  size={24}
+                />
+              ) : (
+                <Menu
+                  className={isScrolled || !isHomePage ? "text-gray-900" : "text-white"}
+                  size={24}
+                />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white py-4 shadow-md animate-fade-in border-t max-h-[calc(100vh-56px)] overflow-y-auto">
+          <div className="container mx-auto px-4">
+            <nav className="flex flex-col space-y-4">
+              <Link
+                to="/"
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
+                  isActive("/") ? "text-red-600" : "text-gray-900"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.home")}
+              </Link>
+
+              {/* Services Collapsible */}
+              <div className="flex flex-col">
+                <button
+                  onClick={() => setIsCompanyDropdownOpen(!isCompanyDropdownOpen)}
+                  className="flex items-center justify-between font-medium py-2 text-lg hover:text-red-600 transition-colors text-gray-900"
+                >
+                  {t("nav.services")}
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      isCompanyDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {isCompanyDropdownOpen && (
+                  <div className="flex flex-col pl-4 space-y-2 mt-2">
+                    {/* All services */}
+                    <Link
+                      to="/services"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.allServices")}
+                    </Link>
+
+                    {/* Services from HaixunServicesSection */}
+                    <Link
+                      to="/services/lcl"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.lcl.title")}
+                    </Link>
+                    <Link
+                      to="/services/fcl"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.fcl.title")}
+                    </Link>
+                    <Link
+                      to="/services/warehousing"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.warehouse.title")}
+                    </Link>
+                    <Link
+                      to="/services/project-cargo"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.project.title")}
+                    </Link>
+                    <Link
+                      to="/services/air-freight"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.air.title")}
+                    </Link>
+                    <Link
+                      to="/services/customs-clearance"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.customs.title")}
+                    </Link>
+                    <Link
+                      to="/services/import"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.import.title")}
+                    </Link>
+                    <Link
+                      to="/services/consolidation"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.consolidation.title")}
+                    </Link>
+                    <Link
+                      to="/services/oog-shipments"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("services.oog.title")}
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              <Link
+                to="/about-us"
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
+                  isActive("/about-us") ? "text-red-600" : "text-gray-900"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.about")}
+              </Link>
+
+              <Link
+                to="/blog"
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
+                  isActive("/blog") ? "text-red-600" : "text-gray-900"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.news")}
+              </Link>
+
+              <Link
+                to="/advantages"
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
+                  isActive("/advantages") ? "text-red-600" : "text-gray-900"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.advantage")}
+              </Link>
+
+              <Link
+                to="/global-presence"
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
+                  isActive("/global-presence") ? "text-red-600" : "text-gray-900"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.globalPresence")}
+              </Link>
+
+              <Link
+                to="/contact"
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
+                  isActive("/contact") ? "text-red-600" : "text-gray-900"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("nav.contact")}
+              </Link>
+
+              {/* Mobile language button with red color */}
+              <button
+                type="button"
+                onClick={() => {
+                  handleLanguageSwitch();
+                  setIsMenuOpen(false);
+                }}
+                className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-red-600 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-600 hover:text-white transition-colors"
+              >
+                {langLabel}
+              </button>
+            </nav>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Navigation;
