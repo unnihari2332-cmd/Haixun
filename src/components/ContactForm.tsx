@@ -28,9 +28,8 @@ export default function ContactUsSection() {
   };
 
   return (
-    <section className="py-20 bg-[#F5F5F5]">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-        
         {/* LEFT COLUMN */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -207,7 +206,6 @@ export default function ContactUsSection() {
             />
           </div>
         </motion.div>
-
       </div>
     </section>
   );
