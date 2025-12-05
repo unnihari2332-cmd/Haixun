@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
+/** Small flag component that never shows raw text like '/lk.svg' */
 function FlagIcon({
   code,
   className = "h-5 w-7 object-contain rounded-[2px]",
@@ -48,6 +49,7 @@ const Navigation = () => {
 
   const [currentLang, setCurrentLang] = useState(i18n.language || "en");
 
+  // Load preferred language from localStorage
   useEffect(() => {
     try {
       const stored = localStorage.getItem("preferredLanguage");
@@ -55,24 +57,32 @@ const Navigation = () => {
         i18n.changeLanguage(stored);
         setCurrentLang(stored);
       }
-    } catch {}
+    } catch {
+      // ignore
+    }
   }, []);
 
+  // Keep state in sync if i18n language changes
   useEffect(() => {
     setCurrentLang(i18n.language);
   }, [i18n.language]);
 
+  // Toggle language EN <-> ZH and persist
   const handleLanguageSwitch = () => {
     const next = currentLang === "zh" ? "en" : "zh";
     i18n.changeLanguage(next);
     setCurrentLang(next);
     try {
       localStorage.setItem("preferredLanguage", next);
-    } catch {}
+    } catch {
+      // ignore
+    }
   };
 
+  // We use the URL to decide the current country flag
   const currentCountry = getCurrentCountryFromPath(location.pathname);
 
+  // Detect country by IP for flag display
   useEffect(() => {
     const detect = async () => {
       try {
@@ -90,6 +100,7 @@ const Navigation = () => {
     detect();
   }, []);
 
+  // Handle scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -127,6 +138,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-3 sm:px-4 md:px-6 py-2 sm:py-4 lg:py-[18px]">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
               <img
@@ -137,7 +149,7 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* DESKTOP NAV */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
             <Link
               to="/"
@@ -158,76 +170,67 @@ const Navigation = () => {
               >
                 {t("nav.services")} <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-
               <DropdownMenuContent className="w-64 bg-white border-gray-200 shadow-lg z-[100]">
                 <DropdownMenuItem asChild>
-                  <Link to="/services" className="hover:bg-gray-100">
+                  <Link to="/services" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.allServices")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/lcl" className="hover:bg-gray-100">
+                  <Link to="/services/lcl" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.lcl.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/cfs" className="hover:bg-gray-100">
+                  <Link to="/services/cfs" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.cfs.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/sea-freight" className="hover:bg-gray-100">
+                  <Link to="/services/sea-freight" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.oceanFreight.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/air-freight" className="hover:bg-gray-100">
+                  <Link to="/services/air-freight" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.air.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/warehousing" className="hover:bg-gray-100">
+                  <Link to="/services/warehousing" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.warehouse.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/project-cargo" className="hover:bg-gray-100">
+                  <Link to="/services/project-cargo" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.projectCargo.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/customs-clearance" className="hover:bg-gray-100">
+                  <Link to="/services/customs-clearance" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.customs.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/consolidation" className="hover:bg-gray-100">
+                  <Link to="/services/consolidation" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.consolidation.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/liquid-cargo" className="hover:bg-gray-100">
+                  <Link to="/services/liquid-cargo" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.liquidCargo.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/third-party-logistics" className="hover:bg-gray-100">
+                  <Link
+                    to="/services/third-party-logistics"
+                    className="w-full cursor-pointer hover:bg-gray-100"
+                  >
                     {t("services.thirdPartyLogistics.title")}
                   </Link>
                 </DropdownMenuItem>
-
                 <DropdownMenuItem asChild>
-                  <Link to="/services/liner-agency" className="hover:bg-gray-100">
+                  <Link to="/services/liner-agency" className="w-full cursor-pointer hover:bg-gray-100">
                     {t("services.linerAgency.title")}
                   </Link>
                 </DropdownMenuItem>
@@ -236,7 +239,7 @@ const Navigation = () => {
 
             <Link
               to="/about-us"
-              className={`font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
                 isActive("/about-us")
               )}`}
             >
@@ -245,7 +248,7 @@ const Navigation = () => {
 
             <Link
               to="/blog"
-              className={`font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
                 isActive("/blog")
               )}`}
             >
@@ -254,7 +257,7 @@ const Navigation = () => {
 
             <Link
               to="/advantages"
-              className={`font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
                 isActive("/advantages")
               )}`}
             >
@@ -263,7 +266,7 @@ const Navigation = () => {
 
             <Link
               to="/global-presence"
-              className={`font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
                 isActive("/global-presence")
               )}`}
             >
@@ -272,13 +275,14 @@ const Navigation = () => {
 
             <Link
               to="/contact"
-              className={`font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
+              className={`nav-link font-medium text-base xl:text-lg hover:text-red-600 transition-colors ${desktopLinkColor(
                 isActive("/contact")
               )}`}
             >
               {t("nav.contact")}
             </Link>
 
+            {/* Desktop language button with red icon on white bg */}
             <button
               type="button"
               onClick={handleLanguageSwitch}
@@ -292,11 +296,11 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* MOBILE MENU BUTTON — moved left */}
+          {/* Mobile Toggle */}
           <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 mr-2"   {/* ← MOVED LEFT */}
+              className="p-2 mr-2"
               aria-label="Toggle Menu"
             >
               {isMenuOpen ? (
@@ -315,14 +319,14 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* MOBILE NAVIGATION */}
+      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white py-4 shadow-md border-t max-h-[calc(100vh-56px)] overflow-y-auto">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white py-4 shadow-md animate-fade-in border-t max-h-[calc(100vh-56px)] overflow-y-auto">
           <div className="container mx-auto px-4">
             <nav className="flex flex-col space-y-4">
               <Link
                 to="/"
-                className={`font-medium py-2 text-lg ${
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
                   isActive("/") ? "text-red-600" : "text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -330,11 +334,11 @@ const Navigation = () => {
                 {t("nav.home")}
               </Link>
 
-              {/* SERVICES COLLAPSE */}
+              {/* Services Collapsible */}
               <div className="flex flex-col">
                 <button
                   onClick={() => setIsCompanyDropdownOpen(!isCompanyDropdownOpen)}
-                  className="flex items-center justify-between py-2 text-lg text-gray-900"
+                  className="flex items-center justify-between font-medium py-2 text-lg hover:text-red-600 transition-colors text-gray-900"
                 >
                   {t("nav.services")}
                   <ChevronDown
@@ -343,100 +347,88 @@ const Navigation = () => {
                     }`}
                   />
                 </button>
-
                 {isCompanyDropdownOpen && (
                   <div className="flex flex-col pl-4 space-y-2 mt-2">
                     <Link
                       to="/services"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.allServices")}
                     </Link>
-
                     <Link
                       to="/services/lcl"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.lcl.title")}
                     </Link>
-
                     <Link
                       to="/services/cfs"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.cfs.title")}
                     </Link>
-
                     <Link
                       to="/services/sea-freight"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.oceanFreight.title")}
                     </Link>
-
                     <Link
                       to="/services/air-freight"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.air.title")}
                     </Link>
-
                     <Link
                       to="/services/warehousing"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.warehouse.title")}
                     </Link>
-
                     <Link
                       to="/services/project-cargo"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.projectCargo.title")}
                     </Link>
-
                     <Link
                       to="/services/customs-clearance"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.customs.title")}
                     </Link>
-
                     <Link
                       to="/services/consolidation"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.consolidation.title")}
                     </Link>
-
                     <Link
                       to="/services/liquid-cargo"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.liquidCargo.title")}
                     </Link>
-
                     <Link
                       to="/services/third-party-logistics"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.thirdPartyLogistics.title")}
                     </Link>
-
                     <Link
                       to="/services/liner-agency"
-                      className="py-2 text-base text-gray-700"
+                      className="py-2 text-base hover:text-red-600 transition-colors text-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t("services.linerAgency.title")}
@@ -447,7 +439,7 @@ const Navigation = () => {
 
               <Link
                 to="/about-us"
-                className={`py-2 text-lg ${
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
                   isActive("/about-us") ? "text-red-600" : "text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -457,7 +449,7 @@ const Navigation = () => {
 
               <Link
                 to="/blog"
-                className={`py-2 text-lg ${
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
                   isActive("/blog") ? "text-red-600" : "text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -467,7 +459,7 @@ const Navigation = () => {
 
               <Link
                 to="/advantages"
-                className={`py-2 text-lg ${
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
                   isActive("/advantages") ? "text-red-600" : "text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -477,7 +469,7 @@ const Navigation = () => {
 
               <Link
                 to="/global-presence"
-                className={`py-2 text-lg ${
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
                   isActive("/global-presence") ? "text-red-600" : "text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -487,7 +479,7 @@ const Navigation = () => {
 
               <Link
                 to="/contact"
-                className={`py-2 text-lg ${
+                className={`font-medium py-2 text-lg hover:text-red-600 transition-colors ${
                   isActive("/contact") ? "text-red-600" : "text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -495,13 +487,14 @@ const Navigation = () => {
                 {t("nav.contact")}
               </Link>
 
+              {/* Mobile language button with red color */}
               <button
                 type="button"
                 onClick={() => {
                   handleLanguageSwitch();
                   setIsMenuOpen(false);
                 }}
-                className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-red-600 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-600 hover:text-white"
+                className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-red-600 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-600 hover:text-white transition-colors"
               >
                 {langLabel}
               </button>
