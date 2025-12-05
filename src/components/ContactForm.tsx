@@ -29,44 +29,39 @@ export default function ContactUsSection() {
 
   return (
     <section
-      className="py-20 relative bg-cover bg-center bg-no-repeat"
+      className="py-20 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/about-bg.webp')",
       }}
     >
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/40"></div>
-
-      <div className="relative container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         
-        {/* LEFT COLUMN - CONTACT INFO */}
+        {/* LEFT COLUMN */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="space-y-8 text-white"
+          className="space-y-8"
         >
-          <h2 className="text-4xl font-extrabold text-[#FFCDD2] mb-4">
+          <h2 className="text-4xl font-extrabold text-[#9B111E] mb-4">
             {t("contact.title")}
           </h2>
 
-          <p className="text-white text-lg max-w-md leading-relaxed">
+          <p className="text-gray-900 text-lg max-w-md leading-relaxed">
             {t("contact.subtitle").split("No problem!")[0]}
-            <span className="text-[#FFCDD2] font-semibold">{t("contact.noProblem")}</span>{" "}
+            <span className="text-[#9B111E] font-semibold">{t("contact.noProblem")}</span>{" "}
             {t("contact.formIntro")}
           </p>
 
           <div className="space-y-6">
             {/* Office */}
-            <div className="flex items-start gap-4 bg-white/90 backdrop-blur p-5 rounded-xl shadow-sm border border-white/20">
+            <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-[#9B111E]/10">
               <div className="w-12 h-12 rounded-full bg-[#9B111E]/10 flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-[#9B111E]" />
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-gray-900">
-                  {t("contact.address")}
-                </h4>
+                <h4 className="text-lg font-semibold text-gray-900">{t("contact.address")}</h4>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   13C02, Block A, Zhaoxin Huijin Plaza
                   <br />
@@ -76,7 +71,7 @@ export default function ContactUsSection() {
             </div>
 
             {/* Email */}
-            <div className="flex items-start gap-4 bg-white/90 backdrop-blur p-5 rounded-xl shadow-sm border border-white/20">
+            <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-[#9B111E]/10">
               <div className="w-12 h-12 rounded-full bg-[#9B111E]/10 flex items-center justify-center">
                 <Mail className="w-6 h-6 text-[#9B111E]" />
               </div>
@@ -92,7 +87,7 @@ export default function ContactUsSection() {
             </div>
 
             {/* Phone */}
-            <div className="flex items-start gap-4 bg-white/90 backdrop-blur p-5 rounded-xl shadow-sm border border-white/20">
+            <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-[#9B111E]/10">
               <div className="w-12 h-12 rounded-full bg-[#9B111E]/10 flex items-center justify-center">
                 <Phone className="w-6 h-6 text-[#9B111E]" />
               </div>
@@ -109,7 +104,7 @@ export default function ContactUsSection() {
           </div>
         </motion.div>
 
-        {/* CENTER COLUMN - CONTACT FORM */}
+        {/* CENTER FORM */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -118,6 +113,7 @@ export default function ContactUsSection() {
           className="bg-white p-10 rounded-2xl shadow-xl border border-[#9B111E]/20"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
                 {t("contact.form.name")}
@@ -130,6 +126,7 @@ export default function ContactUsSection() {
               />
             </div>
 
+            {/* Email */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
                 {t("contact.form.yourEmail")}
@@ -143,6 +140,7 @@ export default function ContactUsSection() {
               />
             </div>
 
+            {/* Subject */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
                 {t("contact.form.subject")}
@@ -155,6 +153,7 @@ export default function ContactUsSection() {
               />
             </div>
 
+            {/* Message */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
                 {t("contact.form.message")}
@@ -189,7 +188,7 @@ export default function ContactUsSection() {
           </form>
         </motion.div>
 
-        {/* RIGHT COLUMN - IMAGE */}
+        {/* RIGHT IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -205,6 +204,7 @@ export default function ContactUsSection() {
             />
           </div>
         </motion.div>
+
       </div>
     </section>
   );
