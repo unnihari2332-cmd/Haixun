@@ -38,7 +38,7 @@ const GlobalPresence = () => {
   }, [isMobile]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-amber-50/30 to-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-red-50/30 to-white">
       <ScrollToTop />
 
       {/* Header */}
@@ -47,9 +47,9 @@ const GlobalPresence = () => {
       {/* White blank space BELOW header */}
       <div className={isMobile ? "h-[110px]" : "h-[150px]"}></div>
 
-      {/* Mobile fixed title */}
+      {/* Mobile fixed title (changed to red, no blur) */}
       {isMobile && (
-        <div className="fixed top-20 left-0 right-0 z-30 bg-gradient-to-r from-amber-500 to-amber-400 p-3 text-white text-center shadow-md">
+        <div className="fixed top-20 left-0 right-0 z-30 bg-gradient-to-r from-red-600 to-red-500 p-3 text-white text-center shadow-md">
           <h1 className="text-lg font-bold">{t("globalPresence.title")}</h1>
         </div>
       )}
@@ -111,4 +111,3 @@ const GlobalPresence = () => {
 };
 
 export default GlobalPresence;
-
