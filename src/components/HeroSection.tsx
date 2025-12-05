@@ -27,7 +27,6 @@ const HeroSection: React.FC = () => {
   const videoPoster = "/hero-poster.jpg";
 
   const [index, setIndex] = useState(0);
-  const [loaded, setLoaded] = useState<boolean[]>(() => heroImages.map(() => false));
   const [autoPlay, setAutoPlay] = useState(true);
   const [useVideo, setUseVideo] = useState(true);
 
@@ -37,29 +36,6 @@ const HeroSection: React.FC = () => {
     typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
   ).current;
-
-  useEffect(() => {
-    const imgs = heroImages.map((src, i) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () =>
-        setLoaded((prev) => {
-          const next = [...prev];
-          next[i] = true;
-          return next;
-        });
-      return img;
-    });
-    return () => imgs.forEach((img) => (img.onload = null));
-  }, [heroImages]);
-
-  useEffect(() => {
-    if (prefersReducedMotion || !autoPlay || useVideo) return;
-    const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(id);
-  }, [heroImages.length, prefersReducedMotion, autoPlay, useVideo]);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -87,6 +63,14 @@ const HeroSection: React.FC = () => {
     document.addEventListener("visibilitychange", onVis);
     return () => document.removeEventListener("visibilitychange", onVis);
   }, [prefersReducedMotion]);
+
+  useEffect(() => {
+    if (prefersReducedMotion || !autoPlay || useVideo) return;
+    const id = setInterval(() => {
+      setIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [heroImages.length, prefersReducedMotion, autoPlay, useVideo]);
 
   const goNext = () => {
     setAutoPlay(false);
@@ -130,12 +114,12 @@ const HeroSection: React.FC = () => {
         )}
       </div>
 
-      {/* LEFT 25% GRADIENT — DISABLED ON MOBILE */}
+      {/* LEFT 35% GRADIENT — DISABLED ON MOBILE */}
       <div
         className="
           hidden sm:block
           absolute inset-y-0 left-0
-          w-[25%]
+          w-[35%]
           bg-gradient-to-r
           from-black/70 via-black/40 to-transparent
           pointer-events-none
