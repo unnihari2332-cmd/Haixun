@@ -218,7 +218,7 @@ const Navigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/services/oog-shipments" className="w-full cursor-pointer hover:bg-gray-100">
-                    {t("services.oog shipments.title")}
+                    {t("services.oogshipments.title")}
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
