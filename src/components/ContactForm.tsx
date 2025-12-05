@@ -29,32 +29,37 @@ export default function ContactUsSection() {
 
   return (
     <section
-      className="py-20"
+      className="py-20 relative bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundColor: "#F5EAEA", // 🌸 Full soft rose white background
+        backgroundImage: "url('/about-bg.webp')",
       }}
     >
-      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      <div className="relative container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        
         {/* LEFT COLUMN - CONTACT INFO */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="space-y-8 text-white"
         >
-          <h2 className="text-4xl font-extrabold text-[#9B111E] mb-4">
+          <h2 className="text-4xl font-extrabold text-[#FFCDD2] mb-4">
             {t("contact.title")}
           </h2>
-          <p className="text-gray-800 text-lg max-w-md leading-relaxed">
+
+          <p className="text-white text-lg max-w-md leading-relaxed">
             {t("contact.subtitle").split("No problem!")[0]}
-            <span className="text-[#9B111E] font-semibold">{t("contact.noProblem")}</span>{" "}
+            <span className="text-[#FFCDD2] font-semibold">{t("contact.noProblem")}</span>{" "}
             {t("contact.formIntro")}
           </p>
 
           <div className="space-y-6">
             {/* Office */}
-            <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-[#9B111E]/10">
+            <div className="flex items-start gap-4 bg-white/90 backdrop-blur p-5 rounded-xl shadow-sm border border-white/20">
               <div className="w-12 h-12 rounded-full bg-[#9B111E]/10 flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-[#9B111E]" />
               </div>
@@ -71,7 +76,7 @@ export default function ContactUsSection() {
             </div>
 
             {/* Email */}
-            <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-[#9B111E]/10">
+            <div className="flex items-start gap-4 bg-white/90 backdrop-blur p-5 rounded-xl shadow-sm border border-white/20">
               <div className="w-12 h-12 rounded-full bg-[#9B111E]/10 flex items-center justify-center">
                 <Mail className="w-6 h-6 text-[#9B111E]" />
               </div>
@@ -87,7 +92,7 @@ export default function ContactUsSection() {
             </div>
 
             {/* Phone */}
-            <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-[#9B111E]/10">
+            <div className="flex items-start gap-4 bg-white/90 backdrop-blur p-5 rounded-xl shadow-sm border border-white/20">
               <div className="w-12 h-12 rounded-full bg-[#9B111E]/10 flex items-center justify-center">
                 <Phone className="w-6 h-6 text-[#9B111E]" />
               </div>
