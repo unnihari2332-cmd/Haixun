@@ -19,12 +19,11 @@ const Footer = () => {
 
   const keyAddresses = [
     {
-      country: "China",
+      country: t("globalPresence.countries.china"),
       offices: [
         {
-          name: "Shenzhen Office",
-          address:
-            "13C02, Block A,\nZhaoxin Huijin Plaza 3085 Shennan East Road,\nLuohu, Shenzhen.",
+          name: t("footer.shenzhenOffice"),
+          address: t("footer.shenzhenAddress"),
           phone: "+86 75582222447",
           fax: "+86 75582192854",
           email: "helen@haixun.co",
