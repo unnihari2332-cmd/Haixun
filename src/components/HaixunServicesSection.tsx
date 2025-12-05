@@ -95,24 +95,23 @@ export default function HaixunServicesSection() {
     <section
       className="relative py-20 overflow-hidden min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        background:
-          "linear-gradient(to top, #9B111E 0%, #B24049 30%, #D58A8A 65%, #F2E6E6 100%)",
+        background: "#BC0018", // FULL RED BACKGROUND
       }}
     >
       <div className="container mx-auto px-4">
-        
+
         {/* HEADER */}
         <ScrollAnimation className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-black/70 mb-3">
+          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-white mb-3">
             {t("services.overline", "What We Do")}
           </p>
 
-          <h2 className="font-extrabold text-black text-4xl md:text-5xl mb-3 leading-tight">
-            {t("services.title")}
+          <h2 className="font-extrabold text-white text-4xl md:text-5xl mb-3 leading-tight">
+            {t("services.title", "Our Services")}
           </h2>
 
-          <p className="text-lg text-black/80 max-w-2xl mx-auto">
-            {t("services.subtitle")}
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            {t("services.subtitle", "Comprehensive logistics solutions tailored to your needs")}
           </p>
         </ScrollAnimation>
 
@@ -128,7 +127,7 @@ export default function HaixunServicesSection() {
                   <motion.article
                     whileHover={{ y: -10 }}
                     transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                    className="bg-white rounded-[26px] shadow-[0_18px_50px_rgba(15,23,42,0.35)] overflow-hidden flex flex-col h-full cursor-pointer"
+                    className="bg-white rounded-[26px] shadow-[0_18px_50px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col h-full cursor-pointer"
                   >
                     {/* IMAGE */}
                     <div className="relative">
