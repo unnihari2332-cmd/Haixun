@@ -130,7 +130,7 @@ const HeroSection: React.FC = () => {
         )}
       </div>
 
-      {/* OVERLAY CONTENT WITH STRONG BLACK OUTLINE */}
+      {/* OVERLAY CONTENT WITH BLACK OUTLINE */}
       <div
         className="
           absolute top-1/2 left-1/2
@@ -149,10 +149,11 @@ const HeroSection: React.FC = () => {
             font-extrabold
             leading-tight
             text-white
+            drop-shadow-lg
           "
           style={{
             textShadow:
-              "-3px -3px 4px #000, 3px -3px 4px #000, -3px 3px 4px #000, 3px 3px 4px #000",
+              "-2px -2px 3px #000, 2px -2px 3px #000, -2px 2px 3px #000, 2px 2px 3px #000",
           }}
         >
           {t("hero.title")}
@@ -167,7 +168,7 @@ const HeroSection: React.FC = () => {
           "
           style={{
             textShadow:
-              "-2px -2px 3px #000, 2px -2px 3px #000, -2px 2px 3px #000, 2px 2px 3px #000",
+              "-1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000",
           }}
         >
           {t("hero.subtitle")}
@@ -188,8 +189,7 @@ const HeroSection: React.FC = () => {
               hover:bg-[#A90015]
             "
             style={{
-              textShadow:
-                "-2px -2px 3px #000, 2px -2px 3px #000, -2px 2px 3px #000, 2px 2px 3px #000",
+              textShadow: "0px 0px 2px #000",
             }}
           >
             {t("hero.contactUs")}
@@ -197,19 +197,19 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* SLIDER BUTTONS */}
+      {/* IMAGE MODE SLIDER BUTTONS */}
       {!useVideo && (
         <>
           <button
             onClick={goPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/60 text-white rounded-full"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={goNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/60 text-white rounded-full"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -225,11 +225,8 @@ const HeroSection: React.FC = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-white backdrop-blur-sm hover:bg-white/20"
-              style={{
-                textShadow:
-                  "-2px -2px 3px #000, 2px -2px 3px #000, -2px 2px 3px #000, 2px 2px 3px #000",
-              }}
+              className="group flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white backdrop-blur-sm hover:bg-white/20"
+              style={{ textShadow: "0 0 3px black" }}
             >
               <span className="rounded-full bg-white/20 p-2">{link.icon}</span>
               <span className="text-xs sm:text-sm font-semibold">{link.title}</span>
