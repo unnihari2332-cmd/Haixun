@@ -4,8 +4,10 @@ import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 export default function ContactUsSection() {
+  const { t } = useTranslation();
   const [formStatus, setFormStatus] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -42,12 +44,12 @@ export default function ContactUsSection() {
           className="space-y-8"
         >
           <h2 className="text-4xl font-extrabold text-[#9B111E] mb-4">
-            Contact Us
+            {t("contact.title")}
           </h2>
           <p className="text-gray-800 text-lg max-w-md leading-relaxed">
-            Need to get in touch?{" "}
-            <span className="text-[#9B111E] font-semibold">No problem!</span>{" "}
-            You can use our contact form to send us a message.
+            {t("contact.subtitle").split("No problem!")[0]}
+            <span className="text-[#9B111E] font-semibold">{t("contact.noProblem")}</span>{" "}
+            {t("contact.formIntro")}
           </p>
 
           <div className="space-y-6">
@@ -58,7 +60,7 @@ export default function ContactUsSection() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900">
-                  Our Office Address
+                  {t("contact.address")}
                 </h4>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   13C02, Block A, Zhaoxin Huijin Plaza
@@ -74,7 +76,7 @@ export default function ContactUsSection() {
                 <Mail className="w-6 h-6 text-[#9B111E]" />
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-gray-900">Email Us</h4>
+                <h4 className="text-lg font-semibold text-gray-900">{t("contact.emailUs")}</h4>
                 <a
                   href="mailto:helen@haixun.co"
                   className="text-[#9B111E] text-sm hover:underline"
@@ -90,7 +92,7 @@ export default function ContactUsSection() {
                 <Phone className="w-6 h-6 text-[#9B111E]" />
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-gray-900">Call Us</h4>
+                <h4 className="text-lg font-semibold text-gray-900">{t("contact.callUs")}</h4>
                 <a
                   href="tel:+8675582222447"
                   className="text-[#9B111E] text-sm hover:underline"
@@ -113,11 +115,11 @@ export default function ContactUsSection() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
-                Your Name
+                {t("contact.form.name")}
               </label>
               <Input
                 name="Name"
-                placeholder="Enter your name"
+                placeholder={t("contact.form.enterName")}
                 required
                 className="border-gray-200 focus-visible:ring-[#9B111E]"
               />
@@ -125,12 +127,12 @@ export default function ContactUsSection() {
 
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
-                Your Email
+                {t("contact.form.yourEmail")}
               </label>
               <Input
                 name="Email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("contact.form.enterEmail")}
                 required
                 className="border-gray-200 focus-visible:ring-[#9B111E]"
               />
@@ -138,11 +140,11 @@ export default function ContactUsSection() {
 
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
-                Subject
+                {t("contact.form.subject")}
               </label>
               <Input
                 name="Subject"
-                placeholder="Enter subject"
+                placeholder={t("contact.form.enterSubject")}
                 required
                 className="border-gray-200 focus-visible:ring-[#9B111E]"
               />
@@ -150,11 +152,11 @@ export default function ContactUsSection() {
 
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-800">
-                Message
+                {t("contact.form.message")}
               </label>
               <Textarea
                 name="Message"
-                placeholder="Write your message"
+                placeholder={t("contact.form.writeMessage")}
                 rows={5}
                 required
                 className="border-gray-200 focus-visible:ring-[#9B111E]"
@@ -166,17 +168,17 @@ export default function ContactUsSection() {
               className="w-full bg-[#9B111E] hover:bg-[#7F0E18] text-white font-semibold text-lg py-6 flex items-center justify-center gap-2"
             >
               <Send className="w-5 h-5" />
-              Send Message
+              {t("contact.form.send")}
             </Button>
 
             {formStatus === "success" && (
               <p className="text-green-600 text-center mt-4">
-                ✅ Message sent successfully!
+                ✅ {t("contact.success")}
               </p>
             )}
             {formStatus === "error" && (
               <p className="text-red-600 text-center mt-4">
-                ❌ Something went wrong. Please try again.
+                ❌ {t("contact.error")}
               </p>
             )}
           </form>

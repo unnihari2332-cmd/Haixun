@@ -163,9 +163,13 @@
   },
   "contact": {
     "title": "联系我们",
-    "subtitle": "需要联系我们吗？没问题！",
+    "subtitle": "需要联系我们吗？",
+    "noProblem": "没问题！",
+    "formIntro": "您可以使用我们的联系表单发送消息。",
     "address": "我们的办公地址",
     "email": "邮箱",
+    "emailUs": "邮箱联系",
+    "callUs": "电话联系",
     "phone": "电话",
     "sendUsMail": "发送邮件",
     "feelFreeToWrite": "随时联系我们",
@@ -180,11 +184,16 @@
       "firstName": "名字",
       "lastName": "姓氏",
       "name": "您的姓名",
+      "yourEmail": "您的邮箱",
       "email": "您的邮箱",
       "phone": "电话号码",
       "subject": "主题",
       "message": "留言",
-      "send": "发送消息"
+      "send": "发送消息",
+      "enterName": "请输入您的姓名",
+      "enterEmail": "请输入您的邮箱",
+      "enterSubject": "请输入主题",
+      "writeMessage": "请输入您的留言"
     },
     "success": "消息发送成功！",
     "error": "出错了，请重试。"
