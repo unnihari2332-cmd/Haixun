@@ -130,7 +130,18 @@ const HeroSection: React.FC = () => {
         )}
       </div>
 
-      {/* OVERLAY CONTENT WITH BLACK OUTLINE */}
+      {/* LEFT SIDE GRADIENT OVERLAY */}
+      <div
+        className="
+          absolute inset-y-0 left-0 w-1/2
+          bg-gradient-to-r
+          from-black/70 via-black/40 to-transparent
+          pointer-events-none
+          z-[5]
+        "
+      ></div>
+
+      {/* CONTENT */}
       <div
         className="
           absolute top-1/2 left-1/2
@@ -149,12 +160,7 @@ const HeroSection: React.FC = () => {
             font-extrabold
             leading-tight
             text-white
-            drop-shadow-lg
           "
-          style={{
-            textShadow:
-              "-2px -2px 3px #000, 2px -2px 3px #000, -2px 2px 3px #000, 2px 2px 3px #000",
-          }}
         >
           {t("hero.title")}
         </h1>
@@ -166,10 +172,6 @@ const HeroSection: React.FC = () => {
             leading-relaxed
             text-gray-200
           "
-          style={{
-            textShadow:
-              "-1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000",
-          }}
         >
           {t("hero.subtitle")}
         </p>
@@ -188,16 +190,13 @@ const HeroSection: React.FC = () => {
               shadow-xl
               hover:bg-[#A90015]
             "
-            style={{
-              textShadow: "0px 0px 2px #000",
-            }}
           >
             {t("hero.contactUs")}
           </a>
         </div>
       </div>
 
-      {/* IMAGE MODE SLIDER BUTTONS */}
+      {/* SLIDER BUTTONS */}
       {!useVideo && (
         <>
           <button
@@ -226,7 +225,6 @@ const HeroSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white backdrop-blur-sm hover:bg-white/20"
-              style={{ textShadow: "0 0 3px black" }}
             >
               <span className="rounded-full bg-white/20 p-2">{link.icon}</span>
               <span className="text-xs sm:text-sm font-semibold">{link.title}</span>
