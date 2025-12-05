@@ -165,9 +165,13 @@
   },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "Need to get in touch? No problem!",
+    "subtitle": "Need to get in touch?",
+    "noProblem": "No problem!",
+    "formIntro": "You can use our contact form to send us a message.",
     "address": "Our Office Address",
     "email": "Email Us",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
     "phone": "Call Us",
     "sendUsMail": "Send Us Mail",
     "feelFreeToWrite": "Feel Free To Write",
@@ -182,11 +186,16 @@
       "firstName": "First Name",
       "lastName": "Last Name",
       "name": "Your Name",
+      "yourEmail": "Your Email",
       "email": "Your Email",
       "phone": "Phone Number",
       "subject": "Subject",
       "message": "Message",
-      "send": "Send Message"
+      "send": "Send Message",
+      "enterName": "Enter your name",
+      "enterEmail": "Enter your email",
+      "enterSubject": "Enter subject",
+      "writeMessage": "Write your message"
     },
     "success": "Message sent successfully!",
     "error": "Something went wrong. Please try again."
