@@ -42,17 +42,17 @@ export default function ContactUsSection() {
         >
           {/* TOP SMALL TITLE */}
           <p className="text-xs md:text-sm font-semibold text-[#9B111E] tracking-[0.2em] uppercase mb-2">
-            Send Us Mail
+            {t("contact.sendUsMail")}
           </p>
 
           {/* MAIN TITLE */}
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
-            Feel Free To Write
+            {t("contact.feelFreeToWrite")}
           </h2>
 
           {/* SUBTEXT */}
           <p className="text-gray-700 text-sm md:text-base max-w-xl mb-8 leading-relaxed">
-            Logistics involves efficient planning and coordination of goods movement.
+            {t("contact.logisticsDesc")}
           </p>
 
           {/* FORM */}
@@ -62,13 +62,13 @@ export default function ContactUsSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
                 name="FirstName"
-                placeholder="First Name"
+                placeholder={t("contact.form.firstName")}
                 required
                 className="h-12 rounded-none border-0 bg-[#FBF5EE] text-sm"
               />
               <Input
                 name="LastName"
-                placeholder="Last Name"
+                placeholder={t("contact.form.lastName")}
                 required
                 className="h-12 rounded-none border-0 bg-[#FBF5EE] text-sm"
               />
@@ -79,13 +79,13 @@ export default function ContactUsSection() {
               <Input
                 name="Email"
                 type="email"
-                placeholder="Your Email"
+                placeholder={t("contact.form.yourEmail")}
                 required
                 className="h-12 rounded-none border-0 bg-[#FBF5EE] text-sm"
               />
               <Input
                 name="Phone"
-                placeholder="Phone Number"
+                placeholder={t("contact.form.phone")}
                 className="h-12 rounded-none border-0 bg-[#FBF5EE] text-sm"
               />
             </div>
@@ -93,7 +93,7 @@ export default function ContactUsSection() {
             {/* MESSAGE */}
             <Textarea
               name="Message"
-              placeholder="Message"
+              placeholder={t("contact.form.message")}
               rows={5}
               required
               className="rounded-none border-0 bg-[#FBF5EE] text-sm"
@@ -130,17 +130,17 @@ export default function ContactUsSection() {
         >
           {/* TOP SMALL TITLE */}
           <p className="text-xs md:text-sm font-semibold text-[#9B111E] tracking-[0.2em] uppercase">
-            Need Any Help?
+            {t("contact.needAnyHelp")}
           </p>
 
           {/* MAIN TITLE */}
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-            Get In Touch With Us!
+            {t("contact.getInTouchWithUs")}
           </h2>
 
           {/* SUBTEXT */}
           <p className="text-gray-700 text-sm md:text-base max-w-xl leading-relaxed">
-            Logistics involves efficient planning and coordination of goods movement.
+            {t("contact.logisticsDesc")}
           </p>
 
           {/* CONTACT CARDS */}
@@ -153,7 +153,7 @@ export default function ContactUsSection() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                  Have any question?
+                  {t("contact.haveAnyQuestion")}
                 </p>
                 <a
                   href="tel:+8675582222447"
@@ -172,7 +172,7 @@ export default function ContactUsSection() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                  Fax
+                  {t("footer.fax")}
                 </p>
                 <a
                   href="fax:+8675582192854"
@@ -190,7 +190,7 @@ export default function ContactUsSection() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                  Write us email
+                  {t("contact.writeUsEmail")}
                 </p>
                 <a
                   href="mailto:helen@haixun.co"
@@ -208,12 +208,10 @@ export default function ContactUsSection() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                  Headquarters
+                  {t("contact.headquarters")}
                 </p>
-                <p className="mt-1 text-gray-900 text-sm leading-relaxed">
-                  13C02, Block A, Zhaoxin Huijin Plaza 3085 Shennan East Road,
-                  <br />
-                  Luohu, Shenzhen.
+                <p className="mt-1 text-gray-900 text-sm leading-relaxed whitespace-pre-line">
+                  {t("footer.shenzhenAddress")}
                 </p>
               </div>
             </div>

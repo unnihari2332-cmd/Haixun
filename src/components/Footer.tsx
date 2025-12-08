@@ -14,36 +14,35 @@ type Office = {
 };
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
 
-  const keyAddresses = [
-    {
-      country: t("globalPresence.countries.china"),
-      offices: [
-        {
-          name: t("footer.shenzhenOffice"),
-          address: t("footer.shenzhenAddress"),
-          phone: "+86 75582222447",
-          fax: "+86 75582192854",
-          email: "helen@haixun.co",
-        },
-      ],
-    },
-  ];
-
-  const getCurrentCountry = () => "China";
-
+  // Move keyAddresses inside useMemo to react to language changes
   const offices = useMemo(() => {
+    const keyAddresses = [
+      {
+        country: t("globalPresence.countries.china"),
+        offices: [
+          {
+            name: t("footer.shenzhenOffice"),
+            address: t("footer.shenzhenAddress"),
+            phone: "+86 75582222447",
+            fax: "+86 75582192854",
+            email: "helen@haixun.co",
+          },
+        ],
+      },
+    ];
+
     const all = keyAddresses.flatMap((c) =>
       c.offices.map((o) => ({ ...o, country: c.country }))
     );
-    const current = getCurrentCountry();
+    const current = t("globalPresence.countries.china");
     return [
       ...all.filter((o) => o.country === current),
       ...all.filter((o) => o.country !== current),
     ];
-  }, [location.pathname]);
+  }, [t, i18n.language, location.pathname]);
 
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -54,8 +53,8 @@ const Footer = () => {
 
   useEffect(() => {
     if (paused || offices.length <= 1) return;
-    const t = setInterval(() => setIdx((i) => (i + 1) % offices.length), intervalMs);
-    return () => clearInterval(t);
+    const timer = setInterval(() => setIdx((i) => (i + 1) % offices.length), intervalMs);
+    return () => clearInterval(timer);
   }, [paused, offices.length]);
 
   const current = offices[idx];
@@ -152,7 +151,7 @@ const Footer = () => {
             >
               <AnimatePresence initial={false} mode="wait">
                 <motion.div
-                  key={idx}
+                  key={`${idx}-${i18n.language}`}
                   initial={{ y: 24, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -24, opacity: 0 }}
@@ -193,11 +192,6 @@ const Footer = () => {
                 </motion.div>
               </AnimatePresence>
             </div>
-
-            {/* REMOVED:
-                - Arrow button
-                - Dot indicators
-            */}
           </motion.div>
         </div>
 
