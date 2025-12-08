@@ -206,10 +206,7 @@ const Navigation = () => {
             </Link>
 
             {/* ⭐⭐⭐ Desktop Country Selector (Adaptive Colors) */}
-            <CountrySelector 
-                buttonClassName={selectorBtnClass}
-                textClassName={selectorTextClass}
-            />
+            <CountrySelector />
 
             {/* Desktop language button */}
             <button
@@ -364,10 +361,7 @@ const Navigation = () => {
 
               {/* ⭐⭐⭐ Mobile Country Selector (Always dark text on white bg) */}
               <div className="py-2">
-                <CountrySelector 
-                    buttonClassName="border-gray-900/30 hover:bg-gray-100"
-                    textClassName="text-gray-900"
-                />
+                <CountrySelector />
               </div>
 
               {/* Mobile language button */}
