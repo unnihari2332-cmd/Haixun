@@ -140,7 +140,7 @@ const CountrySelector = () => {
           align="center"
           className="w-[280px] max-h-screen h-[90vh] border border-amber-100 bg-white p-2 rounded-lg shadow-lg overflow-y-auto"
         >
-          <ScrollArea className="h-full w-full pr-2 custom-scrollbar">
+          <ScrollArea className="h-full w-full pr-2 [&_[data-radix-scroll-area-thumb]]:bg-red-500 [&_[data-radix-scroll-area-track]]:bg-red-100">
             <div className="grid grid-cols-1 gap-1 p-1">
               {sortedCountries.map(country => (
                 <DropdownMenuItem
