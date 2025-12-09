@@ -18,29 +18,23 @@ interface CountryData {
 }
 
 const countries: CountryData[] = [
-  // --- Singapore (two options) ---
-  { country: "SINGAPORE", company: "GC",   website: "https://www.globalconsol.com", priority: 1,   flag: "/sg.svg" },
+  { country: "SINGAPORE", company: "GC", website: "https://www.globalconsol.com", priority: 1, flag: "/sg.svg" },
 
   { country: "SRI LANKA", company: "GC", website: "https://www.globalconsol.com/sri-lanka/home", priority: 2, flag: "/lk.svg" },
   { country: "MYANMAR", company: "GC", website: "https://www.globalconsol.com/myanmar/home", priority: 3, flag: "/mm.svg" },
   { country: "BANGLADESH", company: "GC", website: "https://www.globalconsol.com/bangladesh/home", priority: 4, flag: "/bd.svg" },
   { country: "PAKISTAN", company: "GC", website: "https://www.globalconsol.com/pakistan/home", priority: 5, flag: "/pk.svg" },
 
-  // Hidden only in Bangladesh
-  { country: "MALAYSIA", company: "OECL", website: "https://oecl.sg/malaysia", priority: 6, flag: "/my.svg",
-    visibilityByCountry: { BANGLADESH: false } },
-  { country: "INDONESIA", company: "OECL", website: "https://oecl.sg/indonesia", priority: 7, flag: "/id.svg",
-    visibilityByCountry: { BANGLADESH: false } },
-  { country: "THAILAND", company: "OECL", website: "https://oecl.sg/thailand", priority: 8, flag: "/th.svg",
-    visibilityByCountry: { BANGLADESH: false } },
+  { country: "MALAYSIA", company: "OECL", website: "https://oecl.sg/malaysia", priority: 6, flag: "/my.svg", visibilityByCountry: { BANGLADESH: false } },
+  { country: "INDONESIA", company: "OECL", website: "https://oecl.sg/indonesia", priority: 7, flag: "/id.svg", visibilityByCountry: { BANGLADESH: false } },
+  { country: "THAILAND", company: "OECL", website: "https://oecl.sg/thailand", priority: 8, flag: "/th.svg", visibilityByCountry: { BANGLADESH: false } },
 
   { country: "INDIA", company: "GGL", website: "https://gglindia.com", priority: 8, flag: "/in.svg" },
   { country: "AUSTRALIA", company: "GGL", website: "https://www.gglaustralia.com/", priority: 10, flag: "/au.svg" },
   { country: "QATAR", company: "ONE GLOBAL", website: "https://oneglobalqatar.com/", priority: 11, flag: "/qa.svg" },
   { country: "SAUDI ARABIA", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 12, flag: "/sa.svg" },
   { country: "UAE", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 13, flag: "/ae.svg" },
-  { country: "USA", company: "GGL", website: "https://gglusa.us/", priority: 14, flag: "/us.svg",
-    visibilityByCountry: { MYANMAR: false } },
+  { country: "USA", company: "GGL", website: "https://gglusa.us/", priority: 14, flag: "/us.svg", visibilityByCountry: { MYANMAR: false } },
   { country: "UK", company: "Moltech", website: "https://moltech.uk/", priority: 15, flag: "/gb.svg" }
 ];
 
@@ -50,11 +44,9 @@ const CountrySelector = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  // Safe fallback if detection fails
   const detected = getCurrentCountryFromPath(location.pathname) ?? { code: "SG", name: "Singapore" };
   const currentCountryName = detected.name?.toUpperCase() || "SINGAPORE";
 
-  // Detect by IP or load from localStorage
   useEffect(() => {
     const detect = async () => {
       try {
@@ -72,12 +64,10 @@ const CountrySelector = () => {
     detect();
   }, []);
 
-  // Show ALL countries (including current) but still respect visibility rules
   const visibleCountries = countries.filter(c =>
     !c.visibilityByCountry || c.visibilityByCountry[currentCountryName] !== false
   );
 
-  // Stable sort: priority first, then company as tie-breaker
   const sortedCountries = [...visibleCountries].sort((a, b) => {
     if (a.priority === b.priority) {
       return (a.company || "").localeCompare(b.company || "");
@@ -127,7 +117,7 @@ const CountrySelector = () => {
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="bg-black text-white border-black hover:bg-black/90 px-4 py-2 rounded-full flex items-center gap-2"
+            className="bg-black text-white border-black hover:bg-black/90 px-4 py-2 rounded-full flex items-center gap-2 focus-visible:ring-red-500"
           >
             <Globe className="w-6 h-6 text-white" />
             <span className="flex items-center gap-1">
@@ -149,7 +139,7 @@ const CountrySelector = () => {
                     e.preventDefault();
                     handleCountrySelect(country);
                   }}
-                  className="cursor-pointer hover:bg-amber-50 py-4 px-3 min-h-[60px] rounded-md flex items-center gap-3 transition-all"
+                  className="cursor-pointer hover:bg-amber-50 py-4 px-3 min-h-[60px] rounded-md flex items-center gap-3 transition-all focus-visible:ring-red-500 focus-visible:ring-offset-2"
                 >
                   <motion.div whileHover={{ scale: 1.05 }} className="flex items-center w-full">
                     <div className="flex-shrink-0">
@@ -166,7 +156,6 @@ const CountrySelector = () => {
                       )}
                     </div>
                     <div className="ml-3 flex-1">
-                      {/* Country on top, company below (previous style) */}
                       <div className="font-medium text-sm">{country.country}</div>
                       <div className="text-xs text-gray-500">{country.company}</div>
                     </div>
