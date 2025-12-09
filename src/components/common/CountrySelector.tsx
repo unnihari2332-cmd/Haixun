@@ -149,7 +149,7 @@ const CountrySelector = () => {
                     e.preventDefault();
                     handleCountrySelect(country);
                   }}
-                  className="cursor-pointer hover:bg-amber-50 py-4 px-3 min-h-[60px] rounded-md flex items-center gap-3 transition-all"
+                  className="cursor-pointer hover:bg-red-100 focus:bg-red-500 focus:text-white data-[highlighted]:bg-red-500 data-[highlighted]:text-white py-4 px-3 min-h-[60px] rounded-md flex items-center gap-3 transition-all"
                 >
                   <motion.div whileHover={{ scale: 1.05 }} className="flex items-center w-full">
                     <div className="flex-shrink-0">
