@@ -24,7 +24,6 @@ const ScrollBar = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
 >(({ className, orientation = "vertical", ...props }, ref) => {
-  // Handle mouse events to prevent dropdown closing
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -53,7 +52,7 @@ const ScrollBar = React.forwardRef<
           : "h-2.5 flex-col border-t border-t-transparent p-[1px] hover:h-3.5",
         className
       )}
-      data-radix-scrollbar // Important: allows pointer event filtering
+      data-radix-scrollbar
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -62,7 +61,7 @@ const ScrollBar = React.forwardRef<
     >
       <ScrollAreaPrimitive.ScrollAreaThumb
         className="relative flex-1 rounded-full"
-        style={{ backgroundColor: "#4e9ff5" }}
+        style={{ backgroundColor: "#ef4444" }} // 🔴 changed from blue to red
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
