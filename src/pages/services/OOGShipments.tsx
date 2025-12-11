@@ -148,10 +148,18 @@ const OOGShipments: React.FC = () => {
                   </div>
 
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
-                    <p>{t("services.oog.content1")}</p>
-                    <p>{t("services.oog.content2")}</p>
-                    <p>{t("services.oog.content3")}</p>
-                    <p>{t("services.oog.content4")}</p>
+                    <p className="font-semibold">{t("services.oog.servicesOffered")}</p>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>{t("services.oog.content1")}</li>
+                      <li>{t("services.oog.content2")}</li>
+                      <li>{t("services.oog.content3")}</li>
+                      <li>{t("services.oog.content4")}</li>
+                      <li>{t("services.oog.content5")}</li>
+                      <li>{t("services.oog.content6")}</li>
+                      <li>{t("services.oog.content7")}</li>
+                      <li>{t("services.oog.content8")}</li>
+                      <li>{t("services.oog.content9")}</li>
+                    </ul>
                   </div>
                 </section>
               </div>

@@ -26,10 +26,9 @@
       "title": "LCL Services",
       "description": "HAIXUN operates its own consolidation services on multiple trade routes.",
       "heroTagline": "Flexible Less-Than-Container Load solutions tailored for your partial shipments.",
-      "content1": "Haixun Global provides Less-Than-Container Load (LCL) services designed for customers who do not have enough cargo to fill a full container but require reliable shipping.",
-      "content2": "Our extensive global consolidation network helps customers move smaller shipments more economically by combining multiple consignments into one container.",
-      "content3": "Our operations team manages receiving, stuffing, documentation, and delivery at destination, ensuring safety, transparency, and efficiency.",
-      "content4": "With predictable transit schedules, frequent departures, and transparent pricing, our LCL solutions provide unmatched flexibility for businesses of all sizes."
+      "content1": "HAIXUN operate own consolidation service on many trade routes. With its vast network of consolidators, the company is able to provide competitive price with multiple options of sailing.",
+      "content2": "With regular consolidation boxes to important trade lanes, the company has the advantage of accommodating cargo which requires timely deliveries.",
+      "content3": "HAIXUN Provide complete transparency of all the pricing at the origin, destination and ocean freight charges."
     },
     "cfs": {
       "title": "CFS Services",
@@ -39,80 +38,91 @@
       "title": "FCL Services",
       "description": "HAIXUN owns a fleet of containers, including special equipment.",
       "heroTagline": "Full Container Load shipping solutions with dedicated containers.",
-      "content1": "Full Container Load (FCL) shipping is ideal for businesses with enough cargo to fill an entire container.",
-      "content2": "We provide dedicated containers ensuring your goods travel safely without sharing space with other shipments.",
-      "content3": "Our FCL services offer competitive rates, reliable schedules, and door-to-door delivery options.",
-      "content4": "With our extensive network of shipping lines, we ensure optimal routing and transit times for your cargo."
+      "content1": "HAIXUN has own fleet of containers including special equipment's to accommodate special requirements of customers and specializes in many trade lanes.",
+      "content2": "Being sea freight professionals with vast experience in the field helps to match frequent sailing and flexible service options. Multiple carrier options on any trade route with contracted rates helps to secure the space, allocation, timing, pricing and frequency of your shipments.",
+      "content3": "FCL is the most optimized container shipping way regarding cost, volume and weight of the cargo. We take special care at each step of the process which involves fixing contract pricing with carriers, reserving space, make booking, picking up empty container at the container depot, loading at shipper facility, transporting by truck / rail to the port and vessel loading, monitor vessel schedule till final delivery to consignee.",
+      "content4": "For import bookings we engage our overseas partners in the absence of our own network and monitor each steps and keep our customers / consignees informed at all stages."
     },
     "warehouse": {
       "title": "Warehouse Management",
       "description": "State-of-the-art facilities for warehousing operations.",
       "heroTagline": "Modern warehousing solutions with advanced inventory management.",
-      "content1": "Our state-of-the-art warehousing facilities provide secure storage solutions for all types of cargo.",
-      "content2": "We offer comprehensive inventory management, pick-and-pack services, and distribution solutions.",
-      "content3": "Our warehouses are strategically located to optimize supply chain efficiency and reduce transit times.",
-      "content4": "Advanced security systems and climate-controlled environments ensure your goods remain in optimal condition."
+      "content1": "HAIXUN is well equipped to handle the warehousing of various commodities including cold storage.",
+      "content2": "Warehouse management is a key part of the supply chain and primarily aims to control the movement and storage of materials within a warehouse and process the associated transactions including shipping, receiving, put away and picking. With visibility in to processes that proceed and follow the supply chain link, your warehouse will become an accelerator and not a road block to drive greater profitability and customer satisfaction.",
+      "content3": "The objective of WM is to handle the receipts of stock and manage supplies. WM today is part of supply chain management and also demand management. It also covers the container storage, loading and unloading. An efficient WM gives a cutting edge to retail chain distribution.",
+      "content4": "The company identifies the customer needs and assist to handle in the best possible manner. The company has expertise in handling vanning and devanning of consolidation cargo and arranges to distribute/deliver to respective parties from the warehouse which delivers full satisfaction to its customers.",
+      "content5": "With its network in domestic and global market, HX can identify the right kind of warehouse depending on customer's requirement based on cost effective, storage specific, commodity specific and proximity specific needs."
     },
     "projectCargo": {
-      "title": "Project Cargo",
+      "title": "Project Logistics",
       "description": "Specialized handling of oversized, heavy-lift, and complex project cargo.",
       "heroTagline": "Expert handling of oversized and complex project cargo.",
-      "content1": "Project cargo requires specialized handling for oversized, heavy-lift, and complex shipments.",
-      "content2": "Our experienced team manages every aspect from planning to execution, ensuring safe delivery.",
-      "content3": "We provide customized solutions including route surveys, specialized equipment, and permits.",
-      "content4": "Our track record includes successful delivery for construction, energy, and industrial sectors."
+      "content1": "With Dedicated project division having experts in the field inherited from major project handlers.",
+      "content2": "HAIXUN is well equipped to handle all kinds of special and complex project cargoes including the one which needs to be handled using floating cranes.",
+      "content3": "The expert team is well familiar handling the special and complex over-width and over-height cargo right from the ex-works until the door delivery smoothly and safely. Breakbulk handling experts have the right kind of strategy and contacts from the load point to the destination point and arrange for the right kind of resource as it requires more manpower and handling equipment.",
+      "content4": "The project are well studied and all costs are done in a very transparent manner wherein the customers know the exact costing which is important for their projects."
     },
     "project": {
       "title": "Project Logistics",
       "description": "Safe and timely handling of complex, large-scale project cargo."
     },
     "air": {
-      "title": "Air Freight",
+      "title": "Air Shipments",
       "description": "Swift and reliable air cargo solutions connecting your business to global markets.",
       "heroTagline": "Fast and reliable air cargo solutions.",
-      "leadingTitle": "Leading Air Freight Solutions",
-      "content1": "HAIXUN can provide customized sea-air and air-sea options to meet customer deadlines while achieving significant cost savings.",
-      "content2": "Through its efficient and globally connected network, HAIXUN handles airfreight consolidation across major world routes—ensuring reliable schedules, competitive pricing, and seamless cargo movement."
+      "leadingTitle": "Air Shipments",
+      "content1": "HAIXUN can provide customized sea-air & air-sea options to meet customer's deadline/timeliness and achieve cost savings.",
+      "content2": "The company handles the airfreight consolidation on many major routes through its efficient worldwide network."
     },
     "oceanFreight": {
       "title": "Ocean Freight",
       "description": "Cost-effective sea cargo services with FCL and LCL options."
     },
     "customs": {
-      "title": "Customs Clearance",
+      "title": "Customs Declaration & Inspection",
       "description": "Smooth and efficient completion of all customs formalities.",
       "heroTagline": "Professional customs brokerage services.",
-      "content1": "Our customs clearance services ensure smooth and compliant import/export processes.",
-      "content2": "Our licensed customs brokers handle all documentation and regulatory requirements.",
-      "content3": "We provide duty optimization strategies and tariff classification guidance.",
-      "content4": "Our expertise covers all types of goods including hazardous materials and restricted items."
+      "content1": "As one of the leading custom clearing agents, we ensure that all clearance formalities are done in a smooth and easy manner so that all our customers receive their goods on time.",
+      "content2": "Our customs brokers help ease import and export regulations and all paperwork related to trade compliances and procedures to ensure that your consignments via sea, land and air leave on time."
     },
     "oog": {
-      "title": "OOG Shipments",
+      "title": "OOG Shipments - Inter Island Movements",
       "description": "Cargo loading, lashing, survey arrangements for out-of-gauge cargo.",
       "heroTagline": "Specialized handling of out-of-gauge cargo.",
-      "content1": "Out-of-gauge (OOG) cargo requires specialized equipment and handling expertise.",
-      "content2": "We arrange flat racks, open tops, and specialized containers for oversized cargo.",
-      "content3": "Our team handles lashing, securing, and all necessary documentation.",
-      "content4": "We coordinate with shipping lines and port authorities for smooth OOG operations."
+      "servicesOffered": "Services Offered:",
+      "content1": "Cargo Loading",
+      "content2": "Lashing",
+      "content3": "Surveyor",
+      "content4": "Inter Island Movement to Main Ports",
+      "content5": "Export & Import Handling",
+      "content6": "Ocean Freight",
+      "content7": "Warehouse and Yard Facility",
+      "content8": "Crane and Container Handling Equipment's",
+      "content9": "Import Stripping and Domestic Movements"
     },
     "import": {
-      "title": "Import Services",
+      "title": "Import",
       "description": "Comprehensive import handling services.",
       "heroTagline": "End-to-end import solutions.",
-      "content1": "Our comprehensive import services cover the entire process from origin to destination.",
-      "content2": "We handle customs clearance, duty payments, and last-mile delivery.",
-      "content3": "Our team provides guidance on import regulations and compliance requirements.",
-      "content4": "We offer bonded warehousing and deferred duty payment options."
+      "content1": "总用地面积：5220㎡",
+      "content2": "总建筑面积：44525㎡",
+      "content3": "容积率：7.08",
+      "content4": "该项目位于深圳南头半岛东南部，南临望海路，北靠蛇口老街，西为海韵路，东为规划道路，向南面向大海，向北近2号线地铁口。规划建成为商业高级商务写字楼及大型购物中心，周围交通便利，各类配套设施完善，景观资源丰富，发展前景广阔。"
     },
     "consolidation": {
-      "title": "Cargo Consolidation",
+      "title": "LCL Consolidation",
       "description": "Direct export consolidations to key destinations.",
       "heroTagline": "Cost-effective cargo consolidation services.",
-      "content1": "Our consolidation services combine multiple shipments for cost-effective transportation.",
-      "content2": "We operate regular consolidation services to major global destinations.",
-      "content3": "Reduce your shipping costs while maintaining reliable delivery schedules.",
-      "content4": "Our consolidation network covers Asia, Europe, Americas, and beyond."
+      "exportDirectNavaSheva": "Export - Direct Consol to Nava Sheva Connecting",
+      "navaShevaPorts": "ICD PPG, ICD Ludhiana, ICD Garhiharsru, ICD Ahmedabad",
+      "exportDirectConsol": "Export - Direct Consol",
+      "directConsolPorts": "Singapore, Colombo, Karachi",
+      "exportConsolViaSingapore": "Export Consol Via Singapore Hub to",
+      "singaporeHubDest": "India, Middle East, Bangladesh, Maldives, Karachi, USA, Europe Ports, Australia",
+      "importConsolidation": "Import Consolidation - Via Singapore Hub",
+      "importConsolRegions": "Asia, Middle East, USA, Europe",
+      "facilities": "Facilities",
+      "facilitiesDesc": "LCL Consolidation / Deconsolidation Warehouse, Packing and Value Added Services"
     },
     "liquidCargo": {
       "title": "Liquid Cargo Transportation",

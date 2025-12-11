@@ -153,8 +153,6 @@ const CustomsClearance = () => {
                   <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
                     <p>{t("services.customs.content1")}</p>
                     <p>{t("services.customs.content2")}</p>
-                    <p>{t("services.customs.content3")}</p>
-                    <p>{t("services.customs.content4")}</p>
                   </div>
                 </section>
               </div>

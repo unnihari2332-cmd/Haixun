@@ -147,11 +147,27 @@ const Consolidation = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
-                    <p>{t("services.consolidation.content1")}</p>
-                    <p>{t("services.consolidation.content2")}</p>
-                    <p>{t("services.consolidation.content3")}</p>
-                    <p>{t("services.consolidation.content4")}</p>
+                  <div className="space-y-6 text-sm md:text-base leading-relaxed text-gray-700">
+                    <div>
+                      <p className="font-semibold text-gray-900">{t("services.consolidation.exportDirectNavaSheva")}</p>
+                      <p>{t("services.consolidation.navaShevaPorts")}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">{t("services.consolidation.exportDirectConsol")}</p>
+                      <p>{t("services.consolidation.directConsolPorts")}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">{t("services.consolidation.exportConsolViaSingapore")}</p>
+                      <p>{t("services.consolidation.singaporeHubDest")}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">{t("services.consolidation.importConsolidation")}</p>
+                      <p>{t("services.consolidation.importConsolRegions")}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">{t("services.consolidation.facilities")}</p>
+                      <p>{t("services.consolidation.facilitiesDesc")}</p>
+                    </div>
                   </div>
                 </section>
               </div>

@@ -147,6 +147,7 @@ const Warehousing = () => {
                     <p>{t("services.warehouse.content2")}</p>
                     <p>{t("services.warehouse.content3")}</p>
                     <p>{t("services.warehouse.content4")}</p>
+                    <p>{t("services.warehouse.content5")}</p>
                   </div>
                 </section>
               </div>

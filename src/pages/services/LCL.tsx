@@ -146,7 +146,6 @@ const LCL = () => {
                     <p>{t("services.lcl.content1")}</p>
                     <p>{t("services.lcl.content2")}</p>
                     <p>{t("services.lcl.content3")}</p>
-                    <p>{t("services.lcl.content4")}</p>
                   </div>
                 </section>
               </div>
