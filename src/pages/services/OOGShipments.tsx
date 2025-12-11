@@ -7,207 +7,170 @@ import Footer from "@/components/Footer";
 import { getCurrentCountryFromPath } from "@/services/countryDetection";
 import { PackageSearch } from "lucide-react";
 
-// Renamed component from OOGShipments to LCLConsolidation
-const LCLConsolidation: React.FC = () => {
-  const { t } = useTranslation();
-  const location = useLocation();
-
-  const detected = getCurrentCountryFromPath(location.pathname);
-  const currentCountry = detected ?? { code: "SG", name: "Singapore" };
-
-  const getNavLink = (basePath: string) => {
-    if (currentCountry.code === "SG") return basePath;
-    const countrySlug = currentCountry.name.toLowerCase().replace(/\s+/g, "-");
-    return `/${countrySlug}${basePath}`;
-  };
-
-  // Updated navigation item for LCL Consolidation
-  const servicesNav = [
-    { label: t("services.seeAllServices"), path: "/services" },
-    { label: t("services.lcl.title"), path: "/services/lcl" },
-    { label: t("services.fcl.title"), path: "/services/fcl" },
-    { label: t("services.warehouse.title"), path: "/services/warehousing" },
-    { label: t("services.projectCargo.title"), path: "/services/project-cargo" },
-    { label: t("services.air.title"), path: "/services/air-freight" },
-    { label: t("services.customs.title"), path: "/services/customs-clearance" },
-    { label: t("services.import.title"), path: "/services/import" },
-    { label: t("services.consolidation.title"), path: "/services/consolidation" },
-    { label: t("services.lclConsolidation.title"), path: "/services/lcl-consolidation" }, // New link
-  ];
-
-  const pathname = location.pathname;
-
-  return (
-    <div className="bg-white text-gray-900 min-h-screen flex flex-col">
-      <ScrollToTop />
-      <Navigation />
-
-      <div className="h-[90px] w-full bg-white" />
-
-      <main className="flex-grow">
-        {/* HERO - Updated title and tagline to LCL Consolidation */}
-        <section className="relative h-[250px] md:h-[360px] w-full overflow-hidden flex items-center justify-center">
-          <img
-            src="/lclconsolidationhero.jpg" // Changed image source placeholder
-            alt="LCL Consolidation Hero"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-
-          <div className="container mx-auto px-4 relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="inline-block max-w-3xl"
-            >
-              <h1 className="text-3xl md:text-5xl font-extrabold text-white">
-                {t("services.lclConsolidation.title")} {/* Updated Translation Key */}
-              </h1>
-              <div className="w-24 h-[3px] bg-[#BC0018] mx-auto mt-3" />
-              <p className="text-sm md:text-lg text-gray-200 mt-4 leading-relaxed px-4">
-                {t("services.lclConsolidation.heroTagline")} {/* Updated Translation Key */}
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* MAIN CONTENT */}
-        <section className="py-10 md:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 md:gap-12 md:grid-cols-[260px,1fr] items-start">
-              {/* LEFT SIDEBAR - Hidden on mobile (Unchanged) */}
-              <aside className="hidden md:block space-y-10">
-                <div>
-                  <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
-                    {t("services.ourServices")}
-                  </h2>
-                  <div className="w-12 h-[2px] bg-[#BC0018] mb-5" />
-                  <nav className="border border-slate-200 rounded-md overflow-hidden bg-slate-50">
-                    {servicesNav.map((item) => {
-                      const to = getNavLink(item.path);
-                      const isActive =
-                        pathname === to ||
-                        (item.path !== "/services" && pathname.startsWith(to));
-
-                      return (
-                        <Link
-                          key={item.path}
-                          to={to}
-                          className={`block px-6 py-3 text-sm font-medium transition-colors ${
-                            isActive
-                              ? "bg-[#BC0018] text-white"
-                              : "text-slate-600 hover:bg-slate-100"
-                          }`}
-                        >
-                          {item.label}
-                        </Link>
-                      );
-                    })}
-                  </nav>
-                </div>
-              </aside>
-
-              {/* RIGHT CONTENT */}
-              <div className="space-y-8 md:space-y-12">
-                {/* TOP IMAGE (Unchanged) */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="rounded-md overflow-hidden shadow-lg"
-                >
-                  <img
-                    src="/lclconsolidationbanner.jpg" // Changed image source placeholder
-                    alt="LCL Consolidation"
-                    className="w-full h-[240px] md:h-[380px] object-cover"
-                    loading="lazy"
-                  />
-                </motion.div>
-
-                {/* LCL CONSOLIDATION DESCRIPTION - Content updated based on image */}
-                <section>
-                  <div className="mb-4 md:mb-6 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
-                      <PackageSearch className="w-5 h-5 text-[#BC0018]" />
-                    </div>
-                    <div>
-                      <h2 className="text-lg md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
-                        {t("services.lclConsolidation.title")} {/* Updated Translation Key */}
-                      </h2>
-                      <div className="mt-1 w-16 h-[2px] bg-[#BC0018]" />
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
-                    <p className="font-semibold">
-                      {t("services.lclConsolidation.exportDirectConsolTitle")} {/* New Title */}
-                    </p>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>
-                        {t("services.lclConsolidation.exportDirect1")} {/* ICD PPG, ICD Ludhiana */}
-                      </li>
-                      <li>
-                        {t("services.lclConsolidation.exportDirect2")} {/* ICD Garhiharsru, ICD Ahmedabad */}
-                      </li>
-                    </ul>
-
-                    <p className="font-semibold pt-4">
-                      {t("services.lclConsolidation.exportDirectConsol")} {/* Export - Direct Consol */}
-                    </p>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>{t("services.lclConsolidation.exportDirectConsol1")}</li> {/* Singapore */}
-                      <li>{t("services.lclConsolidation.exportDirectConsol2")}</li> {/* Colombo */}
-                      <li>{t("services.lclConsolidation.exportDirectConsol3")}</li> {/* Karachi */}
-                    </ul>
-
-                    <p className="font-semibold pt-4">
-                      {t("services.lclConsolidation.exportConsolViaHub")} {/* Export Consol Via Singapore Hub to */}
-                    </p>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>{t("services.lclConsolidation.exportViaHub1")}</li> {/* India, Middle East */}
-                      <li>{t("services.lclConsolidation.exportViaHub2")}</li> {/* Bangladesh, Maldives */}
-                      <li>{t("services.lclConsolidation.exportViaHub3")}</li> {/* Karachi, USA */}
-                      <li>{t("services.lclConsolidation.exportViaHub4")}</li> {/* Europe Ports, Australia */}
-                    </ul>
-
-                    <p className="font-semibold pt-4">
-                      {t("services.lclConsolidation.importConsolViaHub")} {/* Import Consolidation - Via Singapore Hub */}
-                    </p>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>{t("services.lclConsolidation.importViaHub1")}</li> {/* Asia, Middle East */}
-                      <li>{t("services.lclConsolidation.importViaHub2")}</li> {/* USA, Europe */}
-                    </ul>
-
-                    <p className="font-semibold pt-4">
-                      {t("services.lclConsolidation.facilitiesTitle")} {/* Facilities */}
-                    </p>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>{t("services.lclConsolidation.facilities1")}</li> {/* LCL Consolidation / Deconsolidation Warehouse */}
-                      <li>{t("services.lclConsolidation.facilities2")}</li> {/* Packing and Value Added Services */}
-                    </ul>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
-  );
-};
-
-export default LCLConsolidation;
-
-// ScrollToTop component is assumed to be defined elsewhere in your project
 const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [pathname]);
-  return null;
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+  return null;
 };
+
+const OOGShipments: React.FC = () => {
+  const { t } = useTranslation();
+  const location = useLocation();
+
+  const detected = getCurrentCountryFromPath(location.pathname);
+  const currentCountry = detected ?? { code: "SG", name: "Singapore" };
+
+  const getNavLink = (basePath: string) => {
+    if (currentCountry.code === "SG") return basePath;
+    const countrySlug = currentCountry.name.toLowerCase().replace(/\s+/g, "-");
+    return `/${countrySlug}${basePath}`;
+  };
+
+  const servicesNav = [
+    { label: t("services.seeAllServices"), path: "/services" },
+    { label: t("services.lcl.title"), path: "/services/lcl" },
+    { label: t("services.fcl.title"), path: "/services/fcl" },
+    { label: t("services.warehouse.title"), path: "/services/warehousing" },
+    { label: t("services.projectCargo.title"), path: "/services/project-cargo" },
+    { label: t("services.air.title"), path: "/services/air-freight" },
+    { label: t("services.customs.title"), path: "/services/customs-clearance" },
+    { label: t("services.import.title"), path: "/services/import" },
+    { label: t("services.consolidation.title"), path: "/services/consolidation" },
+    { label: t("services.oog.title"), path: "/services/oog-shipments" },
+  ];
+
+  const pathname = location.pathname;
+
+  return (
+    <div className="bg-white text-gray-900 min-h-screen flex flex-col">
+      <ScrollToTop />
+      <Navigation />
+
+      <div className="h-[90px] w-full bg-white" />
+
+      <main className="flex-grow">
+        {/* HERO */}
+        <section className="relative h-[250px] md:h-[360px] w-full overflow-hidden flex items-center justify-center">
+          <img
+            src="/oggshipmentshero.jpg"
+            alt="OOG Shipments Hero"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="inline-block max-w-3xl"
+            >
+              <h1 className="text-3xl md:text-5xl font-extrabold text-white">
+                {t("services.oog.title")}
+              </h1>
+              <div className="w-24 h-[3px] bg-[#BC0018] mx-auto mt-3" />
+              <p className="text-sm md:text-lg text-gray-200 mt-4 leading-relaxed px-4">
+                {t("services.oog.heroTagline")}
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* MAIN CONTENT */}
+        <section className="py-10 md:py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 md:gap-12 md:grid-cols-[260px,1fr] items-start">
+              {/* LEFT SIDEBAR - Hidden on mobile */}
+              <aside className="hidden md:block space-y-10">
+                <div>
+                  <h2 className="text-sm font-semibold tracking-[0.15em] text-gray-900 mb-2 uppercase">
+                    {t("services.ourServices")}
+                  </h2>
+                  <div className="w-12 h-[2px] bg-[#BC0018] mb-5" />
+                  <nav className="border border-slate-200 rounded-md overflow-hidden bg-slate-50">
+                    {servicesNav.map((item) => {
+                      const to = getNavLink(item.path);
+                      const isActive =
+                        pathname === to ||
+                        (item.path !== "/services" && pathname.startsWith(to));
+
+                      return (
+                        <Link
+                          key={item.path}
+                          to={to}
+                          className={`block px-6 py-3 text-sm font-medium transition-colors ${
+                            isActive
+                              ? "bg-[#BC0018] text-white"
+                              : "text-slate-600 hover:bg-slate-100"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </nav>
+                </div>
+              </aside>
+
+              {/* RIGHT CONTENT */}
+              <div className="space-y-8 md:space-y-12">
+                {/* TOP IMAGE */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="rounded-md overflow-hidden shadow-lg"
+                >
+                  <img
+                    src="/oogbanner.jpg"
+                    alt="OOG Shipments - Inter Island Movements"
+                    className="w-full h-[240px] md:h-[380px] object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
+
+                {/* OOG SHIPMENTS DESCRIPTION */}
+                <section>
+                  <div className="mb-4 md:mb-6 flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#BC0018]/10">
+                      <PackageSearch className="w-5 h-5 text-[#BC0018]" />
+                    </div>
+                    <div>
+                      <h2 className="text-lg md:text-2xl font-extrabold tracking-wide text-gray-900 uppercase">
+                        {t("services.oog.title")}
+                      </h2>
+                      <div className="mt-1 w-16 h-[2px] bg-[#BC0018]" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-4 text-sm md:text-base leading-relaxed text-gray-700">
+                    <p className="font-semibold">{t("services.oog.servicesOffered")}</p>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>{t("services.oog.content1")}</li>
+                      <li>{t("services.oog.content2")}</li>
+                      <li>{t("services.oog.content3")}</li>
+                      <li>{t("services.oog.content4")}</li>
+                      <li>{t("services.oog.content5")}</li>
+                      <li>{t("services.oog.content6")}</li>
+                      <li>{t("services.oog.content7")}</li>
+                      <li>{t("services.oog.content8")}</li>
+                      <li>{t("services.oog.content9")}</li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default OOGShipments;
