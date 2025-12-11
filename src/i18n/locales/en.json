@@ -91,19 +91,20 @@
       "content2": "Our customs brokers help ease import and export regulations and all paperwork related to trade compliances and procedures to ensure that your consignments via sea, land and air leave on time."
     },
     "oog": {
-      "title": "OOG Shipments - Inter Island Movements",
-      "description": "Cargo loading, lashing, survey arrangements for out-of-gauge cargo.",
-      "heroTagline": "Specialized handling of out-of-gauge cargo.",
-      "servicesOffered": "Services Offered:",
-      "content1": "Cargo Loading",
-      "content2": "Lashing",
-      "content3": "Surveyor",
-      "content4": "Inter Island Movement to Main Ports",
-      "content5": "Export & Import Handling",
-      "content6": "Ocean Freight",
-      "content7": "Warehouse and Yard Facility",
-      "content8": "Crane and Container Handling Equipment's",
-      "content9": "Import Stripping and Domestic Movements"
+  "title": "OOG Shipments - Inter Island Movements",
+  "description": "Cargo loading, lashing, survey arrangements for out-of-gauge cargo.",
+  "heroTagline": "Specialized handling of out-of-gauge cargo.",
+  "servicesOffered": "Services Offered:",
+  "content1": "Cargo Loading",
+  "content2": "Lashing",
+  "content3": "Surveyor",
+  "content4": "Inter Island Movement to Main Ports",
+  "content5": "Export & Import Handling",
+  "content6": "Ocean Freight",
+  "content7": "Warehouse and Yard Facility",
+  "content8": "Crane and Container Handling Equipment's",
+  "content9": "Import Stripping and Domestic Movements"
+}
     },
     "import": {
       "title": "Import",
