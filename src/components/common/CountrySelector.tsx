@@ -6,6 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { getCurrentCountryFromPath, detectCountryByIP } from '@/services/countryDetection';
+import { useTranslation } from 'react-i18next';
 
 interface CountryData {
   country: string;
@@ -43,10 +44,31 @@ const countries: CountryData[] = [
 ];
 
 const CountrySelector = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [ipCountry, setIpCountry] = useState<{ code: string; name: string } | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  // Map country names to translation keys
+  const getCountryTranslationKey = (countryName: string): string => {
+    const countryKeyMap: Record<string, string> = {
+      "SINGAPORE": "globalPresence.countries.singapore",
+      "SRI LANKA": "globalPresence.countries.sriLanka",
+      "MYANMAR": "globalPresence.countries.myanmar",
+      "BANGLADESH": "globalPresence.countries.bangladesh",
+      "PAKISTAN": "globalPresence.countries.pakistan",
+      "MALAYSIA": "globalPresence.countries.malaysia",
+      "INDONESIA": "globalPresence.countries.indonesia",
+      "THAILAND": "globalPresence.countries.thailand",
+      "INDIA": "globalPresence.countries.india",
+      "AUSTRALIA": "globalPresence.countries.australia",
+      "QATAR": "globalPresence.countries.qatar",
+      "USA": "globalPresence.countries.usa",
+      "UK": "globalPresence.countries.uk"
+    };
+    return countryKeyMap[countryName] || countryName;
+  };
 
   // Safe fallback if detection fails
   const detected = getCurrentCountryFromPath(location.pathname) ?? { code: "SG", name: "Singapore" };
@@ -129,7 +151,7 @@ const CountrySelector = () => {
           >
             <Globe className="w-6 h-6 text-white" />
             <span className="flex items-center gap-1">
-              Switch Country <ChevronDown className="h-3 w-3 ml-1 text-white" />
+              {t("nav.switchcountry")} <ChevronDown className="h-3 w-3 ml-1 text-white" />
             </span>
           </Button>
         </DropdownMenuTrigger>
@@ -165,7 +187,7 @@ const CountrySelector = () => {
                     </div>
                     <div className="ml-3 flex-1">
                       {/* Country on top, company below (previous style) */}
-                      <div className="font-medium text-sm">{country.country}</div>
+                      <div className="font-medium text-sm">{t(getCountryTranslationKey(country.country))}</div>
                       <div className="text-xs text-gray-500">{country.company}</div>
                     </div>
                   </motion.div>
