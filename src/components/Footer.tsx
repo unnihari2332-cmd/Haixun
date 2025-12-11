@@ -28,7 +28,6 @@ const Footer = () => {
             address: t("footer.shenzhenAddress"),
             phone: "+86 75582222447",
             fax: "+86 75582192854",
-            email: "helen@haixun.co",
           },
         ],
       },
