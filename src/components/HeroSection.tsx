@@ -14,10 +14,10 @@ const HeroSection: React.FC = () => {
 
   const portalLinks = useMemo(
     () => [
-      { icon: <Users className="w-5 h-5" />, title: "Consolmate", url: "https://consolmate.com/auth/login/10" },
-      { icon: <UserCircle className="w-5 h-5" />, title: "Partner Portal", url: "https://pp.onlinetracking.co/auth/login/10" },
-      { icon: <SearchCode className="w-5 h-5" />, title: "Tracking", url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:195" },
-      { icon: <Ship className="w-5 h-5" />, title: "Sailing Schedule", url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:195" },
+      { icon: <Users className="w-5 h-5" />, titleKey: "hero.customerPortal", url: "https://consolmate.com/auth/login/10" },
+      { icon: <UserCircle className="w-5 h-5" />, titleKey: "hero.partnerPortal", url: "https://pp.onlinetracking.co/auth/login/10" },
+      { icon: <SearchCode className="w-5 h-5" />, titleKey: "hero.tracking", url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:195" },
+      { icon: <Ship className="w-5 h-5" />, titleKey: "hero.sailingSchedule", url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:195" },
     ],
     []
   );
@@ -212,7 +212,7 @@ const HeroSection: React.FC = () => {
               className="group flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white backdrop-blur-sm hover:bg-white/20"
             >
               <span className="rounded-full bg-white/20 p-2">{link.icon}</span>
-              <span className="text-xs sm:text-sm font-semibold">{link.title}</span>
+              <span className="text-xs sm:text-sm font-semibold">{t(link.titleKey)}</span>
             </a>
           ))}
         </div>
