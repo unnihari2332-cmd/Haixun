@@ -10,12 +10,25 @@
     "switchcountry": "Switch Country"
   },
   "hero": {
-    "title": "Trusted Project Cargo Partner",
-    "subtitle": "At Haixun, we excel in providing customized logistics solutions for project cargo, ensuring client deadlines and requirements are met with precision.",
-    "description": "With expertise in handling oversized and sensitive shipments, we have successfully served clients such as Caterpillar China, electric car exporters, and construction companies.",
-    "ourServices": "Our Services",
-    "contactUs": "Contact Us"
+  "slide1": {
+    "title": "Welcome to Haixun",
+    "subtitle": "Haixun Global Co., Ltd., headquartered in Shenzhen, China, provides end-to-end logistics solutions across sea, land, and air for global trade."
   },
+  "slide2": {
+    "title": "LCL Services",
+    "subtitle": "HAIXUN operates its own consolidation services across multiple trade routes, offering flexible schedules, competitive pricing, and full cost transparency."
+  },
+  "slide3": {
+    "title": "FCL Services",
+    "subtitle": "With our own fleet of containers and strong carrier partnerships, HAIXUN delivers reliable full container load solutions with optimized cost and efficiency."
+  },
+
+  "contactUs": "Contact Us",
+  "customerPortal": "Customer Portal",
+  "partnerPortal": "Partner Portal",
+  "tracking": "Tracking",
+  "sailingSchedule": "Sailing Schedule"
+},
   "services": {
     "title": "Our Services",
     "subtitle": "Comprehensive logistics solutions tailored to your needs",
@@ -143,10 +156,12 @@
     "title": "About Haixun Global",
     "subtitle": "30+ Years of Logistics Excellence",
     "whoWeAre": "Who We Are",
-    "paragraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics, including sea, land, air transportation, customs declaration, warehousing, and distribution, the Group has expanded its network to regions such as China, India, Malaysia, the UAE, and beyond.",
-    "paragraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity, customer satisfaction, and rapid response, ensuring a reliable and customer-focused service experience in China.",
-    "pageParagraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics, including sea, land, air transportation, customs declaration, warehousing, and distribution, the Group has expanded its network to regions such as China, India, Malaysia, the UAE, and beyond.",
-    "pageParagraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity, customer satisfaction, and rapid response, ensuring a reliable and customer-focused service experience in China.",
+    "paragraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics.",
+    "paragraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity.",
+    "paragraph3": "Our services include tailored shipping plans with appropriate transport modes.",
+    "pageParagraph1": "Haixun Global Logistics (Shenzhen) Co., Ltd., headquartered in Shenzhen, China, provides global freight forwarding services for LCL, FCL, general cargo, and bulk cargo via sea, land, and air. Our solutions include booking, customs clearance, inspection, warehousing, distribution, door-to-door delivery, and logistics planning.",
+    "pageParagraph2": "Guided by integrity, honesty, service, and speed, we follow a corporate spirit of pragmatism, hard work, and responsibility. Our business model is built on innovation, win-win cooperation, and a strong commitment to customer satisfaction.",
+    "pageParagraph3": "With a modern management approach, advanced technology, and attentive customer care, we consistently adhere to the principle of putting customers first. We aim to impress clients with reliable, efficient, and seamless logistics solutions.",
     "fastDelivery": "Fast Worldwide Delivery",
     "fastDeliveryDesc": "Our vast global network ensures your cargo reaches destinations on schedule.",
     "safeDelivery": "Safe And Secure Delivery",
@@ -154,7 +169,7 @@
     "knowMore": "Know More About Us",
     "needHelp": "Need Help?",
     "yearsOfGrowth": "Years of Growth",
-    "yearsNumber": "6+"
+    "yearsNumber": "9+"
   },
   "advantages": {
     "title": "Our Advantages",
@@ -219,12 +234,14 @@
     "article": "Article",
     "emptyCta": "Create First Article"
   },
-  "globalPresence": {
+"globalPresence": {
     "title": "Global Presence",
     "subtitle": "Serving customers worldwide with local expertise",
     "globalLocations": "Global Locations",
     "office": "Office",
     "viewDetails": "View Details",
+    "viewLocations": "View Locations",
+    "viewMap": "View Map",
     "countries": {
       "china": "China",
       "singapore": "Singapore",
@@ -238,7 +255,58 @@
       "pakistan": "Pakistan",
       "uae": "UAE",
       "uk": "United Kingdom",
-      "usa": "United States"
+      "usa": "United States",
+      "australia": "Australia",
+      "qatar": "Qatar"
+    },
+    "cities": {
+      "kerala": "Kerala",
+      "mumbai": "Mumbai",
+      "mumbaiAndheri": "Mumbai-Andheri",
+      "delhi": "Delhi",
+      "bangalore": "Bangalore",
+      "kolkata": "Kolkata",
+      "pasirgudang": "Pasirgudang",
+      "portklang": "Port Klang",
+      "doha": "Doha",
+      "jakarta": "Jakarta",
+      "surabaya": "Surabaya",
+      "colombo": "Colombo",
+      "bangkok": "Bangkok",
+      "yangon": "Yangon",
+      "karachi": "Karachi",
+      "lahore": "Lahore",
+      "shenzhen": "Shenzhen",
+      "chicago": "Chicago",
+      "newYork": "New York",
+      "losAngeles": "Los Angeles",
+      "london": "London",
+      "melbourne": "Melbourne"
+    },
+    "addresses": {
+      "kerala": "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013, Kerala.",
+      "mumbai": "803 / 804, Shelton Cubix, Plot No. 87, Sector-15, CBD Belapur, Navi Mumbai, Maharastra - 400614.",
+      "mumbaiAndheri": "503, Midas, Sahar Plaza Complex, Sir M.V Road, Andheri East, Mumbai 400059",
+      "delhi": "903, Surya Kiran Building K.G Marg, Connaught Place New Delhi - 110001",
+      "bangalore": "3C-964 IIIrd Cross Street, HRBR LAYOUT 1st Block, Kalayan Nagar Bannaswadi, Bengaluru - 560043.",
+      "kolkata": "Merlin Matrix, 3rd floor, Room No. 303 10, D. N. BLOCK, SECTOR - V SALT LAKE CITY, Kolkata – 700091",
+      "pasirgudang": "Unit 20-03A, Level 20 Menara Zurich, 15 Jalan Dato Abdullah Tahir, 80300 Johor Bahru",
+      "portklang": "MTBBT 2, 3A-5, Jalan Batu Nilam 16, The Landmark (Behind AEON Mall), Bandar Bukit Tinggi 2, 41200, Klang, Selangor D.E",
+      "doha": "Office no: 48, 2nd Floor, Al matar Centre, Old Airport Road Doha",
+      "singapore": "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
+      "jakarta": "408, Lina Building, JL.HR Rasuna Said kav B7, Jakarta",
+      "surabaya": "Japfa Indoland Center, Japfa Tower 1, Lantai 4/401-A JL Jend, Basuki Rahmat 129-137, Surabaya 60271",
+      "colombo": "Ceylinco House, 9th Floor, No. 69, Janadhipathi Mawatha, Colombo 01, Sri Lanka",
+      "bangkok": "109 CCT Building, 3rd Floor, Rm.3, Surawong Road, Suriyawongse, Bangrak, Bangkok 10500",
+      "yangon": "No.608, Room 8B, Bo Soon Pat Tower, Merchant Street, Pabedan Township, Yangon, Myanmar",
+      "karachi": "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
+      "lahore": "Office # 301, 3rd Floor, Gulberg Arcade Main Market, Gulberg 2, Lahore, Pakistan",
+      "shenzhen": "13C02, Block A, Zhaoxin Huijin Plaza 3085 Shennan East Road, Luohu, Shenzhen.",
+      "chicago": "939 W. North Avenue, Suite 750, Chicago, IL 60642",
+      "newYork": "New Jersey Branch, 33 Wood Avenue South Suite 600, Iselin, NJ 08830",
+      "losAngeles": "2250 South Central Avenue Compton, CA 90220",
+      "london": "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
+      "melbourne": "Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043"
     }
   },
   "footer": {
