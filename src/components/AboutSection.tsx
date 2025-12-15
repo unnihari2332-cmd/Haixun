@@ -97,10 +97,6 @@ const AboutSection: React.FC = () => {
             {t("about.paragraph2")}
           </p>
 
-          <p className="mt-5 text-gray-700 max-w-xl">
-            {t("about.paragraph3")}
-          </p>
-
           <div className="mt-8 space-y-7">
             <div className="flex items-start gap-4">
               <Globe2 className="w-8 h-8" style={{ color: ACCENT }} />
