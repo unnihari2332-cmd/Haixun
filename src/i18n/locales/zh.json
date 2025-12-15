@@ -168,22 +168,22 @@
   "yearsOfGrowth": "发展年限",
   "yearsNumber": "9+"
   },
-  "advantages": {
-    "title": "我们的优势",
-    "subtitle": "通过能力、服务和专业知识提供卓越",
-    "transportation": {
-      "title": "运输能力",
-      "description": "从事全国各地的货物运输服务。"
-    },
-    "logistics": {
-      "title": "物流服务",
-      "description": "先进的信息系统，全程可见。"
-    },
-    "team": {
-      "title": "团队人员",
-      "description": "高度竞争力的运营团队。"
-    }
+ "advantages": {
+  "title": "我们的优势",
+  "subtitle": "以运力、服务和专业实力提供卓越价值",
+  "transportation": {
+    "title": "运输能力",
+    "description": "公司注册资本为五千万元人民币，拥有解放、东风和五十铃等轻型运输车辆，业务覆盖全国范围的货物运输服务。"
   },
+  "logistics": {
+    "title": "物流服务",
+    "description": "公司配备先进的信息化系统，实现全流程可视化管理，客户可随时掌握各项业务进展，严格的管理制度有效防止差错和事故发生。"
+  },
+  "team": {
+    "title": "团队人员",
+    "description": "公司拥有一支高效且富有竞争力的运营团队，多年从事国内货物运输服务，具备严谨完善的运输组织能力。"
+  }
+}
   "contact": {
     "title": "联系我们",
     "subtitle": "需要联系我们吗？",
