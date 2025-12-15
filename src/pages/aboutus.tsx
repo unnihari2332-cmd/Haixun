@@ -125,10 +125,6 @@ const AboutUs: React.FC = () => {
                   {t("about.pageParagraph2")}
                 </p>
 
-                <p className="text-lg leading-relaxed text-gray-700">
-                  {t("about.pageParagraph3")}
-                </p>
-
                 <div className="pt-4">
                   <Link to={getNavLink("/contact")}>
                     <Button
