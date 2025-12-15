@@ -12,21 +12,64 @@ import { useTranslation } from "react-i18next";
 const HeroSection: React.FC = () => {
   const { t } = useTranslation();
 
+  /* ---------------- PORTAL LINKS ---------------- */
   const portalLinks = useMemo(
     () => [
-      { icon: <Users className="w-5 h-5" />, titleKey: "hero.customerPortal", url: "https://consolmate.com/auth/login/10" },
-      { icon: <UserCircle className="w-5 h-5" />, titleKey: "hero.partnerPortal", url: "https://pp.onlinetracking.co/auth/login/10" },
-      { icon: <SearchCode className="w-5 h-5" />, titleKey: "hero.tracking", url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:195" },
-      { icon: <Ship className="w-5 h-5" />, titleKey: "hero.sailingSchedule", url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:195" },
+      {
+        icon: <Users className="w-5 h-5" />,
+        titleKey: "hero.customerPortal",
+        url: "https://consolmate.com/auth/login/10",
+      },
+      {
+        icon: <UserCircle className="w-5 h-5" />,
+        titleKey: "hero.partnerPortal",
+        url: "https://pp.onlinetracking.co/auth/login/10",
+      },
+      {
+        icon: <SearchCode className="w-5 h-5" />,
+        titleKey: "hero.tracking",
+        url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:102:::::P0_GROUP_RID:195",
+      },
+      {
+        icon: <Ship className="w-5 h-5" />,
+        titleKey: "hero.sailingSchedule",
+        url: "http://ec2-13-229-38-56.ap-southeast-1.compute.amazonaws.com:8081/ords/f?p=107:104:::::P0_GROUP_RID:195",
+      },
     ],
     []
   );
 
-  const heroImages = useMemo(() => ["/oceanfreight.png", "/airfreight.png", "/truck.png"], []);
+  /* ---------------- HERO CONTENT SLIDES ---------------- */
+  const heroContents = useMemo(
+    () => [
+      {
+        titleKey: "hero.slide1.title",
+        subtitleKey: "hero.slide1.subtitle",
+      },
+      {
+        titleKey: "hero.slide2.title",
+        subtitleKey: "hero.slide2.subtitle",
+      },
+      {
+        titleKey: "hero.slide3.title",
+        subtitleKey: "hero.slide3.subtitle",
+      },
+    ],
+    []
+  );
+
+  /* ---------------- BACKGROUND MEDIA ---------------- */
+  const heroImages = useMemo(
+    () => ["/oceanfreight.png", "/airfreight.png", "/truck.png"],
+    []
+  );
+
   const videoSrc = "/Hero01.mp4";
   const videoPoster = "/hero-poster.jpg";
 
-  const [index, setIndex] = useState(0);
+  /* ---------------- STATES ---------------- */
+  const [bgIndex, setBgIndex] = useState(0);
+  const [contentIndex, setContentIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
   const [useVideo, setUseVideo] = useState(true);
 
@@ -37,6 +80,7 @@ const HeroSection: React.FC = () => {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
   ).current;
 
+  /* ---------------- VIDEO HANDLING ---------------- */
   useEffect(() => {
     if (prefersReducedMotion) {
       setUseVideo(false);
@@ -64,28 +108,41 @@ const HeroSection: React.FC = () => {
     return () => document.removeEventListener("visibilitychange", onVis);
   }, [prefersReducedMotion]);
 
+  /* ---------------- BACKGROUND IMAGE AUTOPLAY ---------------- */
   useEffect(() => {
     if (prefersReducedMotion || !autoPlay || useVideo) return;
+
     const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % heroImages.length);
+      setBgIndex((prev) => (prev + 1) % heroImages.length);
     }, 5000);
+
     return () => clearInterval(id);
   }, [heroImages.length, prefersReducedMotion, autoPlay, useVideo]);
 
+  /* ---------------- HERO TEXT AUTOSCROLL ---------------- */
+  useEffect(() => {
+    const id = setInterval(() => {
+      setContentIndex((prev) => (prev + 1) % heroContents.length);
+    }, 4000);
+
+    return () => clearInterval(id);
+  }, [heroContents.length]);
+
+  /* ---------------- CONTROLS ---------------- */
   const goNext = () => {
     setAutoPlay(false);
-    setIndex((p) => (p + 1) % heroImages.length);
+    setBgIndex((p) => (p + 1) % heroImages.length);
   };
 
   const goPrev = () => {
     setAutoPlay(false);
-    setIndex((p) => (p - 1 + heroImages.length) % heroImages.length);
+    setBgIndex((p) => (p - 1 + heroImages.length) % heroImages.length);
   };
 
+  /* ================= RENDER ================= */
   return (
     <section className="relative h-[100svh] w-full overflow-hidden">
-
-      {/* BACKGROUND */}
+      {/* ---------- BACKGROUND ---------- */}
       <div className="absolute inset-0">
         {useVideo ? (
           <video
@@ -107,100 +164,71 @@ const HeroSection: React.FC = () => {
               src={src}
               alt=""
               className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-                i === index ? "opacity-100" : "opacity-0"
+                i === bgIndex ? "opacity-100" : "opacity-0"
               }`}
             />
           ))
         )}
       </div>
 
-      {/* FULL-PAGE GRADIENT OVERLAY — DISABLED ON MOBILE */}
-      <div
-        className="
-          hidden sm:block
-          absolute inset-0
-          bg-gradient-to-r
-          from-black/70 via-black/40 to-transparent
-          pointer-events-none
-          z-[5]
-        "
-      ></div>
+      {/* ---------- GRADIENT OVERLAY (DESKTOP) ---------- */}
+      <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-[5]" />
 
-      {/* CONTENT */}
-      <div
-        className="
-          absolute top-1/2 left-1/2
-          -translate-x-1/2 -translate-y-1/2
-          md:left-40 lg:left-56 md:-translate-x-0
-          z-20
-          w-[calc(100%-2rem)]
-          sm:w-auto sm:max-w-md md:max-w-xl
-          px-4
-          text-center sm:text-left
-        "
-      >
-        <h1
-          className="
-            text-3xl sm:text-3xl md:text-4xl lg:text-5xl
-            font-extrabold
-            leading-tight
-            text-white
-          "
-        >
-          {t("hero.title")}
-        </h1>
+      {/* ---------- CONTENT ---------- */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:left-40 lg:left-56 md:-translate-x-0 z-20 w-[calc(100%-2rem)] sm:max-w-md md:max-w-xl px-4 text-center sm:text-left">
+        {/* AUTO SCROLLING TEXT */}
+        <div className="relative h-[150px] overflow-hidden">
+          {heroContents.map((item, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                i === contentIndex
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              }`}
+            >
+              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+                {t(item.titleKey)}
+              </h1>
 
-        <p
-          className="
-            mt-4
-            text-base sm:text-lg md:text-xl
-            leading-relaxed
-            text-gray-200
-          "
-        >
-          {t("hero.subtitle")}
-        </p>
+              <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-gray-200">
+                {t(item.subtitleKey)}
+              </p>
+            </div>
+          ))}
+        </div>
 
+        {/* CTA */}
         <div className="mt-6 flex justify-center sm:justify-start">
           <a
             href="/contact"
-            className="
-              inline-flex items-center justify-center
-              rounded-xl
-              bg-[#BC0018]
-              px-6 py-3.5
-              text-base sm:text-sm
-              font-semibold
-              text-white
-              shadow-xl
-              hover:bg-[#A90015]
-            "
+            className="inline-flex items-center justify-center rounded-xl bg-[#BC0018] px-6 py-3.5 text-sm font-semibold text-white shadow-xl hover:bg-[#A90015]"
           >
             {t("hero.contactUs")}
           </a>
         </div>
       </div>
 
-      {/* SLIDER BUTTONS */}
+      {/* ---------- SLIDER CONTROLS ---------- */}
       {!useVideo && (
         <>
           <button
             onClick={goPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full z-20"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={goNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-full z-20"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
         </>
       )}
 
-      {/* PORTAL LINKS */}
+      {/* ---------- PORTAL LINKS ---------- */}
       <div className="absolute bottom-8 left-0 right-0 z-20">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 px-4 sm:grid-cols-4">
           {portalLinks.map((link, i) => (
@@ -211,8 +239,12 @@ const HeroSection: React.FC = () => {
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white backdrop-blur-sm hover:bg-white/20"
             >
-              <span className="rounded-full bg-white/20 p-2">{link.icon}</span>
-              <span className="text-xs sm:text-sm font-semibold">{t(link.titleKey)}</span>
+              <span className="rounded-full bg-white/20 p-2">
+                {link.icon}
+              </span>
+              <span className="text-xs sm:text-sm font-semibold">
+                {t(link.titleKey)}
+              </span>
             </a>
           ))}
         </div>
