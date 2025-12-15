@@ -59,7 +59,7 @@
     },
     "warehouse": {
       "title": "Warehouse Management",
-      "description": "HAIXUN is well equipped to handle the warehousing of various commodities including cold storage.",
+      "description": "State-of-the-art facilities for warehousing operations.",
       "heroTagline": "Modern warehousing solutions with advanced inventory management.",
       "content1": "HAIXUN is well equipped to handle the warehousing of various commodities including cold storage.",
       "content2": "Warehouse management is a key part of the supply chain and primarily aims to control the movement and storage of materials within a warehouse and process the associated transactions including shipping, receiving, put away and picking. With visibility in to processes that proceed and follow the supply chain link, your warehouse will become an accelerator and not a road block to drive greater profitability and customer satisfaction.",
@@ -69,7 +69,7 @@
     },
     "projectCargo": {
       "title": "Project Logistics",
-      "description": "With Dedicated project division having experts in the field inherited from major project handlers.",
+      "description": "Specialized handling of oversized, heavy-lift, and complex project cargo.",
       "heroTagline": "Expert handling of oversized and complex project cargo.",
       "content1": "With Dedicated project division having experts in the field inherited from major project handlers.",
       "content2": "HAIXUN is well equipped to handle all kinds of special and complex project cargoes including the one which needs to be handled using floating cranes.",
@@ -82,7 +82,7 @@
     },
     "air": {
       "title": "Air Shipments",
-      "description": "HAIXUN can provide customized sea-air & air-sea options to meet customer's deadline/timeliness and achieve cost savings.",
+      "description": "Swift and reliable air cargo solutions connecting your business to global markets.",
       "heroTagline": "Fast and reliable air cargo solutions.",
       "leadingTitle": "Air Shipments",
       "content1": "HAIXUN can provide customized sea-air & air-sea options to meet customer's deadline/timeliness and achieve cost savings.",
@@ -93,7 +93,7 @@
       "description": "Cost-effective sea cargo services with FCL and LCL options."
     },
     "customs": {
-      "title": "As one of the leading custom clearing agents, we ensure that all clearance formalities",
+      "title": "Customs Declaration & Inspection",
       "description": "Smooth and efficient completion of all customs formalities.",
       "heroTagline": "Professional customs brokerage services.",
       "content1": "As one of the leading custom clearing agents, we ensure that all clearance formalities are done in a smooth and easy manner so that all our customers receive their goods on time.",
@@ -174,15 +174,15 @@
     "subtitle": "Delivering excellence through capacity, service, and expertise",
     "transportation": {
       "title": "Transportation Capacity",
-      "description": "With a registered capital of 50 million yuan, the company has Jiefang, Dongfeng and Isuzu light format transportation vehicles, which are engaged in cargo transportation services all over the country."
+      "description": "Engaged in cargo transportation services all over the country."
     },
     "logistics": {
       "title": "Logistics Service",
-      "description": "The company has advanced information system, which can be seen in the whole process, so that you can master the progress of each business at any time, and strict system prevents errors and accidents."
+      "description": "Advanced information system with full process visibility."
     },
     "team": {
       "title": "Team Personnel",
-      "description": "The company has a highly competitive operation team, has been engaged in domestic cargo transportation services for many years, and has a rigorous transportation organization team."
+      "description": "Highly competitive operation team with years of experience."
     }
   },
   "contact": {
