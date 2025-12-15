@@ -10,25 +10,24 @@
     "switchcountry": "Switch Country"
   },
   "hero": {
-  "slide1": {
-    "title": "Welcome to Haixun",
-    "subtitle": "Haixun Global Co., Ltd., headquartered in Shenzhen, China, provides end-to-end logistics solutions across sea, land, and air for global trade."
+    "slide1": {
+      "title": "Welcome to Haixun",
+      "subtitle": "Haixun Global Co., Ltd., headquartered in Shenzhen, China, provides end-to-end logistics solutions across sea, land, and air for global trade."
+    },
+    "slide2": {
+      "title": "LCL Services",
+      "subtitle": "HAIXUN operates its own consolidation services across multiple trade routes, offering flexible schedules, competitive pricing, and full cost transparency."
+    },
+    "slide3": {
+      "title": "FCL Services",
+      "subtitle": "With our own fleet of containers and strong carrier partnerships, HAIXUN delivers reliable full container load solutions with optimized cost and efficiency."
+    },
+    "contactUs": "Contact Us",
+    "customerPortal": "Customer Portal",
+    "partnerPortal": "Partner Portal",
+    "tracking": "Tracking",
+    "sailingSchedule": "Sailing Schedule"
   },
-  "slide2": {
-    "title": "LCL Services",
-    "subtitle": "HAIXUN operates its own consolidation services across multiple trade routes, offering flexible schedules, competitive pricing, and full cost transparency."
-  },
-  "slide3": {
-    "title": "FCL Services",
-    "subtitle": "With our own fleet of containers and strong carrier partnerships, HAIXUN delivers reliable full container load solutions with optimized cost and efficiency."
-  },
-
-  "contactUs": "Contact Us",
-  "customerPortal": "Customer Portal",
-  "partnerPortal": "Partner Portal",
-  "tracking": "Tracking",
-  "sailingSchedule": "Sailing Schedule"
-},
   "services": {
     "title": "Our Services",
     "subtitle": "Comprehensive logistics solutions tailored to your needs",
@@ -156,20 +155,16 @@
     "title": "About Haixun Global",
     "subtitle": "30+ Years of Logistics Excellence",
     "whoWeAre": "Who We Are",
-    "paragraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics.",
-    "paragraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity.",
-    "paragraph3": "Our services include tailored shipping plans with appropriate transport modes.",
-    "pageParagraph1": "Haixun Global Logistics (Shenzhen) Co., Ltd., headquartered in Shenzhen, China, provides global freight forwarding services for LCL, FCL, general cargo, and bulk cargo via sea, land, and air. Our solutions include booking, customs clearance, inspection, warehousing, distribution, door-to-door delivery, and logistics planning.",
-    "pageParagraph2": "Guided by integrity, honesty, service, and speed, we follow a corporate spirit of pragmatism, hard work, and responsibility. Our business model is built on innovation, win-win cooperation, and a strong commitment to customer satisfaction.",
-    "pageParagraph3": "With a modern management approach, advanced technology, and attentive customer care, we consistently adhere to the principle of putting customers first. We aim to impress clients with reliable, efficient, and seamless logistics solutions.",
+    "description1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics, including sea, land, air transportation, customs declaration, warehousing, and distribution, the Group has expanded its network to regions such as China, India, Malaysia, the UAE, and beyond.",
+    "description2": "Established in 2019, Haixun Global Shenzhen upholds the Group’s commitment to integrity, customer satisfaction, and rapid response, ensuring a reliable and customer-focused service experience in China.",
+    "yearsNumber": "30+",
+    "yearsOfGrowth": "Years of Growth",
     "fastDelivery": "Fast Worldwide Delivery",
     "fastDeliveryDesc": "Our vast global network ensures your cargo reaches destinations on schedule.",
     "safeDelivery": "Safe And Secure Delivery",
     "safeDeliveryDesc": "From pickup to final drop-off, we maintain strict safety standards.",
     "knowMore": "Know More About Us",
-    "needHelp": "Need Help?",
-    "yearsOfGrowth": "Years of Growth",
-    "yearsNumber": "9+"
+    "needHelp": "Need Help?"
   },
   "advantages": {
     "title": "Our Advantages",
@@ -234,7 +229,7 @@
     "article": "Article",
     "emptyCta": "Create First Article"
   },
-"globalPresence": {
+  "globalPresence": {
     "title": "Global Presence",
     "subtitle": "Serving customers worldwide with local expertise",
     "globalLocations": "Global Locations",
@@ -269,6 +264,7 @@
       "pasirgudang": "Pasirgudang",
       "portklang": "Port Klang",
       "doha": "Doha",
+      "singapore": "Singapore",
       "jakarta": "Jakarta",
       "surabaya": "Surabaya",
       "colombo": "Colombo",
