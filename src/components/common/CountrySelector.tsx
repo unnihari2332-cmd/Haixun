@@ -21,10 +21,8 @@ interface CountryData {
 const countries: CountryData[] = [
   // --- Singapore (two options) ---
   { country: "SINGAPORE", company: "GGL",   website: "https://www.ggl.sg", priority: 1,   flag: "/sg.svg" },
-
   { country: "SRI LANKA", company: "GC", website: "https://www.globalconsol.com/sri-lanka/home", priority: 2, flag: "/lk.svg" },
   { country: "MYANMAR", company: "GC", website: "https://www.globalconsol.com/myanmar/home", priority: 3, flag: "/mm.svg" },
-  { country: "BANGLADESH", company: "GC", website: "https://www.globalconsol.com/bangladesh/home", priority: 4, flag: "/bd.svg" },
   { country: "PAKISTAN", company: "GC", website: "https://www.globalconsol.com/pakistan/home", priority: 5, flag: "/pk.svg" },
 
   // Hidden only in Bangladesh
@@ -56,7 +54,6 @@ const CountrySelector = () => {
       "SINGAPORE": "globalPresence.countries.singapore",
       "SRI LANKA": "globalPresence.countries.sriLanka",
       "MYANMAR": "globalPresence.countries.myanmar",
-      "BANGLADESH": "globalPresence.countries.bangladesh",
       "PAKISTAN": "globalPresence.countries.pakistan",
       "MALAYSIA": "globalPresence.countries.malaysia",
       "INDONESIA": "globalPresence.countries.indonesia",
