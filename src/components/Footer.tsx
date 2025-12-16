@@ -145,7 +145,7 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-4">{t("footer.contactUs")}</h3>
 
             <div
-              className="relative h-[168px] overflow-hidden"
+              className="relative h-[200px] overflow-hidden"
               onMouseEnter={() => setPaused(true)}
               onMouseLeave={() => setPaused(false)}
             >
