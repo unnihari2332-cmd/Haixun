@@ -145,7 +145,7 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-4">{t("footer.contactUs")}</h3>
 
             <div
-              className="relative h-[200px] overflow-hidden"
+              className="relative min-h-[220px] overflow-visible"
               onMouseEnter={() => setPaused(true)}
               onMouseLeave={() => setPaused(false)}
             >
@@ -184,9 +184,9 @@ const Footer = () => {
                   )}
 
                   {current.email && (
-                    <div className="flex items-center gap-2 text-white/90 text-sm">
-                      <Mail size={16} className="text-white/80" />
-                      <span>{current.email}</span>
+                    <div className="flex items-center gap-2 text-white text-sm">
+                      <Mail size={16} className="text-white flex-shrink-0" />
+                      <a href={`mailto:${current.email}`} className="hover:underline break-all">{current.email}</a>
                     </div>
                   )}
                 </motion.div>
