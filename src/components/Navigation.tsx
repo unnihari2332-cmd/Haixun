@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "@/contexts/AuthContext";
 
 import {
   DropdownMenu,
@@ -69,9 +69,6 @@ const Navigation = () => {
       ? "text-gray-900"
       : "text-white";
 
-  const desktopLangButtonClasses =
-    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors";
-
   const langLabel = currentLang === "zh" ? "EN" : "中文";
 
   return (
@@ -93,8 +90,11 @@ const Navigation = () => {
 
           {/* ================= Desktop ================= */}
           <div className="hidden lg:flex items-center gap-6">
-            <Link to="/" className={desktopLinkColor(location.pathname === "/")}>
-              {t("nav.home") || "Home"}
+            <Link
+              to="/"
+              className={desktopLinkColor(location.pathname === "/")}
+            >
+              {t("nav.home")}
             </Link>
 
             {/* Services */}
@@ -104,23 +104,24 @@ const Navigation = () => {
                   location.pathname.includes("/services")
                 )}`}
               >
-                {t("nav.services") || "Services"}{" "}
+                {t("nav.services")}
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
+
               <DropdownMenuContent className="w-64">
                 {[
-                  ["lcl", "LCL"],
-                  ["fcl", "FCL"],
-                  ["warehousing", "Warehousing"],
-                  ["project-cargo", "Project Cargo"],
-                  ["air-freight", "Air Freight"],
-                  ["customs-clearance", "Customs Clearance"],
-                  ["import", "Import Services"],
-                  ["consolidation", "Buyer's Consolidation"],
-                  ["oog-shipments", "OOG Shipments"],
-                ].map(([slug, label]) => (
+                  ["lcl", "services.lcl.title"],
+                  ["fcl", "services.fcl.title"],
+                  ["warehouse", "services.warehouse.title"],
+                  ["project-cargo", "services.projectCargo.title"],
+                  ["air-freight", "services.air.title"],
+                  ["customs-clearance", "services.customs.title"],
+                  ["import", "services.import.title"],
+                  ["consolidation", "services.consolidation.title"],
+                  ["oog-shipments", "services.oog.title"],
+                ].map(([slug, key]) => (
                   <DropdownMenuItem asChild key={slug}>
-                    <Link to={`/services/${slug}`}>{label}</Link>
+                    <Link to={`/services/${slug}`}>{t(key)}</Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -130,14 +131,14 @@ const Navigation = () => {
               to="/about-us"
               className={desktopLinkColor(location.pathname === "/about-us")}
             >
-              {t("nav.about") || "About Us"}
+              {t("nav.about")}
             </Link>
 
             <Link
               to="/blog"
               className={desktopLinkColor(location.pathname === "/blog")}
             >
-              {t("nav.news") || "News"}
+              {t("nav.news")}
             </Link>
 
             <Link
@@ -146,7 +147,7 @@ const Navigation = () => {
                 location.pathname === "/advantages"
               )}
             >
-              {t("nav.advantage") || "Advantage"}
+              {t("nav.advantage")}
             </Link>
 
             <Link
@@ -155,7 +156,7 @@ const Navigation = () => {
                 location.pathname === "/global-presence"
               )}
             >
-              {t("nav.globalPresence") || "Global Presence"}
+              {t("nav.globalPresence")}
             </Link>
 
             {/* Contact Dropdown */}
@@ -165,20 +166,22 @@ const Navigation = () => {
                   location.pathname === "/contact"
                 )}`}
               >
-                {t("nav.contact") || "Contact"}{" "}
+                {t("nav.contact")}
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
+
               <DropdownMenuContent className="w-44">
                 <DropdownMenuItem asChild>
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/contact">{t("nav.contactUs")}</Link>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem asChild>
                   <a
                     href={JOIN_US_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Join Us
+                    {t("nav.joinUs")}
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -188,7 +191,7 @@ const Navigation = () => {
 
             <button
               onClick={handleLanguageSwitch}
-              className={`${desktopLangButtonClasses} ${
+              className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                 isDarkTextMode
                   ? "border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
                   : "border-white text-white hover:bg-white hover:text-black"
@@ -217,7 +220,7 @@ const Navigation = () => {
         <div className="lg:hidden bg-white border-t shadow-md">
           <nav className="flex flex-col px-4 py-4 space-y-3">
             <Link to="/" onClick={() => setIsMenuOpen(false)}>
-              Home
+              {t("nav.home")}
             </Link>
 
             {/* Mobile Services */}
@@ -225,43 +228,48 @@ const Navigation = () => {
               onClick={() => setIsServicesOpen(!isServicesOpen)}
               className="flex justify-between items-center"
             >
-              Services <ChevronDown />
+              {t("nav.services")}
+              <ChevronDown />
             </button>
+
             {isServicesOpen && (
               <div className="pl-4 space-y-2">
                 {[
-                  "lcl",
-                  "fcl",
-                  "warehousing",
-                  "project-cargo",
-                  "air-freight",
-                  "customs-clearance",
-                  "import",
-                  "consolidation",
-                  "oog-shipments",
-                ].map(slug => (
+                  ["lcl", "services.lcl.title"],
+                  ["fcl", "services.fcl.title"],
+                  ["warehouse", "services.warehouse.title"],
+                  ["project-cargo", "services.projectCargo.title"],
+                  ["air-freight", "services.air.title"],
+                  ["customs-clearance", "services.customs.title"],
+                  ["import", "services.import.title"],
+                  ["consolidation", "services.consolidation.title"],
+                  ["oog-shipments", "services.oog.title"],
+                ].map(([slug, key]) => (
                   <Link
                     key={slug}
                     to={`/services/${slug}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {slug.replace("-", " ")}
+                    {t(key)}
                   </Link>
                 ))}
               </div>
             )}
 
             <Link to="/about-us" onClick={() => setIsMenuOpen(false)}>
-              About Us
+              {t("nav.about")}
             </Link>
+
             <Link to="/blog" onClick={() => setIsMenuOpen(false)}>
-              News
+              {t("nav.news")}
             </Link>
+
             <Link to="/advantages" onClick={() => setIsMenuOpen(false)}>
-              Advantage
+              {t("nav.advantage")}
             </Link>
+
             <Link to="/global-presence" onClick={() => setIsMenuOpen(false)}>
-              Global Presence
+              {t("nav.globalPresence")}
             </Link>
 
             {/* Mobile Contact */}
@@ -269,20 +277,23 @@ const Navigation = () => {
               onClick={() => setIsContactOpen(!isContactOpen)}
               className="flex justify-between items-center"
             >
-              Contact <ChevronDown />
+              {t("nav.contact")}
+              <ChevronDown />
             </button>
+
             {isContactOpen && (
               <div className="pl-4 space-y-2">
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                  Contact Us
+                  {t("nav.contactUs")}
                 </Link>
+
                 <a
                   href={JOIN_US_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Join Us
+                  {t("nav.joinUs")}
                 </a>
               </div>
             )}
