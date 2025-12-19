@@ -6,185 +6,33 @@
     "news": "News",
     "advantage": "Advantage",
     "globalPresence": "Global Presence",
-    "contact": "Contact Us",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "joinUs": "Join Us",
     "switchcountry": "Switch Country"
   },
+
   "hero": {
-  "slide1": {
-    "title": "Welcome to Haixun",
-    "subtitle": "Haixun Global Co., Ltd., headquartered in Shenzhen, China, provides end-to-end logistics solutions across sea, land, and air for global trade."
-  },
-  "slide2": {
-    "title": "LCL Services",
-    "subtitle": "HAIXUN operates its own consolidation services across multiple trade routes, offering flexible schedules, competitive pricing, and full cost transparency."
-  },
-  "slide3": {
-    "title": "FCL Services",
-    "subtitle": "With our own fleet of containers and strong carrier partnerships, HAIXUN delivers reliable full container load solutions with optimized cost and efficiency."
+    "slide1": {
+      "title": "Welcome to Haixun",
+      "subtitle": "Haixun Global Co., Ltd., headquartered in Shenzhen, China, provides end-to-end logistics solutions across sea, land, and air for global trade."
+    },
+    "slide2": {
+      "title": "LCL Services",
+      "subtitle": "HAIXUN operates its own consolidation services across multiple trade routes, offering flexible schedules, competitive pricing, and full cost transparency."
+    },
+    "slide3": {
+      "title": "FCL Services",
+      "subtitle": "With our own fleet of containers and strong carrier partnerships, HAIXUN delivers reliable full container load solutions with optimized cost and efficiency."
+    },
+
+    "contactUs": "Contact Us",
+    "customerPortal": "Customer Portal",
+    "partnerPortal": "Partner Portal",
+    "tracking": "Tracking",
+    "sailingSchedule": "Sailing Schedule"
   },
 
-  "contactUs": "Contact Us",
-  "customerPortal": "Customer Portal",
-  "partnerPortal": "Partner Portal",
-  "tracking": "Tracking",
-  "sailingSchedule": "Sailing Schedule"
-},
-  "services": {
-    "title": "Our Services",
-    "subtitle": "Comprehensive logistics solutions tailored to your needs",
-    "allServices": "All Services",
-    "seeAllServices": "See All Services",
-    "ourServices": "OUR SERVICES",
-    "description": "Description",
-    "lcl": {
-      "title": "LCL Services",
-      "description": "HAIXUN operates its own consolidation services on multiple trade routes.",
-      "heroTagline": "Flexible Less-Than-Container Load solutions tailored for your partial shipments.",
-      "content1": "HAIXUN operate own consolidation service on many trade routes. With its vast network of consolidators, the company is able to provide competitive price with multiple options of sailing.",
-      "content2": "With regular consolidation boxes to important trade lanes, the company has the advantage of accommodating cargo which requires timely deliveries.",
-      "content3": "HAIXUN Provide complete transparency of all the pricing at the origin, destination and ocean freight charges."
-    },
-    "cfs": {
-      "title": "CFS Services",
-      "description": "Container Freight Station services providing efficient cargo handling."
-    },
-    "fcl": {
-      "title": "FCL Services",
-      "description": "HAIXUN owns a fleet of containers, including special equipment.",
-      "heroTagline": "Full Container Load shipping solutions with dedicated containers.",
-      "content1": "HAIXUN has own fleet of containers including special equipment's to accommodate special requirements of customers and specializes in many trade lanes.",
-      "content2": "Being sea freight professionals with vast experience in the field helps to match frequent sailing and flexible service options. Multiple carrier options on any trade route with contracted rates helps to secure the space, allocation, timing, pricing and frequency of your shipments.",
-      "content3": "FCL is the most optimized container shipping way regarding cost, volume and weight of the cargo. We take special care at each step of the process which involves fixing contract pricing with carriers, reserving space, make booking, picking up empty container at the container depot, loading at shipper facility, transporting by truck / rail to the port and vessel loading, monitor vessel schedule till final delivery to consignee.",
-      "content4": "For import bookings we engage our overseas partners in the absence of our own network and monitor each steps and keep our customers / consignees informed at all stages."
-    },
-    "warehouse": {
-      "title": "Warehouse Management",
-      "description": "HAIXUN is well equipped to handle the warehousing of various commodities including cold storage.",
-      "heroTagline": "Modern warehousing solutions with advanced inventory management.",
-      "content1": "HAIXUN is well equipped to handle the warehousing of various commodities including cold storage.",
-      "content2": "Warehouse management is a key part of the supply chain and primarily aims to control the movement and storage of materials within a warehouse and process the associated transactions including shipping, receiving, put away and picking. With visibility in to processes that proceed and follow the supply chain link, your warehouse will become an accelerator and not a road block to drive greater profitability and customer satisfaction.",
-      "content3": "The objective of WM is to handle the receipts of stock and manage supplies. WM today is part of supply chain management and also demand management. It also covers the container storage, loading and unloading. An efficient WM gives a cutting edge to retail chain distribution.",
-      "content4": "The company identifies the customer needs and assist to handle in the best possible manner. The company has expertise in handling vanning and devanning of consolidation cargo and arranges to distribute/deliver to respective parties from the warehouse which delivers full satisfaction to its customers.",
-      "content5": "With its network in domestic and global market, HX can identify the right kind of warehouse depending on customer's requirement based on cost effective, storage specific, commodity specific and proximity specific needs."
-    },
-    "projectCargo": {
-      "title": "Project Logistics",
-      "description": "Specialized handling of oversized, heavy-lift, and complex project cargo.",
-      "heroTagline": "Expert handling of oversized and complex project cargo.",
-      "content1": "With Dedicated project division having experts in the field inherited from major project handlers.",
-      "content2": "HAIXUN is well equipped to handle all kinds of special and complex project cargoes including the one which needs to be handled using floating cranes.",
-      "content3": "The expert team is well familiar handling the special and complex over-width and over-height cargo right from the ex-works until the door delivery smoothly and safely. Breakbulk handling experts have the right kind of strategy and contacts from the load point to the destination point and arrange for the right kind of resource as it requires more manpower and handling equipment.",
-      "content4": "The project are well studied and all costs are done in a very transparent manner wherein the customers know the exact costing which is important for their projects."
-    },
-    "project": {
-      "title": "Project Logistics",
-      "description": "Specialized handling of oversized, heavy-lift, and complex project cargo."
-    },
-    "air": {
-      "title": "Air Shipments",
-      "description": "HAIXUN can provide customized sea-air & air-sea options to meet customer's deadline/timeliness and achieve cost savings.",
-      "heroTagline": "Fast and reliable air cargo solutions.",
-      "leadingTitle": "Air Shipments",
-      "content1": "HAIXUN can provide customized sea-air & air-sea options to meet customer's deadline/timeliness and achieve cost savings.",
-      "content2": "The company handles the airfreight consolidation on many major routes through its efficient worldwide network."
-    },
-    "oceanFreight": {
-      "title": "Ocean Freight",
-      "description": "Cost-effective sea cargo services with FCL and LCL options."
-    },
-    "customs": {
-      "title": "Customs Declaration & Inspection",
-      "description": "As one of the leading custom clearing agents, we ensure that all clearance formalities are done in a smooth.",
-      "heroTagline": "Professional customs brokerage services.",
-      "content1": "As one of the leading custom clearing agents, we ensure that all clearance formalities are done in a smooth and easy manner so that all our customers receive their goods on time.",
-      "content2": "Our customs brokers help ease import and export regulations and all paperwork related to trade compliances and procedures to ensure that your consignments via sea, land and air leave on time."
-    },
-    "oog": {
-      "title": "OOG Shipments - Inter Island Movements",
-      "description": "Cargo loading, lashing, survey arrangements for out-of-gauge cargo.",
-      "heroTagline": "Specialized handling of out-of-gauge cargo.",
-      "servicesOffered": "Services Offered:",
-      "content1": "Cargo Loading",
-      "content2": "Lashing",
-      "content3": "Surveyor",
-      "content4": "Inter Island Movement to Main Ports",
-      "content5": "Export & Import Handling",
-      "content6": "Ocean Freight",
-      "content7": "Warehouse and Yard Facility",
-      "content8": "Crane and Container Handling Equipment's",
-      "content9": "Import Stripping and Domestic Movements"
-    },
-    "import": {
-      "title": "Import",
-      "description": "Comprehensive import handling services.",
-      "heroTagline": "End-to-end import solutions.",
-      "content1": "总用地面积：5220㎡",
-      "content2": "总建筑面积：44525㎡",
-      "content3": "容积率：7.08",
-      "content4": "该项目位于深圳南头半岛东南部，南临望海路，北靠蛇口老街，西为海韵路，东为规划道路，向南面向大海，向北近2号线地铁口。规划建成为商业高级商务写字楼及大型购物中心，周围交通便利，各类配套设施完善，景观资源丰富，发展前景广阔。"
-    },
-    "consolidation": {
-      "title": "LCL Consolidation",
-      "description": "Direct export consolidations to key destinations.",
-      "heroTagline": "Cost-effective cargo consolidation services.",
-      "exportDirectNavaSheva": "Export - Direct Consol to Nava Sheva Connecting",
-      "navaShevaPorts": "ICD PPG, ICD Ludhiana, ICD Garhiharsru, ICD Ahmedabad",
-      "exportDirectConsol": "Export - Direct Consol",
-      "directConsolPorts": "Singapore, Colombo, Karachi",
-      "exportConsolViaSingapore": "Export Consol Via Singapore Hub to",
-      "singaporeHubDest": "India, Middle East, Bangladesh, Maldives, Karachi, USA, Europe Ports, Australia",
-      "importConsolidation": "Import Consolidation - Via Singapore Hub",
-      "importConsolRegions": "Asia, Middle East, USA, Europe",
-      "facilities": "Facilities",
-      "facilitiesDesc": "LCL Consolidation / Deconsolidation Warehouse, Packing and Value Added Services"
-    },
-    "liquidCargo": {
-      "title": "Liquid Cargo Transportation",
-      "description": "Specialized transportation solutions for liquid cargo."
-    },
-    "thirdPartyLogistics": {
-      "title": "3PL Services",
-      "description": "Advanced third-party logistics solutions."
-    },
-    "linerAgency": {
-      "title": "Liner Agency",
-      "description": "End-to-end services for shipping lines."
-    },
-    "readMore": "Read More"
-  },
-  "about": {
-    "title": "About Haixun Global",
-    "subtitle": "30+ Years of Logistics Excellence",
-    "whoWeAre": "Who We Are",
-    "paragraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics, including sea, land, air transportation, customs declaration, warehousing, and distribution, the Group has expanded its network to regions such as China, India, Malaysia, the UAE, and beyond.",
-    "paragraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity, customer satisfaction, and rapid response, ensuring a reliable and customer-focused service experience in China.",
-    "pageParagraph1": "Haixun Global Shenzhen, leverages over 30 years of expertise in logistics, including sea, land, air transportation, customs declaration, warehousing, and distribution, the Group has expanded its network to regions such as China, India, Malaysia, the UAE, and beyond.",
-    "pageParagraph2": "Established in 2019, Haixun Global Shenzhen upholds the Group's commitment to integrity, customer satisfaction, and rapid response, ensuring a reliable and customer-focused service experience in China.",
-    "fastDelivery": "Fast Worldwide Delivery",
-    "fastDeliveryDesc": "Our vast global network ensures your cargo reaches destinations on schedule.",
-    "safeDelivery": "Safe And Secure Delivery",
-    "safeDeliveryDesc": "From pickup to final drop-off, we maintain strict safety standards.",
-    "knowMore": "Know More About Us",
-    "needHelp": "Need Help?",
-    "yearsOfGrowth": "Years of Growth",
-    "yearsNumber": "9+"
-  },
-  "advantages": {
-    "title": "Our Advantages",
-    "subtitle": "Delivering excellence through capacity, service, and expertise",
-    "transportation": {
-      "title": "Transportation Capacity",
-      "description": "With a registered capital of 50 million yuan, the company has Jiefang, Dongfeng and Isuzu light format transportation vehicles, which are engaged in cargo transportation services all over the country."
-    },
-    "logistics": {
-      "title": "Logistics Service",
-      "description": "The company has advanced information system, which can be seen in the whole process, so that you can master the progress of each business at any time, and strict system prevents errors and accidents."
-    },
-    "team": {
-      "title": "Team Personnel",
-      "description": "The company has a highly competitive operation team, has been engaged in domestic cargo transportation services for many years, and has a rigorous transportation organization team."
-    }
-  },
   "contact": {
     "title": "Contact Us",
     "subtitle": "Need to get in touch?",
@@ -204,6 +52,7 @@
     "headquarters": "Headquarters",
     "messageSent": "Your message has been sent.",
     "logisticsDesc": "Logistics involves efficient planning and coordination of goods movement.",
+
     "form": {
       "firstName": "First Name",
       "lastName": "Last Name",
@@ -219,102 +68,8 @@
       "enterSubject": "Enter subject",
       "writeMessage": "Write your message"
     },
+
     "success": "Message sent successfully!",
     "error": "Something went wrong. Please try again."
-  },
-  "blog": {
-    "title": "Our Blog",
-    "subtitle": "Stay updated with the latest insights in global logistics.",
-    "loading": "Loading articles...",
-    "noArticles": "No articles published yet.",
-    "readMore": "Read More",
-    "minRead": "min read",
-    "article": "Article",
-    "emptyCta": "Create First Article"
-  },
-"globalPresence": {
-    "title": "Global Presence",
-    "subtitle": "Serving customers worldwide with local expertise",
-    "globalLocations": "Global Locations",
-    "office": "Office",
-    "viewDetails": "View Details",
-    "viewLocations": "View Locations",
-    "viewMap": "View Map",
-    "countries": {
-      "china": "China",
-      "singapore": "Singapore",
-      "india": "India",
-      "indonesia": "Indonesia",
-      "malaysia": "Malaysia",
-      "thailand": "Thailand",
-      "sriLanka": "Sri Lanka",
-      "bangladesh": "Bangladesh",
-      "myanmar": "Myanmar",
-      "pakistan": "Pakistan",
-      "uae": "UAE",
-      "uk": "United Kingdom",
-      "usa": "United States",
-      "australia": "Australia",
-      "qatar": "Qatar"
-    },
-    "cities": {
-      "kerala": "Kerala",
-      "mumbai": "Mumbai",
-      "mumbaiAndheri": "Mumbai-Andheri",
-      "delhi": "Delhi",
-      "bangalore": "Bangalore",
-      "kolkata": "Kolkata",
-      "pasirgudang": "Pasirgudang",
-      "portklang": "Port Klang",
-      "doha": "Doha",
-      "jakarta": "Jakarta",
-      "surabaya": "Surabaya",
-      "colombo": "Colombo",
-      "bangkok": "Bangkok",
-      "yangon": "Yangon",
-      "karachi": "Karachi",
-      "lahore": "Lahore",
-      "shenzhen": "Shenzhen",
-      "chicago": "Chicago",
-      "newYork": "New York",
-      "losAngeles": "Los Angeles",
-      "london": "London",
-      "melbourne": "Melbourne"
-    },
-    "addresses": {
-      "kerala": "CC 59/801A Elizabeth Memorial Building, Thevara Ferry Jn, Cochin 682013, Kerala.",
-      "mumbai": "803 / 804, Shelton Cubix, Plot No. 87, Sector-15, CBD Belapur, Navi Mumbai, Maharastra - 400614.",
-      "mumbaiAndheri": "503, Midas, Sahar Plaza Complex, Sir M.V Road, Andheri East, Mumbai 400059",
-      "delhi": "903, Surya Kiran Building K.G Marg, Connaught Place New Delhi - 110001",
-      "bangalore": "3C-964 IIIrd Cross Street, HRBR LAYOUT 1st Block, Kalayan Nagar Bannaswadi, Bengaluru - 560043.",
-      "kolkata": "Merlin Matrix, 3rd floor, Room No. 303 10, D. N. BLOCK, SECTOR - V SALT LAKE CITY, Kolkata – 700091",
-      "pasirgudang": "Unit 20-03A, Level 20 Menara Zurich, 15 Jalan Dato Abdullah Tahir, 80300 Johor Bahru",
-      "portklang": "MTBBT 2, 3A-5, Jalan Batu Nilam 16, The Landmark (Behind AEON Mall), Bandar Bukit Tinggi 2, 41200, Klang, Selangor D.E",
-      "doha": "Office no: 48, 2nd Floor, Al matar Centre, Old Airport Road Doha",
-      "singapore": "Blk 511 Kampong Bahru Road, #03-01 Keppel Distripark, Singapore - 099447",
-      "jakarta": "408, Lina Building, JL.HR Rasuna Said kav B7, Jakarta",
-      "surabaya": "Japfa Indoland Center, Japfa Tower 1, Lantai 4/401-A JL Jend, Basuki Rahmat 129-137, Surabaya 60271",
-      "colombo": "Ceylinco House, 9th Floor, No. 69, Janadhipathi Mawatha, Colombo 01, Sri Lanka",
-      "bangkok": "109 CCT Building, 3rd Floor, Rm.3, Surawong Road, Suriyawongse, Bangrak, Bangkok 10500",
-      "yangon": "No.608, Room 8B, Bo Soon Pat Tower, Merchant Street, Pabedan Township, Yangon, Myanmar",
-      "karachi": "Suite No.301, 3rd Floor, Fortune Center, Shahrah-e-Faisal, Block 6, PECHS, Karachi, Pakistan",
-      "lahore": "Office # 301, 3rd Floor, Gulberg Arcade Main Market, Gulberg 2, Lahore, Pakistan",
-      "shenzhen": "13C02, Block A, Zhaoxin Huijin Plaza 3085 Shennan East Road, Luohu, Shenzhen.",
-      "chicago": "939 W. North Avenue, Suite 750, Chicago, IL 60642",
-      "newYork": "New Jersey Branch, 33 Wood Avenue South Suite 600, Iselin, NJ 08830",
-      "losAngeles": "2250 South Central Avenue Compton, CA 90220",
-      "london": "167-169 Great Portland Street 5th Floor, London W1W 5PF, United Kingdom",
-      "melbourne": "Suite 5, 7-9 Mallet Road, Tullamarine, Victoria, 3043"
-    }
-  },
-  "footer": {
-    "company": "Haixun Global Co., Ltd",
-    "description": "Leveraging over 30 years of expertise in logistics.",
-    "usefulLinks": "Useful Links",
-    "contactUs": "Contact Us",
-    "rights": "All rights reserved.",
-    "fax": "Fax",
-    "shenzhenOffice": "Shenzhen Office",
-    "shenzhenAddress": "13C02, Block A,\nZhaoxin Huijin Plaza 3085 Shennan East Road,\nLuohu, Shenzhen."
   }
 }
